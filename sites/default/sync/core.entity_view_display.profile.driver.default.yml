@@ -1,0 +1,45 @@
+uuid: 8b81c141-b75f-4275-866a-94a5b1d7acff
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.field.profile.driver.field_address
+    - field.field.profile.driver.field_job_type
+    - field.field.profile.driver.field_mobile_no
+    - field.field.profile.driver.field_work_place
+    - profile.type.driver
+  module:
+    - address
+    - options
+    - text
+id: profile.driver.default
+targetEntityType: profile
+bundle: driver
+mode: default
+content:
+  field_address:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+  field_job_type:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_mobile_no:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_work_place:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  langcode: true

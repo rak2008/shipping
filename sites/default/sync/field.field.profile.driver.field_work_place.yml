@@ -1,0 +1,21 @@
+uuid: 7a2c4209-ee0f-4e0e-84e8-4ae61bb99305
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_work_place
+    - profile.type.driver
+  module:
+    - text
+id: profile.driver.field_work_place
+field_name: field_work_place
+entity_type: profile
+bundle: driver
+label: 'work Place'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,13 @@
+uuid: 8c37cb55-69f4-49c7-9316-633b64ab83a7
+langcode: ar
+status: true
+dependencies:
+  module:
+    - comment
+_core:
+  default_config_hash: f6w_Pd30AyyDIoMkD4QpPMM2-I8FTEHICchFVOpjiCI
+id: comment_publish_action
+label: 'نشر التعليق'
+type: comment
+plugin: comment_publish_action
+configuration: {  }

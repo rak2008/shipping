@@ -1,0 +1,26 @@
+uuid: 452f8608-440b-4b98-800c-76956feb5be1
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.field.profile.store_customer.field_mobile_no
+    - profile.type.store_customer
+  module:
+    - telephone
+id: profile.store_customer.default
+targetEntityType: profile
+bundle: store_customer
+mode: default
+content:
+  field_mobile_no:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

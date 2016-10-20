@@ -1,0 +1,22 @@
+uuid: c9700e39-d129-40b9-95d8-355869b0fedd
+langcode: ar
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - h2h
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: h2h_help
+theme: h2h
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: المساعدة
+  provider: help
+  label_display: '0'
+visibility: {  }

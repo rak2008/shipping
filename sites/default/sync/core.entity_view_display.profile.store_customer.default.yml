@@ -1,0 +1,20 @@
+uuid: 28d140a6-9008-4c2d-8812-6dbb6db21412
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.field.profile.store_customer.field_mobile_no
+    - profile.type.store_customer
+id: profile.store_customer.default
+targetEntityType: profile
+bundle: store_customer
+mode: default
+content:
+  field_mobile_no:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+hidden:
+  langcode: true

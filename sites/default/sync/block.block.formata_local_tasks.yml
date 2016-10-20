@@ -1,0 +1,22 @@
+uuid: 8ca7e7b6-43f8-46d2-8aa8-615d270558b4
+langcode: ar
+status: true
+dependencies:
+  theme:
+    - formata
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: formata_local_tasks
+theme: formata
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

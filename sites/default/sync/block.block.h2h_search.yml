@@ -1,0 +1,22 @@
+uuid: 7ac8d6c5-5c84-437e-aa2e-8b41bfc94d7e
+langcode: ar
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - h2h
+_core:
+  default_config_hash: za-39d5WDUg6XvbyqSnuVYEeq6QM4qKJxW8MnoAha5A
+id: h2h_search
+theme: h2h
+region: sidebar_first
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: بحث
+  provider: search
+  label_display: visible
+visibility: {  }

@@ -1,0 +1,12 @@
+uuid: 5e40d3d0-701a-4ef1-a471-86fe337be38d
+langcode: ar
+status: true
+dependencies: {  }
+id: store_owner
+label: 'Store Owner'
+registration: true
+multiple: false
+roles:
+  authenticated: authenticated
+  administrator: '0'
+weight: 0

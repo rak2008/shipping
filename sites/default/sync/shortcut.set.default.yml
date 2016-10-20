@@ -1,0 +1,8 @@
+uuid: be01e107-ee55-45cb-bca6-5181655a21f9
+langcode: ar
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: U5VlGjd_SfV0Qm_EfnaynOfc549cNscFAx48JfYoMRI
+id: default
+label: الافتراضي

@@ -1,0 +1,9 @@
+fallback_gateway: log
+flood:
+  verify_limit: 5
+  verify_window: 21600
+page:
+  verify: /verify
+_core:
+  default_config_hash: yPBMG-NyKTeh3-DYwOPvmvGPd2FxDQU5kFGULKCHhMI
+langcode: ar

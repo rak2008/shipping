@@ -1,0 +1,13 @@
+uuid: 9f369836-d300-4577-af63-f2cb367e9c57
+langcode: ar
+status: true
+dependencies:
+  module:
+    - comment
+_core:
+  default_config_hash: MLin6S_PsJ7Oo480DxS46D46IM8tqFkkWOLyH7TGByI
+id: comment_unpublish_action
+label: 'تراجع عن نشر التعليق'
+type: comment
+plugin: comment_unpublish_action
+configuration: {  }

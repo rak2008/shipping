@@ -1,0 +1,20 @@
+uuid: 1caf2571-ed1c-4635-b8c7-6938a7e4dcad
+langcode: ar
+status: true
+dependencies:
+  theme:
+    - h2h
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: h2h_page_title
+theme: h2h
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'عنوان الصفحة'
+  provider: core
+  label_display: '0'
+visibility: {  }

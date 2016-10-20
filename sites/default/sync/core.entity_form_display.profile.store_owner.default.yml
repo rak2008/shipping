@@ -1,0 +1,43 @@
+uuid: c7f54e6c-5bfe-4cff-a1c7-e57add0468b0
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.field.profile.store_owner.field_google_map
+    - field.field.profile.store_owner.field_mobile_no
+    - field.field.profile.store_owner.field_store_name
+    - profile.type.store_owner
+  module:
+    - telephone
+    - text
+id: profile.store_owner.default
+targetEntityType: profile
+bundle: store_owner
+mode: default
+content:
+  field_google_map:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+  field_mobile_no:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+  field_store_name:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

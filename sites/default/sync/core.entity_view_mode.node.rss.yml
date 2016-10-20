@@ -1,0 +1,12 @@
+uuid: 29764199-37c0-4469-8bad-842b61f23e7b
+langcode: ar
+status: false
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: vlYzr-rp2f9NMp-Qlr4sFjlqRq-90mco5-afLNGwCrU
+id: node.rss
+label: آر.إس.إس
+targetEntityType: node
+cache: true
