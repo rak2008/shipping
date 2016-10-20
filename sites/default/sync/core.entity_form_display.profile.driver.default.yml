@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.profile.driver.field_address
     - field.field.profile.driver.field_job_type
+    - field.field.profile.driver.field_location
     - field.field.profile.driver.field_mobile_no
     - field.field.profile.driver.field_work_place
     - profile.type.driver
   module:
     - address
+    - geocoder_autocomplete
     - telephone
     - text
 id: profile.driver.default
@@ -28,6 +30,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_location:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+      autocomplete_route_name: geocoder_autocomplete.autocomplete
+    third_party_settings: {  }
+    type: geocoder_autocomplete
   field_mobile_no:
     weight: 3
     settings:

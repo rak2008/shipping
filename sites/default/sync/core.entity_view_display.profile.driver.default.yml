@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.profile.driver.field_address
     - field.field.profile.driver.field_job_type
+    - field.field.profile.driver.field_location
     - field.field.profile.driver.field_mobile_no
     - field.field.profile.driver.field_work_place
     - profile.type.driver
@@ -29,6 +30,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+  field_location:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_mobile_no:
     weight: 0
     label: above

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.profile.store_owner.field_google_map
+    - field.field.profile.store_owner.field_location
     - field.field.profile.store_owner.field_mobile_no
     - field.field.profile.store_owner.field_store_name
     - profile.type.store_owner
@@ -22,6 +23,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textfield
+  field_location:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_mobile_no:
     weight: 3
     settings:
