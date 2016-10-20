@@ -1,0 +1,13 @@
+uuid: 9b719daf-23e1-4534-84c0-9fa7760a2efd
+langcode: ar
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: U9HspszLxcw6pZmRacFa6yDbbheyMN-We4fPbrWWHGg
+id: node_save_action
+label: 'حفظ المحتوى'
+type: node
+plugin: node_save_action
+configuration: {  }

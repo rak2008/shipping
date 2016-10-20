@@ -1,0 +1,22 @@
+uuid: dc85d1c9-b8c0-4b1c-83d6-73156c7194f6
+langcode: ar
+status: true
+dependencies:
+  theme:
+    - h2h
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: h2h_local_tasks
+theme: h2h
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

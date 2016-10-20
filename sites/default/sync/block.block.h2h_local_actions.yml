@@ -1,0 +1,20 @@
+uuid: 45deb173-9ce6-486b-a3d0-75010b7d9643
+langcode: ar
+status: true
+dependencies:
+  theme:
+    - h2h
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: h2h_local_actions
+theme: h2h
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

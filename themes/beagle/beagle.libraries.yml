@@ -1,0 +1,10 @@
+global-slider:
+  version: 1.x
+  css:
+    theme:
+      assets/css/style.css: {}
+      assets/css/rtl.css: {}
+  js:
+    assets/js/main.js: {}
+
+

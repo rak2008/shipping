@@ -1,0 +1,13 @@
+uuid: 917f7974-9112-4cf1-be3a-871e97ecfda4
+langcode: ar
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: jonvgt3CkUM2eMLTFwWfHileWWDC4YtXCuIlCahTk_I
+id: personal
+label: 'استمارة الاتصال الشخصية'
+recipients: {  }
+reply: ''
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

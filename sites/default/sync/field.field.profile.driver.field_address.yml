@@ -1,0 +1,36 @@
+uuid: ad8d52fa-0a74-43f0-8b23-a3052b431361
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_address
+    - profile.type.driver
+  module:
+    - address
+id: profile.driver.field_address
+field_name: field_address
+entity_type: profile
+bundle: driver
+label: address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries:
+    SA: SA
+  fields:
+    administrativeArea: administrativeArea
+    locality: locality
+    dependentLocality: dependentLocality
+    sortingCode: sortingCode
+    addressLine1: addressLine1
+    addressLine2: addressLine2
+    organization: organization
+    givenName: givenName
+    familyName: familyName
+    postalCode: '0'
+    additionalName: '0'
+  langcode_override: ''
+field_type: address

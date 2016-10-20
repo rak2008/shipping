@@ -1,0 +1,13 @@
+uuid: 15cb3b4a-eee4-4ed5-860c-bc153aee4fbe
+langcode: ar
+status: true
+dependencies:
+  module:
+    - comment
+_core:
+  default_config_hash: TSkg_gUZvk-39yXFrIFnKjsxuEzO0qBH82TdDxOMMr4
+id: comment_save_action
+label: 'حفظ التعليق'
+type: comment
+plugin: comment_save_action
+configuration: {  }

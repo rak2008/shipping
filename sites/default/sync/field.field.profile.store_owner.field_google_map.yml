@@ -1,0 +1,21 @@
+uuid: ec46a347-bb25-4f6e-8570-e05e76add38b
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_google_map
+    - profile.type.store_owner
+  module:
+    - text
+id: profile.store_owner.field_google_map
+field_name: field_google_map
+entity_type: profile
+bundle: store_owner
+label: 'google map'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

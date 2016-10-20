@@ -1,0 +1,11 @@
+uuid: 6033c53a-97fc-410b-8d06-556d7854e464
+langcode: ar
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eNX6lLCKDaY83nCMh20My---y03KbiFlv802DKCCpvg
+id: und
+label: 'غير محدد'
+direction: ltr
+weight: 2
+locked: true

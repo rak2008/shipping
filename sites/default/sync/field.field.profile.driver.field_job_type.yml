@@ -1,0 +1,21 @@
+uuid: f6397cf8-ef72-4ed4-b695-c35c09f8b422
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_job_type
+    - profile.type.driver
+  module:
+    - options
+id: profile.driver.field_job_type
+field_name: field_job_type
+entity_type: profile
+bundle: driver
+label: 'job Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

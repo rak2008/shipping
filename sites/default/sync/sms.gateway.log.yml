@@ -1,0 +1,14 @@
+uuid: 6f8cbf2b-6bcf-47ba-8265-b799e2f92526
+langcode: ar
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: le2gIhFCyt1jrKujOan6ubyihxxvgvPVPOBJIXY_KxA
+id: log
+label: Logger
+plugin: log
+settings: {  }
+skip_queue: null
+reports_push_path: null
+retention_duration_incoming: null
+retention_duration_outgoing: null

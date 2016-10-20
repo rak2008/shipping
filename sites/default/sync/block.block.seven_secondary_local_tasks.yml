@@ -1,0 +1,22 @@
+uuid: eb5bbd13-60a3-4451-b1fa-8ff5cc3b3b6c
+langcode: ar
+status: true
+dependencies:
+  theme:
+    - seven
+_core:
+  default_config_hash: QeZBeCilQfeET3GeW6ZtJkEiwROADTZktFgKWwPieD4
+id: seven_secondary_local_tasks
+theme: seven
+region: pre_content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'التبويبات الفرعية'
+  provider: core
+  label_display: '0'
+  primary: false
+  secondary: true
+visibility: {  }

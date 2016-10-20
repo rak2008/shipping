@@ -1,0 +1,12 @@
+uuid: 218c0b15-172e-4683-9038-50e28f8d6cf6
+langcode: ar
+status: true
+dependencies: {  }
+id: driver
+label: Driver
+registration: true
+multiple: false
+roles:
+  authenticated: authenticated
+  administrator: '0'
+weight: 0

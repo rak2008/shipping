@@ -1,0 +1,25 @@
+uuid: 0c336c68-d585-47d6-9e56-fce472227726
+langcode: ar
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - formata
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: formata_branding
+theme: formata
+region: '-1'
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

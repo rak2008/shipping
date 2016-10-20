@@ -1,0 +1,22 @@
+uuid: a71b3bf9-214b-41b0-8c12-6b599cfb7a14
+langcode: ar
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - h2h
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: h2h_messages
+theme: h2h
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,10 @@
+uuid: a087f754-6373-4f59-8d25-05ffc2159519
+langcode: ar
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7yrlW5z9zdg2eBucB2GPqXKSMQfH9lSRSO4DbWF7AFc
+id: footer
+label: التذييل
+description: 'Site information links'
+locked: true

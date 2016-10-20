@@ -1,0 +1,13 @@
+name: SMS Devel
+type: module
+description: 'Tools to assist building with the SMS Framework.'
+# core: 8.x
+package: SMS Framework
+dependencies:
+  - sms
+
+# Information added by Drupal.org packaging script on 2016-09-22
+version: '8.x-1.0-beta1'
+core: '8.x'
+project: 'smsframework'
+datestamp: 1474523953

@@ -1,0 +1,36 @@
+uuid: db869873-b3a5-494f-90db-6504f3f29a42
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.field.profile.store_owner.field_google_map
+    - field.field.profile.store_owner.field_mobile_no
+    - field.field.profile.store_owner.field_store_name
+    - profile.type.store_owner
+  module:
+    - text
+id: profile.store_owner.default
+targetEntityType: profile
+bundle: store_owner
+mode: default
+content:
+  field_google_map:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_mobile_no:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_store_name:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  langcode: true

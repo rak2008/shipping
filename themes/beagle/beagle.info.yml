@@ -1,0 +1,17 @@
+name: Beagle
+type: theme
+description: the is Beagle theme
+package: Custom
+core: 8.x
+libraries:
+  -beagle/assets/lib
+stylesheets-remove:
+  # - '@classy/css/components/tabs.css'
+  - core/assets/vendor/normalize-css/normalize.css
+regions:
+  beheader: Header
+  header: Header
+  content: Content
+  sidebar_first: 'Sidebar first'
+  slider: Slider
+  footer: Footer
