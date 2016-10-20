@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This file contains default .gitignore rules. To use it, copy it to .gitignore,
 # and it will cause files like your settings.php and user-uploaded files to be
 # excluded from Git version control. This is a common strategy to avoid
@@ -22,6 +23,9 @@ docker-runtime
 
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php
+
+vendor
+
 sites/*/services*.yml
 
 # Ignore paths that contain user-generated content.
@@ -48,3 +52,4 @@ sites/simpletest
 core/phpcs.xml
 core/phpunit.xml
 /nbproject/private/
+
