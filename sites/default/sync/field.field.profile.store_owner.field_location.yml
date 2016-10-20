@@ -1,0 +1,19 @@
+uuid: 9ea60b95-94c6-4dab-8a0d-3656e4adc889
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_location
+    - profile.type.store_owner
+id: profile.store_owner.field_location
+field_name: field_location
+entity_type: profile
+bundle: store_owner
+label: location
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
