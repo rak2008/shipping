@@ -1,0 +1,316 @@
+geolocation.settings:
+  type: config_object
+  label: 'Geolocation settings'
+  mapping:
+    google_map_api_key:
+      type: string
+      label: 'Google Maps API Key'
+    google_map_additional_parameters:
+      type: string
+      label: 'Additional Google Maps API parameters'
+
+views.style.maps_common:
+  type: views_style
+  label: 'Geolocation CommonMap'
+  mapping:
+    even_empty:
+      type: integer
+      label: 'Even empty'
+    geolocation_field:
+      type: string
+      label: 'Geolocation Field'
+    title_field:
+      type: string
+      label: 'Title Field'
+    icon_field:
+      type: string
+      label: 'Icon Field'
+    dynamic_map:
+      type: mapping
+      label: 'Dynamic map settings'
+      mapping:
+        enabled:
+          type: integer
+          label: 'Dynamic content refresh'
+        hide_form:
+          type: integer
+          label: 'Hide form'
+        update_handler:
+          type: string
+          label: 'Filter or agurment name'
+        update_target:
+          type: string
+          label: 'Display to update'
+        update_dom_id:
+                  type: string
+                  label: 'Display to update'
+    centre:
+      type: sequence
+      label: 'Centre Option'
+      sequence:
+        type: mapping
+        mapping:
+          weight:
+            type: integer
+            label: 'Weight'
+          enable:
+            type: boolean
+            label: 'enable'
+          settings:
+            type: sequence
+            label: 'Settings'
+            sequence:
+              type: string
+    google_map_settings:
+      type: mapping
+      label: 'Google Map settings'
+      mapping:
+        type:
+          type: string
+          label: 'Google map type'
+        zoom:
+          type: string
+          label: 'Zoom level'
+        mapTypeControl:
+          type: integer
+          label: 'Map controls'
+        streetViewControl:
+          type: integer
+          label: 'Street view'
+        zoomControl:
+          type: integer
+          label: 'Zoom control'
+        scrollwheel:
+          type: integer
+          label: 'Scrool wheel'
+        disableDoubleClickZoom:
+          type: integer
+          label: 'Disable double click zoom'
+        draggable:
+          type: integer
+          label: 'Draggable'
+        height:
+          type: string
+          label: 'Height value'
+        width:
+          type: string
+          label: 'Width value'
+        info_auto_display:
+          type: integer
+          label: 'Display info'
+        style:
+          type: string
+          label: 'JSON encoded style'
+
+views.field.geolocation_field:
+  type: views.field.field
+  label: 'Geolocation Field'
+
+views.field.geolocation_field_proximity:
+  type: views.field.field
+  label: 'Geolocation Proximity Field'
+  mapping:
+    proximity_source:
+      type: string
+      label: 'Proximity Field Source'
+    proximity_lat:
+      type: string
+      label: 'Proximity Latitude'
+    proximity_lng:
+      type: string
+      label: 'Proximity Longitude'
+    proximity_filter:
+      type: string
+      label: 'Proximity Filter'
+    proximity_argument:
+      type: string
+      label: 'Proximity Argument'
+    entity_id_argument:
+      type: string
+      label: 'Proximity Entity ID argument'
+    entity_id_argument_units:
+      type: string
+      label: 'Proximity Entity ID units'
+    # Inherit from views
+    set_precision:
+      type: boolean
+      label: 'Round'
+    precision:
+      type: integer
+      label: 'Precision'
+    decimal:
+      type: string
+      label: 'Decimal point'
+    separator:
+      type: string
+      label: 'Thousands marker'
+    format_plural:
+      type: boolean
+      label: 'Format plural'
+    format_plural_string:
+      type: plural_label
+      label: 'Plural variants'
+    prefix:
+      type: label
+      label: 'Prefix'
+    suffix:
+      type: label
+      label: 'Suffix'
+
+views.filter.geolocation_filter_boundary:
+  type: views.filter.filter
+  label: 'Geolocation Boundary Filter'
+  mapping:
+    value:
+      type: mapping
+      label: 'Value'
+      mapping:
+        lat_north_east:
+          type: string
+          label: 'North East Latitude'
+        lng_north_east:
+           type: string
+           label: 'North East Longitude'
+        lat_south_west:
+           type: string
+           label: 'South West Latitude'
+        lng_south_west:
+           type: string
+           label: 'North East Longitude'
+
+views.filter.geolocation_filter_proximity:
+  type: views.filter.filter
+  label: 'Geolocation Proximity Filter'
+  mapping:
+    value:
+      type: mapping
+      label: 'Proximity Value'
+      mapping:
+        min:
+          type: string
+          label: 'Minimum Distance'
+        max:
+          type: string
+          label: 'Maximum Distance'
+        value:
+          type: string
+          label: 'Value'
+        lat:
+          type: string
+          label: 'Latitude'
+        lng:
+          type: string
+          label: 'Longitude'
+        units:
+          type: string
+          label: 'Units'
+
+views.sort.geolocation_sort_proximity:
+  type: views_sort
+  label: 'Geolocation Proximity Sort'
+  mapping:
+    proximity_field:
+      type: string
+      label: 'Proximity Field Source'
+
+field.formatter.settings.geolocation_map:
+  type: mapping
+  label: 'Geolocation Google Map Formatter'
+  mapping:
+    title:
+      type: string
+      label: 'Title'
+    info_text:
+      type: string
+      label: 'Info Text'
+    google_map_settings:
+      type: mapping
+      label: 'Google Map settings'
+      mapping:
+        type:
+          type: string
+          label: 'Google map type'
+        zoom:
+          type: string
+          label: 'Zoom level'
+        mapTypeControl:
+          type: integer
+          label: 'Map controls'
+        streetViewControl:
+          type: integer
+          label: 'Street view'
+        zoomControl:
+          type: integer
+          label: 'Zoom control'
+        scrollwheel:
+          type: integer
+          label: 'Scrool wheel'
+        disableDoubleClickZoom:
+          type: integer
+          label: 'Disable double click zoom'
+        draggable:
+          type: integer
+          label: 'Draggable'
+        height:
+          type: string
+          label: 'Height value'
+        width:
+          type: string
+          label: 'Width value'
+        info_auto_display:
+          type: integer
+          label: 'Display info'
+        style:
+          type: string
+          label: 'JSON encoded style'
+
+field.widget.settings.geolocation_googlegeocoder:
+  type: mapping
+  label: 'Geolocation Google Geocoder Widget settings'
+  mapping:
+    populate_address_field:
+      type: string
+      label: 'Store address'
+    target_address_field:
+      type: string
+      label: 'Target address field name'
+    google_map_settings:
+      type: mapping
+      label: 'Google Map settings'
+      mapping:
+        type:
+          type: string
+          label: 'Google map type'
+        zoom:
+          type: string
+          label: 'Zoom level'
+        mapTypeControl:
+          type: integer
+          label: 'Map controls'
+        streetViewControl:
+          type: integer
+          label: 'Street view'
+        zoomControl:
+          type: integer
+          label: 'Zoom control'
+        scrollwheel:
+          type: integer
+          label: 'Scrool wheel'
+        disableDoubleClickZoom:
+          type: integer
+          label: 'Disable double click zoom'
+        draggable:
+          type: integer
+          label: 'Draggable'
+        height:
+          type: string
+          label: 'Height value'
+        width:
+          type: string
+          label: 'Width value'
+        info_auto_display:
+          type: integer
+          label: 'Display info'
+        style:
+          type: string
+          label: 'JSON encoded style'
