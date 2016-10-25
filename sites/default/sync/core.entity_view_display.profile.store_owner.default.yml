@@ -3,37 +3,47 @@ langcode: ar
 status: true
 dependencies:
   config:
-    - field.field.profile.store_owner.field_google_map
-    - field.field.profile.store_owner.field_location
-    - field.field.profile.store_owner.field_mobile_no
+    - field.field.profile.store_owner.field_locat
+    - field.field.profile.store_owner.field_mobile
     - field.field.profile.store_owner.field_store_name
     - profile.type.store_owner
   module:
+    - geolocation
+    - mobile_number
     - text
 id: profile.store_owner.default
 targetEntityType: profile
 bundle: store_owner
 mode: default
 content:
-  field_google_map:
-    weight: 2
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-  field_location:
-    weight: 3
+  field_locat:
+    weight: 5
     label: above
     settings:
-      link_to_entity: false
+      title: ''
+      info_text: ''
+      google_map_settings:
+        type: ROADMAP
+        zoom: '10'
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        disableDoubleClickZoom: 0
+        draggable: 1
+        height: 400px
+        width: 100%
+        info_auto_display: 1
+        style: ''
     third_party_settings: {  }
-    type: string
-  field_mobile_no:
-    weight: 0
+    type: geolocation_map
+  field_mobile:
+    weight: 4
     label: above
-    settings: {  }
+    settings:
+      as_link: false
     third_party_settings: {  }
-    type: basic_string
+    type: mobile_number_international
   field_store_name:
     weight: 1
     label: above

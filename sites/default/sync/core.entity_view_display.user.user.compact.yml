@@ -16,6 +16,12 @@ targetEntityType: user
 bundle: user
 mode: compact
 content:
+  profile_driver:
+    weight: 10
+  profile_store_customer:
+    weight: 10
+  profile_store_owner:
+    weight: 10
   user_picture:
     type: image
     weight: 0

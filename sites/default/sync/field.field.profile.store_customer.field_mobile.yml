@@ -1,0 +1,25 @@
+uuid: a8461ec6-e84d-4308-96bd-0e7bebf10244
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_mobile
+    - profile.type.store_customer
+  module:
+    - mobile_number
+id: profile.store_customer.field_mobile
+field_name: field_mobile
+entity_type: profile
+bundle: store_customer
+label: mobile
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  countries:
+    SA: SA
+  verify: required
+  message: "Your verification code from !site_name:\r\n!code"
+field_type: mobile_number

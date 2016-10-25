@@ -8,7 +8,7 @@ id: log
 label: Logger
 plugin: log
 settings: {  }
-skip_queue: null
-reports_push_path: null
-retention_duration_incoming: null
-retention_duration_outgoing: null
+skip_queue: true
+reports_push_path: ''
+retention_duration_incoming: 0
+retention_duration_outgoing: 0

@@ -1,0 +1,19 @@
+profile_roles:
+  driver:
+    id: driver
+    default: 1
+    label: driver
+    needs_approval: 1
+  store_owner:
+    id: store_owner
+    default: 1
+    label: 'store owner'
+    needs_approval: 1
+  store_customer:
+    id: store_customer
+    default: 1
+    label: 'store customer'
+    needs_approval: 1
+mailing_list: rak2008@gmail.com
+email_subject: ''
+email_body: ''

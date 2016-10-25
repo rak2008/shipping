@@ -1,0 +1,12 @@
+uuid: 3e18abb8-37f8-4643-83ff-5f2f7e2842a9
+langcode: ar
+status: true
+dependencies: {  }
+id: driver
+label: driver
+weight: 3
+is_admin: null
+permissions:
+  - 'add own driver profile'
+  - 'edit own driver profile'
+  - 'view own driver profile'

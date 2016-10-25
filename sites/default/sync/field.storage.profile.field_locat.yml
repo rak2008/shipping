@@ -1,0 +1,19 @@
+uuid: 9971e7b8-af07-44b4-a93c-1b81fae008d7
+langcode: ar
+status: true
+dependencies:
+  module:
+    - geolocation
+    - profile
+id: profile.field_locat
+field_name: field_locat
+entity_type: profile
+type: geolocation
+settings: {  }
+module: geolocation
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

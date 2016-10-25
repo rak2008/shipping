@@ -3,21 +3,22 @@ langcode: ar
 status: true
 dependencies:
   config:
-    - field.field.profile.store_customer.field_mobile_no
+    - field.field.profile.store_customer.field_mobile
     - profile.type.store_customer
   module:
-    - telephone
+    - mobile_number
 id: profile.store_customer.default
 targetEntityType: profile
 bundle: store_customer
 mode: default
 content:
-  field_mobile_no:
+  field_mobile:
     weight: 3
     settings:
-      placeholder: ''
+      default_country: US
+      countries: {  }
     third_party_settings: {  }
-    type: telephone_default
+    type: mobile_number_default
   langcode:
     type: language_select
     weight: 2

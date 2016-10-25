@@ -1,0 +1,14 @@
+uuid: 9eeeb7e3-7a76-4526-abcf-b132f30e1346
+langcode: ar
+status: true
+dependencies:
+  config:
+    - user.role.driver
+  module:
+    - user
+id: user_remove_role_action.driver
+label: 'Remove the driver role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: driver

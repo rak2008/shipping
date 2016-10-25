@@ -1,0 +1,21 @@
+uuid: 31758fbd-16dd-4a38-aaeb-9890a9b8b4b2
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_locat
+    - profile.type.driver
+  module:
+    - geolocation
+id: profile.driver.field_locat
+field_name: field_locat
+entity_type: profile
+bundle: driver
+label: location
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

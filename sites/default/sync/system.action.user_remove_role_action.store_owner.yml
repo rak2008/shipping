@@ -1,0 +1,14 @@
+uuid: a5c0e57f-d310-4b12-98a9-ba68a9894a6d
+langcode: ar
+status: true
+dependencies:
+  config:
+    - user.role.store_owner
+  module:
+    - user
+id: user_remove_role_action.store_owner
+label: 'Remove the store owner role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: store_owner

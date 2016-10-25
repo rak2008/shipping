@@ -5,12 +5,14 @@ dependencies:
   config:
     - field.field.profile.driver.field_address
     - field.field.profile.driver.field_job_type
-    - field.field.profile.driver.field_location
-    - field.field.profile.driver.field_mobile_no
+    - field.field.profile.driver.field_locat
+    - field.field.profile.driver.field_mobile
     - field.field.profile.driver.field_work_place
     - profile.type.driver
   module:
     - address
+    - geolocation
+    - mobile_number
     - options
     - text
 id: profile.driver.default
@@ -30,19 +32,34 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
-  field_location:
-    weight: 4
+  field_locat:
+    weight: 6
     label: above
     settings:
-      link_to_entity: false
+      title: ''
+      info_text: ''
+      google_map_settings:
+        type: ROADMAP
+        zoom: '10'
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        disableDoubleClickZoom: 0
+        draggable: 1
+        height: 400px
+        width: 100%
+        info_auto_display: 1
+        style: ''
     third_party_settings: {  }
-    type: string
-  field_mobile_no:
-    weight: 0
+    type: geolocation_map
+  field_mobile:
+    weight: 5
     label: above
-    settings: {  }
+    settings:
+      as_link: false
     third_party_settings: {  }
-    type: basic_string
+    type: mobile_number_international
   field_work_place:
     weight: 1
     label: above

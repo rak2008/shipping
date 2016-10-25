@@ -1,0 +1,20 @@
+uuid: 7a1944a7-319e-46db-adee-0841b5d9fb25
+langcode: ar
+status: true
+dependencies:
+  module:
+    - mobile_number
+    - profile
+id: profile.field_mobile
+field_name: field_mobile
+entity_type: profile
+type: mobile_number
+settings:
+  unique: '2'
+module: mobile_number
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

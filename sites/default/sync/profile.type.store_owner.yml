@@ -4,9 +4,12 @@ status: true
 dependencies: {  }
 id: store_owner
 label: 'Store Owner'
-registration: true
+registration: false
 multiple: false
 roles:
-  authenticated: authenticated
+  store_owner: store_owner
+  authenticated: '0'
   administrator: '0'
+  driver: '0'
+  store_customer: '0'
 weight: 0

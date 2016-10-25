@@ -1,0 +1,25 @@
+uuid: 9e5c002f-27db-4009-93c9-4440ffdfc3d9
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_mobile
+    - profile.type.driver
+  module:
+    - mobile_number
+id: profile.driver.field_mobile
+field_name: field_mobile
+entity_type: profile
+bundle: driver
+label: mobile
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  countries:
+    SA: SA
+  verify: required
+  message: "Your verification code from !site_name:\r\n!code"
+field_type: mobile_number

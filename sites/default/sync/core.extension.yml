@@ -22,6 +22,7 @@ module:
   file: 0
   filter: 0
   geocoder_autocomplete: 0
+  geolocation: 0
   help: 0
   history: 0
   image: 0
@@ -29,6 +30,7 @@ module:
   link: 0
   locale: 0
   menu_ui: 0
+  mobile_number: 0
   node: 0
   options: 0
   page_cache: 0
@@ -36,13 +38,13 @@ module:
   profile: 0
   quickedit: 0
   rdf: 0
+  registration_role_with_approval: 0
   rest: 0
   search: 0
   serialization: 0
   shortcut: 0
   sms: 0
   sms_blast: 0
-  sms_sendtophone: 0
   sms_user: 0
   system: 0
   taxonomy: 0
@@ -50,6 +52,7 @@ module:
   text: 0
   toolbar: 0
   tour: 0
+  typed_data: 0
   user: 0
   views_ui: 0
   menu_link_content: 1

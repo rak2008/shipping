@@ -1,0 +1,21 @@
+uuid: 254b598d-3793-4b3c-ab5a-238879d1f9d0
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_locat
+    - profile.type.store_owner
+  module:
+    - geolocation
+id: profile.store_owner.field_locat
+field_name: field_locat
+entity_type: profile
+bundle: store_owner
+label: location
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation
