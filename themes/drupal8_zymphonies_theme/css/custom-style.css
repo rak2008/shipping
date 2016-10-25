@@ -1,17 +1,18 @@
-@font-face {
+/*@font-face {
   font-family: 'OpenSans';
   src: url('../fonts/fonts/OpenSans/OpenSans.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/OpenSans/OpenSans.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/OpenSans/OpenSans.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/OpenSans/OpenSans.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/OpenSans/OpenSans.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/OpenSans/OpenSans.svg#OpenSans') format('svg'); /* Legacy iOS */
-}
-
+/*  src: url('../fonts/OpenSans/OpenSans.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+/*       url('../fonts/OpenSans/OpenSans.woff2') format('woff2'), /* Super Modern Browsers */
+/*      url('../fonts/OpenSans/OpenSans.woff') format('woff'), /* Pretty Modern Browsers */
+/*       url('../fonts/OpenSans/OpenSans.ttf')  format('truetype'), /* Safari, Android, iOS */
+/*       url('../fonts/OpenSans/OpenSans.svg#OpenSans') format('svg'); /* Legacy iOS */
+/*}*/
 /*Header*/
+@import url('https://fonts.googleapis.com/css?family=El+Messiri');
 
 body{
-  font-family: 'OpenSans', sans-serif;
+  font-family: 'El Messiri', sans-serif;
+  /*font-family: 'OpenSans', sans-serif;*/
   font-size: 13.5px;
   line-height: 170%;
   color: #333;

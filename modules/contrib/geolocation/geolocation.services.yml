@@ -1,0 +1,9 @@
+services:
+  geolocation.core:
+    class: Drupal\geolocation\GeolocationCore
+    arguments: ["@module_handler", "@entity.manager"]
+
+  geolocation.ajax_subscriber:
+    class: Drupal\geolocation\EventSubscriber\AjaxResponseSubscriber
+    tags:
+      - { name: event_subscriber }
