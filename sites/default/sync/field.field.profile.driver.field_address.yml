@@ -21,16 +21,16 @@ settings:
   available_countries:
     SA: SA
   fields:
-    administrativeArea: administrativeArea
     locality: locality
-    dependentLocality: dependentLocality
-    sortingCode: sortingCode
     addressLine1: addressLine1
-    addressLine2: addressLine2
     organization: organization
-    givenName: givenName
-    familyName: familyName
+    administrativeArea: '0'
+    dependentLocality: '0'
     postalCode: '0'
+    sortingCode: '0'
+    addressLine2: '0'
+    givenName: '0'
     additionalName: '0'
+    familyName: '0'
   langcode_override: ''
 field_type: address

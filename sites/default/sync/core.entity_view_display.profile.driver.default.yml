@@ -7,14 +7,12 @@ dependencies:
     - field.field.profile.driver.field_job_type
     - field.field.profile.driver.field_locat
     - field.field.profile.driver.field_mobile
-    - field.field.profile.driver.field_work_place
     - profile.type.driver
   module:
     - address
     - geolocation
     - mobile_number
     - options
-    - text
 id: profile.driver.default
 targetEntityType: profile
 bundle: driver
@@ -60,11 +58,5 @@ content:
       as_link: false
     third_party_settings: {  }
     type: mobile_number_international
-  field_work_place:
-    weight: 1
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
 hidden:
   langcode: true
