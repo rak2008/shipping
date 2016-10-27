@@ -11,6 +11,7 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  custom: 0
   datetime: 0
   dblog: 0
   dynamic_entity_reference: 0

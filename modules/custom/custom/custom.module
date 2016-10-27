@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Contains custom.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom module.
+    case 'help.page.custom':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if($form_id == 'profile_driver_add_form' || $form_id == 'profile_store_owner_add_form'){
+   $form['#attached']['library'][] = 'custom/custom'; 
+  }
+}

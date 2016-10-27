@@ -1,0 +1,7 @@
+custom:
+  version: 0
+  css:
+    theme:
+      assets/css/custom.css: {}
+  js: 
+    assets/js/custom.js: {}
