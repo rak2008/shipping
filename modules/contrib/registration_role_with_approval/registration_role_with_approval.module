@@ -19,18 +19,28 @@ function registration_role_with_approval_form_user_register_form_alter(&$form, $
   $available_roles = $config->get('profile_roles');
 
   if (!empty($available_roles)){
+//    foreach($available_roles as $role){
+//      if($role['needs_approval']){
+//        $name = $role['label'] . " (*needs admin approval)";
+//      }
+//      else{
+//        $name = $role['label'];
+//      }
+//      $form[$role['id']] = array(
+//        '#type' => 'checkbox',
+//        '#title' =>$name,
+//      );
+//    }
+    $options = [];
     foreach($available_roles as $role){
-      if($role['needs_approval']){
-        $name = $role['label'] . " (*needs admin approval)";
-      }
-      else{
-        $name = $role['label'];
-      }
-      $form[$role['id']] = array(
-        '#type' => 'checkbox',
-        '#title' =>$name,
-      );
+      $options[$role['id']] = $role['label'];
     }
+    $options = 
+    $form['role'] = array(
+        '#type' => 'radios',
+        '#title' =>t('Register as'),
+        '#options' => $options
+      );
     $form['actions']['submit']['#submit'][] = 'registration_role_with_approval_add_role';
   }
 }
@@ -45,17 +55,20 @@ function registration_role_with_approval_add_role($form, &$form_state){
   $user = \Drupal\user\Entity\User::load($form_state->getValue('uid'));
   $roles_needs_approval = array();
 
-  foreach($available_roles as $role){
-    if($form_state->getValue($role['id'])){
-      $user->addRole($role['id']);
-
-      if($role['needs_approval']) {
-        $roles_needs_approval[] = $role;
-        //Block account until approved by administrator
-        $user->block();
-      }
-    }
-  }
+//  foreach($available_roles as $role){
+//    if($form_state->getValue($role['id'])){
+//      $user->addRole($role['id']);
+//
+//      if($role['needs_approval']) {
+//        $roles_needs_approval[] = $role;
+//        //Block account until approved by administrator
+//        $user->block();
+//      }
+//    }
+//  }
+  $role = $form_state->getValue('role');
+  $user->addRole($role);
+  $user->block();
   $user->save();
 
   // Send email notification to configured mails
