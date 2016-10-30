@@ -11,7 +11,7 @@ id: node.shipping_order.field_custmobile
 field_name: field_custmobile
 entity_type: node
 bundle: shipping_order
-label: custMobile
+label: 'رقم جوال العميل'
 description: ''
 required: false
 translatable: false
@@ -20,6 +20,6 @@ default_value_callback: ''
 settings:
   countries:
     SA: SA
-  verify: optional
+  verify: none
   message: "Your verification code from !site_name:\r\n!code"
 field_type: mobile_number

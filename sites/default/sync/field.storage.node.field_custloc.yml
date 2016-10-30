@@ -1,0 +1,19 @@
+uuid: 78768f53-5c33-4637-9f1b-19ed975e1da9
+langcode: ar
+status: true
+dependencies:
+  module:
+    - geolocation
+    - node
+id: node.field_custloc
+field_name: field_custloc
+entity_type: node
+type: geolocation
+settings: {  }
+module: geolocation
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

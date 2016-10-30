@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: 'Shipping order'
 type: shipping_order
-description: ''
+description: 'shipping transactions between online stores and their customers'
 help: ''
 new_revision: true
 preview_mode: 1

@@ -11,7 +11,7 @@ id: node.shipping_order.body
 field_name: body
 entity_type: node
 bundle: shipping_order
-label: notes
+label: ملاحظات
 description: ''
 required: false
 translatable: true

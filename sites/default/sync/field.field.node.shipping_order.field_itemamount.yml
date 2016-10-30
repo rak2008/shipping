@@ -9,7 +9,7 @@ id: node.shipping_order.field_itemamount
 field_name: field_itemamount
 entity_type: node
 bundle: shipping_order
-label: itemAmount
+label: 'قيمة البضاعة'
 description: ''
 required: false
 translatable: false

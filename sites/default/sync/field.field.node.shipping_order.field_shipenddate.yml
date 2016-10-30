@@ -1,17 +1,17 @@
-uuid: 27b09c3c-8736-4248-a306-edebc05eb302
+uuid: 7b66600a-e8de-424b-80f9-fdda94fa1c22
 langcode: ar
 status: true
 dependencies:
   config:
-    - field.storage.node.field_prefshipdatetime
+    - field.storage.node.field_shipenddate
     - node.type.shipping_order
   module:
     - datetime
-id: node.shipping_order.field_prefshipdatetime
-field_name: field_prefshipdatetime
+id: node.shipping_order.field_shipenddate
+field_name: field_shipenddate
 entity_type: node
 bundle: shipping_order
-label: 'متى تريد أن نستلم البضاعة منكم؟'
+label: 'وقت تسليم الشحنة'
 description: ''
 required: false
 translatable: false

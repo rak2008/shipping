@@ -4,14 +4,20 @@ status: true
 dependencies:
   config:
     - field.field.node.shipping_order.body
+    - field.field.node.shipping_order.field_custloc
     - field.field.node.shipping_order.field_custmobile
     - field.field.node.shipping_order.field_isitempayed
     - field.field.node.shipping_order.field_itemamount
     - field.field.node.shipping_order.field_itemtype
     - field.field.node.shipping_order.field_prefshipdatetime
+    - field.field.node.shipping_order.field_shipenddate
+    - field.field.node.shipping_order.field_shipstartdate
+    - field.field.node.shipping_order.field_status
+    - field.field.node.shipping_order.field_whowillpaytheship
     - node.type.shipping_order
   module:
     - datetime
+    - geolocation
     - mobile_number
     - options
     - text
@@ -27,6 +33,12 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_custloc:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
   field_custmobile:
     weight: 102
     label: above
@@ -65,6 +77,37 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+  field_shipenddate:
+    weight: 110
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+  field_shipstartdate:
+    weight: 109
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+  field_status:
+    weight: 111
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_whowillpaytheship:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   links:
     weight: 100
 hidden:

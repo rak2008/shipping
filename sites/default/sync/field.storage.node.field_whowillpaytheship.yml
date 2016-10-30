@@ -1,22 +1,22 @@
-uuid: b278f1bd-fd4b-422b-a5a2-6e03f7c0ef2b
+uuid: f2760494-e69b-46e1-bd4f-562c681131d9
 langcode: ar
 status: true
 dependencies:
   module:
     - node
     - options
-id: node.field_itemtype
-field_name: field_itemtype
+id: node.field_whowillpaytheship
+field_name: field_whowillpaytheship
 entity_type: node
 type: list_integer
 settings:
   allowed_values:
     -
       value: 0
-      label: مأكولات
+      label: أنا
     -
       value: 1
-      label: إلكترونيات
+      label: العميل
   allowed_values_function: ''
 module: options
 locked: false

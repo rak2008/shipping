@@ -1,17 +1,17 @@
-uuid: 44c6011d-ac6f-4ece-9108-655d1cefd121
+uuid: ea23a949-8e64-40a3-8aa5-652c11a3d655
 langcode: ar
 status: true
 dependencies:
   config:
-    - field.storage.node.field_itemtype
+    - field.storage.node.field_whowillpaytheship
     - node.type.shipping_order
   module:
     - options
-id: node.shipping_order.field_itemtype
-field_name: field_itemtype
+id: node.shipping_order.field_whowillpaytheship
+field_name: field_whowillpaytheship
 entity_type: node
 bundle: shipping_order
-label: 'نوع البضاعة '
+label: 'من سيدفع قيمة الشحن'
 description: ''
 required: false
 translatable: false

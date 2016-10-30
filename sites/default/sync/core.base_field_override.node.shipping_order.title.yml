@@ -8,7 +8,7 @@ id: node.shipping_order.title
 field_name: title
 entity_type: node
 bundle: shipping_order
-label: custName
+label: 'اسم العميل'
 description: ''
 required: true
 translatable: true

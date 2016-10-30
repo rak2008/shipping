@@ -1,21 +1,21 @@
-uuid: 44c6011d-ac6f-4ece-9108-655d1cefd121
+uuid: 377aacb2-b809-4e73-b423-0ff7a88f7e69
 langcode: ar
 status: true
 dependencies:
   config:
-    - field.storage.node.field_itemtype
+    - field.storage.node.field_custloc
     - node.type.shipping_order
   module:
-    - options
-id: node.shipping_order.field_itemtype
-field_name: field_itemtype
+    - geolocation
+id: node.shipping_order.field_custloc
+field_name: field_custloc
 entity_type: node
 bundle: shipping_order
-label: 'نوع البضاعة '
+label: 'موقع العميل'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: list_integer
+field_type: geolocation
