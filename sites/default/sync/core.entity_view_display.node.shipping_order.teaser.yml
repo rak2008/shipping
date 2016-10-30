@@ -1,0 +1,27 @@
+uuid: 968aba37-e898-4509-aad2-b84b0d0903d5
+langcode: ar
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.shipping_order.body
+    - node.type.shipping_order
+  module:
+    - text
+    - user
+id: node.shipping_order.teaser
+targetEntityType: node
+bundle: shipping_order
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  langcode: true

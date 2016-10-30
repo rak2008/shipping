@@ -1,0 +1,18 @@
+uuid: 8845fea8-1d60-4bef-be4c-4878235b788b
+langcode: ar
+status: true
+dependencies:
+  config:
+    - node.type.shipping_order
+id: node.shipping_order.title
+field_name: title
+entity_type: node
+bundle: shipping_order
+label: custName
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
