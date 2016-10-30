@@ -53,10 +53,9 @@ content:
     type: mobile_number_default
   field_isitempayed:
     weight: 13
-    settings:
-      display_label: true
+    settings: {  }
     third_party_settings: {  }
-    type: boolean_checkbox
+    type: options_buttons
   field_itemamount:
     weight: 10
     settings:
