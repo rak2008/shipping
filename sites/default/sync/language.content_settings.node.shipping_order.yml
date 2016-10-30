@@ -1,0 +1,11 @@
+uuid: 54a907f9-2250-47f8-b9e1-5d555892c678
+langcode: ar
+status: true
+dependencies:
+  config:
+    - node.type.shipping_order
+id: node.shipping_order
+target_entity_type_id: node
+target_bundle: shipping_order
+default_langcode: site_default
+language_alterable: false

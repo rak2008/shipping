@@ -1,0 +1,23 @@
+uuid: f6aca96e-e5eb-4db5-9aba-1f1fbf94c378
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_itemamount
+    - node.type.shipping_order
+id: node.shipping_order.field_itemamount
+field_name: field_itemamount
+entity_type: node
+bundle: shipping_order
+label: itemAmount
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

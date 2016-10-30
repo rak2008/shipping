@@ -1,0 +1,22 @@
+uuid: 0f442bc1-13a0-42c5-8347-28705649e2fb
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.shipping_order
+  module:
+    - text
+id: node.shipping_order.body
+field_name: body
+entity_type: node
+bundle: shipping_order
+label: notes
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

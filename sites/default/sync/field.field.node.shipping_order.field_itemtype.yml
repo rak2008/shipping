@@ -1,0 +1,21 @@
+uuid: 44c6011d-ac6f-4ece-9108-655d1cefd121
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_itemtype
+    - node.type.shipping_order
+  module:
+    - options
+id: node.shipping_order.field_itemtype
+field_name: field_itemtype
+entity_type: node
+bundle: shipping_order
+label: itemType
+description: "0|مأكولات\r\n1|إلكترونيات\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

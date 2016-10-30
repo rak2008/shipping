@@ -1,0 +1,25 @@
+uuid: cf769b8c-c343-461b-b42b-5c48b66dbae8
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_custmobile
+    - node.type.shipping_order
+  module:
+    - mobile_number
+id: node.shipping_order.field_custmobile
+field_name: field_custmobile
+entity_type: node
+bundle: shipping_order
+label: custMobile
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  countries:
+    SA: SA
+  verify: optional
+  message: "Your verification code from !site_name:\r\n!code"
+field_type: mobile_number

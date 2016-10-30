@@ -1,0 +1,71 @@
+uuid: a7ddde23-9292-4f28-b059-f19219ae0e60
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.field.node.shipping_order.body
+    - field.field.node.shipping_order.field_custmobile
+    - field.field.node.shipping_order.field_isitempayed
+    - field.field.node.shipping_order.field_itemamount
+    - field.field.node.shipping_order.field_itemtype
+    - field.field.node.shipping_order.field_prefshipdatetime
+    - node.type.shipping_order
+  module:
+    - datetime
+    - mobile_number
+    - options
+    - text
+    - user
+id: node.shipping_order.default
+targetEntityType: node
+bundle: shipping_order
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_custmobile:
+    weight: 102
+    label: above
+    settings:
+      as_link: false
+    third_party_settings: {  }
+    type: mobile_number_international
+  field_isitempayed:
+    weight: 105
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_itemamount:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_itemtype:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_prefshipdatetime:
+    weight: 106
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+  links:
+    weight: 100
+hidden:
+  langcode: true
