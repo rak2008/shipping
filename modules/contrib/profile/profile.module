@@ -92,24 +92,27 @@ function template_preprocess_profile(array &$variables) {
  * Implements hook_user_view().
  */
 function profile_user_view(array &$build, UserInterface $account, EntityViewDisplayInterface $display, $view_mode) {
-  // Iterate through each bundle and see if it's component exists.
-  foreach (ProfileType::loadMultiple() as $bundle) {
-    $component_key = 'profile_' . $bundle->id();
-    if ($display->getComponent($component_key)) {
+  $route_name = \Drupal::service('current_route_match')->getRouteName();
+  if (isset($route_name) && $route_name == 'entity.user.canonical') {
+    // Iterate through each bundle and see if it's component exists.
+    foreach (ProfileType::loadMultiple() as $bundle) {
+      $component_key = 'profile_' . $bundle->id();
+      if ($display->getComponent($component_key)) {
 
-      // Embed the view of active profiles for profile type.
-      $build[$component_key] = [
-        '#type' => 'view',
-        '#name' => 'profiles',
-        '#display_id' => 'user_view',
-        '#arguments' => [$account->id(), $bundle->id(), 1],
-        '#embed' => TRUE,
-        '#title' => $bundle->label(),
-        '#pre_render' => [
-          ['\Drupal\views\Element\View', 'preRenderViewElement'],
-          'profile_views_add_title_pre_render',
-        ],
-      ];
+        // Embed the view of active profiles for profile type.
+        $build[$component_key] = [
+          '#type' => 'view',
+          '#name' => 'profiles',
+          '#display_id' => 'user_view',
+          '#arguments' => [$account->id(), $bundle->id(), 1],
+          '#embed' => TRUE,
+          '#title' => $bundle->label(),
+          '#pre_render' => [
+            ['\Drupal\views\Element\View', 'preRenderViewElement'],
+            'profile_views_add_title_pre_render',
+          ],
+        ];
+      }
     }
   }
 }
