@@ -6,17 +6,17 @@ dependencies:
     - field.field.node.shipping_order.body
     - field.field.node.shipping_order.field_custloc
     - field.field.node.shipping_order.field_custmobile
+    - field.field.node.shipping_order.field_driver
     - field.field.node.shipping_order.field_isitempayed
     - field.field.node.shipping_order.field_itemamount
     - field.field.node.shipping_order.field_itemtype
     - field.field.node.shipping_order.field_prefshipdatetime
-    - field.field.node.shipping_order.field_shipenddate
-    - field.field.node.shipping_order.field_shipstartdate
-    - field.field.node.shipping_order.field_status
     - field.field.node.shipping_order.field_whowillpaytheship
     - node.type.shipping_order
   module:
+    - content_moderation
     - datetime
+    - dynamic_entity_reference
     - geolocation
     - mobile_number
     - path
@@ -41,9 +41,24 @@ content:
     third_party_settings: {  }
   field_custloc:
     weight: 8
-    settings: {  }
+    settings:
+      google_map_settings:
+        type: ROADMAP
+        zoom: '10'
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        draggable: 1
+        style: ''
+        height: 400px
+        width: 100%
+        info_auto_display: 1
+        disableDoubleClickZoom: 0
+      populate_address_field: null
+      target_address_field: null
     third_party_settings: {  }
-    type: geolocation_latlng
+    type: geolocation_googlegeocoder
   field_custmobile:
     weight: 7
     settings:
@@ -51,6 +66,11 @@ content:
       countries: {  }
     third_party_settings: {  }
     type: mobile_number_default
+  field_driver:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: dynamic_entity_reference_options_select
   field_isitempayed:
     weight: 13
     settings: {  }
@@ -72,27 +92,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
-  field_shipenddate:
-    weight: 15
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_default
-  field_shipstartdate:
-    weight: 14
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_default
-  field_status:
-    weight: 16
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
   field_whowillpaytheship:
     weight: 11
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
   langcode:
     type: language_select
     weight: 1

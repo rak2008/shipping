@@ -1,0 +1,11 @@
+uuid: 43b4a9ee-bc91-4182-b10b-2ab39f5eb747
+langcode: ar
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xXNQquMx-xkHje0RYjdxm2eUzMEr3qaOYHa-qaimATE
+id: published
+label: created
+published: true
+default_revision: false
+weight: -10

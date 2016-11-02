@@ -1,0 +1,11 @@
+uuid: f5e20a5d-fbab-4a8f-bd93-dafd048468ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_moderation.state.delivered
+id: completed
+label: Completed
+stateFrom: delivered
+stateTo: delivered
+weight: -4

@@ -1,0 +1,9 @@
+uuid: cdea116e-7028-46ab-8cf0-28a1bdd9afd9
+langcode: en
+status: true
+dependencies: {  }
+id: hired
+label: Hired
+published: true
+default_revision: false
+weight: -9

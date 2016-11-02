@@ -1,0 +1,22 @@
+uuid: a099762a-44b6-4500-bc05-a6a2c086e43d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.shipping_order
+id: node.shipping_order.status
+field_name: status
+entity_type: node
+bundle: shipping_order
+label: 'Publishing status'
+description: 'A boolean indicating whether the node is published.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

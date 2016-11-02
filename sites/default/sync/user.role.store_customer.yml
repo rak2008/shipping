@@ -10,3 +10,5 @@ permissions:
   - 'add own store_customer profile'
   - 'edit own store_customer profile'
   - 'view own store_customer profile'
+  - 'use draft_draft transition'
+  - 'view any unpublished content'

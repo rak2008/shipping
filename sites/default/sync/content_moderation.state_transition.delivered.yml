@@ -1,0 +1,12 @@
+uuid: df89badd-7277-4240-b7f6-8f7b69f8a83f
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_moderation.state.delivered
+    - content_moderation.state.in_delivery
+id: delivered
+label: delivered
+stateFrom: in_delivery
+stateTo: delivered
+weight: -3

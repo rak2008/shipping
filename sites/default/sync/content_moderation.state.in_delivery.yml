@@ -1,0 +1,9 @@
+uuid: 711d40d1-5875-4bb0-9f32-a45178bcd2e9
+langcode: en
+status: true
+dependencies: {  }
+id: in_delivery
+label: 'In delivery'
+published: true
+default_revision: false
+weight: null

@@ -1,0 +1,12 @@
+uuid: 9427f61c-cdc9-40e0-81cc-655949e90047
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_moderation.state.hired
+    - content_moderation.state.in_delivery
+id: in
+label: 'In delivery'
+stateFrom: hired
+stateTo: in_delivery
+weight: -2

@@ -1,0 +1,74 @@
+uuid: 819eb7ad-4d10-412f-a900-68475f80813f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_driver
+    - node.type.shipping_order
+  module:
+    - dynamic_entity_reference
+id: node.shipping_order.field_driver
+field_name: field_driver
+entity_type: node
+bundle: shipping_order
+label: Driver
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  user:
+    handler: 'default:user'
+    handler_settings:
+      include_anonymous: false
+      filter:
+        type: role
+        role:
+          driver: driver
+          administrator: '0'
+          store_owner: '0'
+          store_customer: '0'
+          admin: '0'
+      target_bundles: null
+      sort:
+        field: login
+        direction: ASC
+      auto_create: false
+  comment:
+    handler: 'default:comment'
+    handler_settings: {  }
+  contact_message:
+    handler: 'default:contact_message'
+    handler_settings: {  }
+  node:
+    handler: 'default:node'
+    handler_settings: {  }
+  content_moderation_state:
+    handler: 'default:content_moderation_state'
+    handler_settings: {  }
+  block_content:
+    handler: 'default:block_content'
+    handler_settings: {  }
+  menu_link_content:
+    handler: 'default:menu_link_content'
+    handler_settings: {  }
+  file:
+    handler: 'default:file'
+    handler_settings: {  }
+  sms_phone_number_verification:
+    handler: 'default:sms_phone_number_verification'
+    handler_settings: {  }
+  profile:
+    handler: 'default:profile'
+    handler_settings: {  }
+  sms:
+    handler: 'default:sms'
+    handler_settings: {  }
+  shortcut:
+    handler: 'default:shortcut'
+    handler_settings: {  }
+  taxonomy_term:
+    handler: 'default:taxonomy_term'
+    handler_settings: {  }
+field_type: dynamic_entity_reference

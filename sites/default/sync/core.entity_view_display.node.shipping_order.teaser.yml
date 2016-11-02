@@ -24,4 +24,14 @@ content:
   links:
     weight: 100
 hidden:
+  field_custloc: true
+  field_custmobile: true
+  field_isitempayed: true
+  field_itemamount: true
+  field_itemtype: true
+  field_prefshipdatetime: true
+  field_shipenddate: true
+  field_shipstartdate: true
+  field_status: true
+  field_whowillpaytheship: true
   langcode: true

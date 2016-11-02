@@ -10,6 +10,7 @@ module:
   comment: 0
   config: 0
   contact: 0
+  content_moderation: 0
   contextual: 0
   custom: 0
   datetime: 0
@@ -19,10 +20,10 @@ module:
   editor: 0
   entity: 0
   field: 0
+  field_permissions: 0
   field_ui: 0
   file: 0
   filter: 0
-  geocoder_autocomplete: 0
   geolocation: 0
   help: 0
   history: 0

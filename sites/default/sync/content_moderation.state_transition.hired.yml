@@ -1,0 +1,12 @@
+uuid: a79fa72f-5451-40e6-8751-60bea44fbba1
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_moderation.state.hired
+    - content_moderation.state.published
+id: hired
+label: Hired
+stateFrom: published
+stateTo: hired
+weight: -9

@@ -1,0 +1,47 @@
+uuid: d32fa4c1-66e7-490a-8b64-fe6e2c0d048c
+langcode: en
+status: true
+dependencies: {  }
+id: admin
+label: admin
+weight: 6
+is_admin: null
+permissions:
+  - 'create field_driver'
+  - 'edit own field_driver'
+  - 'edit field_driver'
+  - 'view own field_driver'
+  - 'view field_driver'
+  - 'administer zones'
+  - 'view any unpublished content'
+  - 'use draft_draft transition'
+  - 'use draft_published transition'
+  - 'use archived_published transition'
+  - 'use published_published transition'
+  - 'access private fields'
+  - 'translate interface'
+  - 'administer languages'
+  - 'bypass mobile number verification requirement'
+  - 'administer nodes'
+  - 'add any driver profile'
+  - 'delete any driver profile'
+  - 'edit any driver profile'
+  - 'view any driver profile'
+  - 'delete any store_customer profile'
+  - 'edit any store_customer profile'
+  - 'view any store_customer profile'
+  - 'delete any store_owner profile'
+  - 'edit any store_owner profile'
+  - 'view any store_owner profile'
+  - 'administer users'
+  - 'create shipping_order content'
+  - 'delete own shipping_order content'
+  - 'view moderation states'
+  - 'view latest version'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'edit own shipping_order content'
+  - 'revert shipping_order revisions'
+  - 'view shipping_order revisions'
+  - 'use completed transition'
+  - 'use hired transition'

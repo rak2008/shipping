@@ -1,0 +1,11 @@
+uuid: 4b6506df-e8ee-439a-860e-9817b76fb594
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_moderation.state.published
+id: create
+label: Create
+stateFrom: published
+stateTo: published
+weight: -10
