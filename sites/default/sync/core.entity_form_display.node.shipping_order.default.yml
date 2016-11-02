@@ -62,7 +62,7 @@ content:
   field_custmobile:
     weight: 7
     settings:
-      default_country: US
+      default_country: SA
       countries: {  }
     third_party_settings: {  }
     type: mobile_number_default
