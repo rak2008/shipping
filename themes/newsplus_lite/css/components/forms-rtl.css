@@ -1,0 +1,12 @@
+/**
+ * @file
+ * Visual styles for Newsplus Lite's forms.
+ */
+label,
+.label {
+  display: block;
+  color: inherit;
+  text-align: right;
+  margin-bottom: 5px;
+}
+

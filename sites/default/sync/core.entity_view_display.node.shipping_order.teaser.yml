@@ -21,11 +21,14 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+  content_moderation_control:
+    weight: -20
   links:
     weight: 100
 hidden:
   field_custloc: true
   field_custmobile: true
+  field_driver: true
   field_isitempayed: true
   field_itemamount: true
   field_itemtype: true
