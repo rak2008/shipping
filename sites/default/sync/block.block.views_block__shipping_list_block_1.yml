@@ -1,0 +1,24 @@
+uuid: cc949da3-f16b-429f-a800-677add43e901
+langcode: ar
+status: true
+dependencies:
+  config:
+    - views.view.shipping_list
+  module:
+    - views
+  theme:
+    - newsplus_lite
+id: views_block__shipping_list_block_1
+theme: newsplus_lite
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:shipping_list-block_1'
+settings:
+  id: 'views_block:shipping_list-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: '20'
+visibility: {  }
