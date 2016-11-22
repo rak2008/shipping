@@ -3,8 +3,12 @@ langcode: ar
 status: true
 dependencies:
   module:
+    - field_permissions
     - geolocation
     - profile
+third_party_settings:
+  field_permissions:
+    permission_type: public
 id: profile.field_locat
 field_name: field_locat
 entity_type: profile

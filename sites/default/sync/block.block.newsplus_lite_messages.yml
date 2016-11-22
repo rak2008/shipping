@@ -11,7 +11,7 @@ _core:
 id: newsplus_lite_messages
 theme: newsplus_lite
 region: top_content
-weight: -13
+weight: -7
 provider: null
 plugin: system_messages_block
 settings:

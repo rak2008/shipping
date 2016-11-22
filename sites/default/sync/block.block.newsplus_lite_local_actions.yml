@@ -9,7 +9,7 @@ _core:
 id: newsplus_lite_local_actions
 theme: newsplus_lite
 region: content
-weight: -10
+weight: -3
 provider: null
 plugin: local_actions_block
 settings:

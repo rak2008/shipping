@@ -17,7 +17,7 @@ third_party_settings:
       - hired
       - in_delivery
     default_moderation_state: published
-name: 'Shipping order'
+name: 'طلب شحن'
 type: shipping_order
 description: 'shipping transactions between online stores and their customers'
 help: ''

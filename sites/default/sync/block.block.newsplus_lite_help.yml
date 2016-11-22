@@ -11,12 +11,12 @@ _core:
 id: newsplus_lite_help
 theme: newsplus_lite
 region: content
-weight: -12
+weight: -5
 provider: null
 plugin: help_block
 settings:
   id: help_block
-  label: Help
+  label: المساعدة
   provider: help
   label_display: '0'
 visibility: {  }

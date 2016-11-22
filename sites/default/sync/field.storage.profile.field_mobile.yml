@@ -3,8 +3,12 @@ langcode: ar
 status: true
 dependencies:
   module:
+    - field_permissions
     - mobile_number
     - profile
+third_party_settings:
+  field_permissions:
+    permission_type: public
 id: profile.field_mobile
 field_name: field_mobile
 entity_type: profile

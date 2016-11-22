@@ -11,7 +11,7 @@ id: profile.driver.field_locat
 field_name: field_locat
 entity_type: profile
 bundle: driver
-label: location
+label: الموقع
 description: ''
 required: true
 translatable: false

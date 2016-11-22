@@ -3,7 +3,7 @@ langcode: ar
 status: true
 dependencies: {  }
 id: driver
-label: Driver
+label: السائق
 registration: false
 multiple: false
 roles:
@@ -12,4 +12,5 @@ roles:
   administrator: '0'
   store_owner: '0'
   store_customer: '0'
+  admin: '0'
 weight: 0

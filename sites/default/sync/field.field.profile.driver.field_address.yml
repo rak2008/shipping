@@ -11,7 +11,7 @@ id: profile.driver.field_address
 field_name: field_address
 entity_type: profile
 bundle: driver
-label: address
+label: العنوان
 description: ''
 required: false
 translatable: false

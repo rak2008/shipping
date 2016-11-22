@@ -4,23 +4,22 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.shipping_order.body
+    - field.field.node.shipping_order.field_custloc
+    - field.field.node.shipping_order.field_custmobile
+    - field.field.node.shipping_order.field_driver
+    - field.field.node.shipping_order.field_isitempayed
+    - field.field.node.shipping_order.field_itemamount
+    - field.field.node.shipping_order.field_itemtype
+    - field.field.node.shipping_order.field_prefshipdatetime
+    - field.field.node.shipping_order.field_whowillpaytheship
     - node.type.shipping_order
   module:
-    - text
     - user
 id: node.shipping_order.teaser
 targetEntityType: node
 bundle: shipping_order
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
   content_moderation_control:
     weight: -20
   links:

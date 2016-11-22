@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: o_8fSWHZOVIbydZACGsSX09DtuJhqkRmNOzcVj-4bQI
 id: who_s_new
-label: 'Who''s new'
+label: 'المستخدمون الجدد'
 module: user
 description: 'Shows a list of the newest user accounts on the site.'
 tag: default
@@ -18,7 +18,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: الرئيسي
     position: 0
     display_options:
       access:
@@ -39,13 +39,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: تطبيق
           reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
       pager:
         type: some
         options:
@@ -160,7 +160,7 @@ display:
           plugin_id: date
           entity_type: user
           entity_field: created
-      title: 'Who''s new'
+      title: 'المستخدمون الجدد'
       header: {  }
       footer: {  }
       empty: {  }
@@ -177,12 +177,12 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: 'Who''s new'
+    display_title: 'المستخدمون الجدد'
     position: 1
     display_options:
       display_description: 'A list of new users'
-      block_description: 'Who''s new'
-      block_category: User
+      block_description: 'المستخدمون الجدد'
+      block_category: المستخدم
       display_extenders: {  }
     cache_metadata:
       contexts:

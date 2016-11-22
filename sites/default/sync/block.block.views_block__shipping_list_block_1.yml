@@ -5,6 +5,8 @@ dependencies:
   config:
     - views.view.shipping_list
   module:
+    - system
+    - user
     - views
   theme:
     - newsplus_lite
@@ -21,4 +23,21 @@ settings:
   label_display: visible
   views_label: ''
   items_per_page: '20'
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+      driver: driver
+      store_owner: store_owner
+      store_customer: store_customer
+      admin: admin
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: /node/5
+    negate: false
+    context_mapping: {  }

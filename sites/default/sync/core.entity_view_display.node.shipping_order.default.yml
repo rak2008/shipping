@@ -3,14 +3,15 @@ langcode: ar
 status: true
 dependencies:
   config:
-    - field.field.node.shipping_order.body
     - field.field.node.shipping_order.field_custloc
     - field.field.node.shipping_order.field_custmobile
     - field.field.node.shipping_order.field_driver
     - field.field.node.shipping_order.field_isitempayed
     - field.field.node.shipping_order.field_itemamount
     - field.field.node.shipping_order.field_itemtype
+    - field.field.node.shipping_order.field_notes
     - field.field.node.shipping_order.field_prefshipdatetime
+    - field.field.node.shipping_order.field_shipcost
     - field.field.node.shipping_order.field_whowillpaytheship
     - node.type.shipping_order
   module:
@@ -19,19 +20,12 @@ dependencies:
     - geolocation
     - mobile_number
     - options
-    - text
     - user
 id: node.shipping_order.default
 targetEntityType: node
 bundle: shipping_order
 mode: default
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 101
-    settings: {  }
-    third_party_settings: {  }
   content_moderation_control:
     weight: -20
   field_custloc:
@@ -77,6 +71,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+  field_notes:
+    weight: 114
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_prefshipdatetime:
     weight: 106
     label: above
@@ -85,6 +86,14 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+  field_shipcost:
+    weight: 115
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
   field_whowillpaytheship:
     weight: 112
     label: above

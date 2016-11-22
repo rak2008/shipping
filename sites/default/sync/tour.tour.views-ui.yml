@@ -49,7 +49,7 @@ tips:
   views-ui-fields:
     id: views-ui-fields
     plugin: text
-    label: Fields
+    label: الحقول
     body: 'If this view uses fields, they are listed here. You can click on a field to configure it.'
     weight: 5
     attributes:
@@ -89,7 +89,7 @@ tips:
   views-ui-preview:
     id: views-ui-preview
     plugin: text
-    label: Preview
+    label: معاينة
     body: 'Show a preview of the view output.'
     weight: 10
     location: left

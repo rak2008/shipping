@@ -11,7 +11,7 @@ id: profile.driver.field_job_type
 field_name: field_job_type
 entity_type: profile
 bundle: driver
-label: 'job Type'
+label: العمل
 description: ''
 required: false
 translatable: false

@@ -11,14 +11,13 @@ dependencies:
     - content_moderation
     - geolocation
     - mobile_number
-    - text
 id: profile.store_owner.default
 targetEntityType: profile
 bundle: store_owner
 mode: default
 content:
   field_locat:
-    weight: 8
+    weight: 3
     settings:
       populate_address_field: null
       target_address_field: null
@@ -38,22 +37,22 @@ content:
     third_party_settings: {  }
     type: geolocation_googlegeocoder
   field_mobile:
-    weight: 7
+    weight: 2
     settings:
       default_country: SA
       countries: {  }
     third_party_settings: {  }
     type: mobile_number_default
   field_store_name:
-    weight: 4
+    weight: 1
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: text_textfield
+    type: string_textfield
   langcode:
     type: language_select
-    weight: 2
+    weight: 0
     settings: {  }
     third_party_settings: {  }
 hidden: {  }

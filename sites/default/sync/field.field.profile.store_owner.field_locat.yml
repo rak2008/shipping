@@ -11,8 +11,8 @@ id: profile.store_owner.field_locat
 field_name: field_locat
 entity_type: profile
 bundle: store_owner
-label: location
-description: ''
+label: 'مكان المتجر'
+description: 'اختر مكان المتجر من الخريطة'
 required: true
 translatable: true
 default_value: {  }

@@ -9,15 +9,15 @@ id: node.shipping_order.field_isitempayed
 field_name: field_isitempayed
 entity_type: node
 bundle: shipping_order
-label: 'هل تم تحصيل المبلغ'
+label: 'هل تم تحصيل قيمة البضاعة'
 description: ''
-required: false
+required: true
 translatable: false
 default_value:
   -
     value: 0
 default_value_callback: ''
 settings:
-  on_label: نعم
-  off_label: لا
+  on_label: تم
+  off_label: 'الدفع عند الاستلام COD'
 field_type: boolean

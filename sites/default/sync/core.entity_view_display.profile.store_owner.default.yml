@@ -10,14 +10,13 @@ dependencies:
   module:
     - geolocation
     - mobile_number
-    - text
 id: profile.store_owner.default
 targetEntityType: profile
 bundle: store_owner
 mode: default
 content:
   field_locat:
-    weight: 5
+    weight: 2
     label: above
     settings:
       title: ''
@@ -38,17 +37,18 @@ content:
     third_party_settings: {  }
     type: geolocation_map
   field_mobile:
-    weight: 4
+    weight: 1
     label: above
     settings:
       as_link: false
     third_party_settings: {  }
     type: mobile_number_international
   field_store_name:
-    weight: 1
+    weight: 0
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    type: text_default
+    type: string
 hidden:
   langcode: true

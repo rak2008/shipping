@@ -11,7 +11,7 @@ id: profile.store_owner.field_mobile
 field_name: field_mobile
 entity_type: profile
 bundle: store_owner
-label: mobile
+label: الجوال
 description: ''
 required: true
 translatable: true

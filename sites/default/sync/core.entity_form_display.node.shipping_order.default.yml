@@ -3,14 +3,15 @@ langcode: ar
 status: true
 dependencies:
   config:
-    - field.field.node.shipping_order.body
     - field.field.node.shipping_order.field_custloc
     - field.field.node.shipping_order.field_custmobile
     - field.field.node.shipping_order.field_driver
     - field.field.node.shipping_order.field_isitempayed
     - field.field.node.shipping_order.field_itemamount
     - field.field.node.shipping_order.field_itemtype
+    - field.field.node.shipping_order.field_notes
     - field.field.node.shipping_order.field_prefshipdatetime
+    - field.field.node.shipping_order.field_shipcost
     - field.field.node.shipping_order.field_whowillpaytheship
     - node.type.shipping_order
   module:
@@ -20,20 +21,11 @@ dependencies:
     - geolocation
     - mobile_number
     - path
-    - text
 id: node.shipping_order.default
 targetEntityType: node
 bundle: shipping_order
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 17
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 3
@@ -67,7 +59,7 @@ content:
     third_party_settings: {  }
     type: mobile_number_default
   field_driver:
-    weight: 26
+    weight: 14
     settings: {  }
     third_party_settings: {  }
     type: dynamic_entity_reference_options_select
@@ -87,16 +79,24 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_prefshipdatetime:
-    weight: 12
-    settings: {  }
+  field_notes:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: datetime_default
-  field_whowillpaytheship:
+    type: string_textfield
+  field_prefshipdatetime:
     weight: 11
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
+    type: datetime_default
+  field_shipcost:
+    weight: 26
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   langcode:
     type: language_select
     weight: 1
@@ -134,4 +134,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_whowillpaytheship: true
