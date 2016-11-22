@@ -1,0 +1,9 @@
+uuid: beef34c8-2a32-45af-bd9f-527ca40550b5
+langcode: ar
+status: true
+dependencies: {  }
+id: en-x-simple
+label: 'Simple English'
+direction: ltr
+weight: 1
+locked: false

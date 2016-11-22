@@ -1,0 +1,23 @@
+uuid: 8db0ecfd-5c69-4b86-81ae-26cfac1c546f
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_shipcost
+    - node.type.shipping_order
+id: node.shipping_order.field_shipcost
+field_name: field_shipcost
+entity_type: node
+bundle: shipping_order
+label: shipcost
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

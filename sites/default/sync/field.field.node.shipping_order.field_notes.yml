@@ -1,0 +1,19 @@
+uuid: 1029bf03-6927-4f4a-8bcf-6a751f1b9998
+langcode: ar
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notes
+    - node.type.shipping_order
+id: node.shipping_order.field_notes
+field_name: field_notes
+entity_type: node
+bundle: shipping_order
+label: الملاحظات
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
