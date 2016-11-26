@@ -36,7 +36,7 @@ content:
     settings:
       google_map_settings:
         type: ROADMAP
-        zoom: '10'
+        zoom: '15'
         mapTypeControl: 1
         streetViewControl: 1
         zoomControl: 1
