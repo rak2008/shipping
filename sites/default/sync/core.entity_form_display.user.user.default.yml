@@ -3,8 +3,10 @@ langcode: ar
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_mobile
     - field.field.user.user.user_picture
   module:
+    - mobile_number
     - user
 _core:
   default_config_hash: LLAieeozVsoZDb-2PbFxRJpQqnKmpR7-4OoRJnduz-U
@@ -17,6 +19,13 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+  field_mobile:
+    weight: 1
+    settings:
+      default_country: SA
+      countries: {  }
+    third_party_settings: {  }
+    type: mobile_number_default
 hidden:
   contact: true
   langcode: true

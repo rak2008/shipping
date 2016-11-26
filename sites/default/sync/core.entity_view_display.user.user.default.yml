@@ -3,10 +3,12 @@ langcode: ar
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_mobile
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
+    - mobile_number
     - user
 _core:
   default_config_hash: L2mtwGWH_7wDRCMIR4r_Iu_jmvQ10DV1L8ht8iNZ5qY
@@ -15,6 +17,13 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_mobile:
+    weight: 6
+    label: inline
+    settings:
+      as_link: false
+    third_party_settings: {  }
+    type: mobile_number_international
   member_for:
     weight: 5
     settings: {  }

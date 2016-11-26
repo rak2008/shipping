@@ -6,13 +6,11 @@ dependencies:
     - field.field.profile.driver.field_address
     - field.field.profile.driver.field_job_type
     - field.field.profile.driver.field_locat
-    - field.field.profile.driver.field_mobile
     - profile.type.driver
   module:
     - address
     - content_moderation
     - geolocation
-    - mobile_number
 id: profile.driver.default
 targetEntityType: profile
 bundle: driver
@@ -49,13 +47,6 @@ content:
         style: ''
     third_party_settings: {  }
     type: geolocation_googlegeocoder
-  field_mobile:
-    weight: 8
-    settings:
-      default_country: SA
-      countries: {  }
-    third_party_settings: {  }
-    type: mobile_number_default
   langcode:
     type: language_select
     weight: 2

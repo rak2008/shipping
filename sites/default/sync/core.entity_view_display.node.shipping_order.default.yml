@@ -28,6 +28,8 @@ mode: default
 content:
   content_moderation_control:
     weight: -20
+    settings: {  }
+    third_party_settings: {  }
   field_custloc:
     weight: 107
     label: above
@@ -82,8 +84,8 @@ content:
     weight: 106
     label: above
     settings:
-      format_type: medium
-      timezone_override: ''
+      timezone_override: Asia/Riyadh
+      format_type: html_date
     third_party_settings: {  }
     type: datetime_default
   field_shipcost:
@@ -102,5 +104,7 @@ content:
     type: list_default
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true

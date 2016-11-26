@@ -10,7 +10,9 @@ dependencies:
     - field.field.node.shipping_order.field_isitempayed
     - field.field.node.shipping_order.field_itemamount
     - field.field.node.shipping_order.field_itemtype
+    - field.field.node.shipping_order.field_notes
     - field.field.node.shipping_order.field_prefshipdatetime
+    - field.field.node.shipping_order.field_shipcost
     - field.field.node.shipping_order.field_whowillpaytheship
     - node.type.shipping_order
   module:
@@ -31,7 +33,9 @@ hidden:
   field_isitempayed: true
   field_itemamount: true
   field_itemtype: true
+  field_notes: true
   field_prefshipdatetime: true
+  field_shipcost: true
   field_shipenddate: true
   field_shipstartdate: true
   field_status: true

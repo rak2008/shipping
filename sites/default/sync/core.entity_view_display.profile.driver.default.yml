@@ -6,12 +6,10 @@ dependencies:
     - field.field.profile.driver.field_address
     - field.field.profile.driver.field_job_type
     - field.field.profile.driver.field_locat
-    - field.field.profile.driver.field_mobile
     - profile.type.driver
   module:
     - address
     - geolocation
-    - mobile_number
     - options
 id: profile.driver.default
 targetEntityType: profile
@@ -51,12 +49,5 @@ content:
         style: ''
     third_party_settings: {  }
     type: geolocation_map
-  field_mobile:
-    weight: 5
-    label: above
-    settings:
-      as_link: false
-    third_party_settings: {  }
-    type: mobile_number_international
 hidden:
   langcode: true

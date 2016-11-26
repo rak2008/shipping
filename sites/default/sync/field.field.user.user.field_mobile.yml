@@ -1,20 +1,20 @@
-uuid: 9e5c002f-27db-4009-93c9-4440ffdfc3d9
-langcode: ar
+uuid: 834c58c1-fcbc-4a1e-80a2-9fa67c18b742
+langcode: en-x-simple
 status: true
 dependencies:
   config:
-    - field.storage.profile.field_mobile
-    - profile.type.driver
+    - field.storage.user.field_mobile
   module:
     - mobile_number
-id: profile.driver.field_mobile
+    - user
+id: user.user.field_mobile
 field_name: field_mobile
-entity_type: profile
-bundle: driver
-label: الجوال
+entity_type: user
+bundle: user
+label: Mobile
 description: ''
-required: true
-translatable: true
+required: false
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -4,12 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.profile.store_owner.field_locat
-    - field.field.profile.store_owner.field_mobile
     - field.field.profile.store_owner.field_store_name
     - profile.type.store_owner
   module:
     - geolocation
-    - mobile_number
 id: profile.store_owner.default
 targetEntityType: profile
 bundle: store_owner
@@ -36,13 +34,6 @@ content:
         style: ''
     third_party_settings: {  }
     type: geolocation_map
-  field_mobile:
-    weight: 1
-    label: above
-    settings:
-      as_link: false
-    third_party_settings: {  }
-    type: mobile_number_international
   field_store_name:
     weight: 0
     label: above
