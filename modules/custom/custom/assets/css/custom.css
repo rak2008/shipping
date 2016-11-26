@@ -10,3 +10,12 @@ and open the template in the editor.
 #block-seven-secondary-local-tasks,
 #block-seven-primary-local-tasks nav li,
 #block-seven-help{display: none;}
+
+/**
+* google map geolocation form field 
+*/
+[dir="rtl"] .page-node-type-shipping-order .geolocation-map-indicator.has-location{top: 15px !important;}
+[dir="rtl"] .geocode-controls-wrapper{width: 80%  !important;}
+/**
+* End google map geolocation form field 
+*/
