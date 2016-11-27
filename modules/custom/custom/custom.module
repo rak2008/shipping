@@ -23,8 +23,34 @@ function custom_help($route_name, RouteMatchInterface $route_match) {
   }
 }
 
+
+/**
+ * Implements hook_form_alter().
+ */
 function custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   if(in_array($form_id, ['profile_driver_add_form','profile_store_owner_add_form', 'node_shipping_order_edit_form', 'node_shipping_order_form'])){
     $form['#attached']['library'][] = 'custom/custom'; 
   }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function custom_views_pre_render(\Drupal\views\ViewExecutable $view) {
+    if($view->id() == 'shipping_list' && $view->current_display == 'page_1'){
+
+        $total_cost = 0;
+
+        foreach ($view->result as $result){
+            $node_as_arr = $result->_entity->toArray();
+//            $node_as_arr['nid'][0]['value'] = $node_as_arr['nid'][0]['value'].'-'.date('d/j/Y', $node_as_arr['created'][0]['value']);
+            if(isset( $node_as_arr['field_shipcost'][0])){
+              $total_cost += $node_as_arr['field_shipcost'][0]['value'];
+            }
+        }
+
+    $message['#markup'] = '<div id="views-record-count-text"><strong>'.  t('Total costs : ') . \Drupal::translation()->formatPlural($total_cost, '@count', '@count', array('@count' => $total_cost)) . '</strong></div>';
+    $message_locate = 'attachment_after';
+    $view->{$message_locate} = $message;
+    }
 }
