@@ -3,7 +3,7 @@ session:
 url:
   source: path_prefix
   prefixes:
-    ar: ''
+    ar: ar
     en-x-simple: en
   domains:
     ar: ''

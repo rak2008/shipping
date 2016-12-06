@@ -21,6 +21,6 @@ name: 'طلب شحن'
 type: shipping_order
 description: 'shipping transactions between online stores and their customers'
 help: ''
-new_revision: true
+new_revision: false
 preview_mode: 1
 display_submitted: false
