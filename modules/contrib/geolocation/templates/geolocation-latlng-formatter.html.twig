@@ -4,14 +4,13 @@
  * Default microdata theme implementation for a geolocation with latitude, longitude.
  *
  * Available variables:
- * - lat: The latitude value.
+
  * - lng: The longitude value.
  *
  * @see template_preprocess()
  *
  * @ingroup themeable
  */
-#}
 {% spaceless %}
   <span itemscope itemtype="http://schema.org/GeoCoordinates">
     <meta itemprop="latitude" content="{{ lat }}">
@@ -19,3 +18,5 @@
     <span class="geolocation-latlng">{{ lat }}, {{ lng }}</span>
   </span>
 {% endspaceless %}
+#}
+<a target="_blank" href="http://maps.google.com/maps?q=loc:{{ lat }},{{ lng }}">Gmap</a>
