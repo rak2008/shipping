@@ -4,7 +4,6 @@ content_access_roles_gids:
   administrator: 3
   driver: 4
   store_owner: 5
-  store_customer: 6
   admin: 7
 _core:
   default_config_hash: 7LkiviGITIpniIOOIzpuxR7r4XzqqYN_cwu0fb0kx1M

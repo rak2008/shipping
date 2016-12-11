@@ -3,8 +3,10 @@ langcode: ar
 status: true
 dependencies:
   config:
+    - field.field.node.shipping_order.field_city
     - field.field.node.shipping_order.field_custloc
     - field.field.node.shipping_order.field_custmobile
+    - field.field.node.shipping_order.field_district
     - field.field.node.shipping_order.field_driver
     - field.field.node.shipping_order.field_isitempayed
     - field.field.node.shipping_order.field_itemamount
@@ -31,6 +33,13 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+  field_city:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_custloc:
     weight: 8
     settings:
@@ -58,6 +67,13 @@ content:
       countries: {  }
     third_party_settings: {  }
     type: mobile_number_default
+  field_district:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_driver:
     weight: 14
     settings: {  }

@@ -31,15 +31,18 @@ function registration_role_with_approval_form_user_register_form_alter(&$form, $
 //        '#title' =>$name,
 //      );
 //    }
-    $options = [];
+    $options [NULL] = t('سجل معنا كسائق او صاحب متجر');
     foreach($available_roles as $role){
+        if($role['id'] == 'store_customer'){
+            continue;
+        }
       $options[$role['id']] = $role['label'];
     }
-    $options = 
+
     $form['role'] = array(
-        '#type' => 'radios',
-        '#title' =>t('Register as'),
-        '#options' => $options
+        '#type' => 'select',
+        '#options' => $options,
+        '#weight' => 1000
       );
     $form['actions']['submit']['#submit'][] = 'registration_role_with_approval_add_role';
   }

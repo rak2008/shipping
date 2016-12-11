@@ -1,5 +1,5 @@
-uuid: 7abf321e-0686-4366-8177-d4983bb07263
-langcode: ar
+uuid: 413f8d6a-47e1-48d1-9aae-7d96095b754e
+langcode: en-x-simple
 status: true
 dependencies:
   module:
@@ -7,14 +7,15 @@ dependencies:
     - node
 third_party_settings:
   field_permissions:
-    permission_type: custom
-id: node.field_shipcost
-field_name: field_shipcost
+    permission_type: public
+id: node.field_city
+field_name: field_city
 entity_type: node
-type: integer
+type: string
 settings:
-  unsigned: false
-  size: normal
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.profile.store_owner.field_locat
+    - field.field.profile.store_owner.field_price
     - field.field.profile.store_owner.field_store_name
     - profile.type.store_owner
   module:
@@ -34,6 +35,12 @@ content:
         style: ''
     third_party_settings: {  }
     type: geolocation_googlegeocoder
+  field_price:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   field_store_name:
     weight: 1
     settings:

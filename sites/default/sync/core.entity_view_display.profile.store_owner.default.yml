@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.profile.store_owner.field_locat
+    - field.field.profile.store_owner.field_price
     - field.field.profile.store_owner.field_store_name
     - profile.type.store_owner
   module:
@@ -34,6 +35,16 @@ content:
         style: ''
     third_party_settings: {  }
     type: geolocation_map
+  field_price:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
   field_store_name:
     weight: 0
     label: above

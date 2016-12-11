@@ -1,0 +1,19 @@
+uuid: d2a95da3-eccd-4345-9094-04aefac1461a
+langcode: en-x-simple
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_district
+    - node.type.shipping_order
+id: node.shipping_order.field_district
+field_name: field_district
+entity_type: node
+bundle: shipping_order
+label: District
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

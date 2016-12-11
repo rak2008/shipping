@@ -1,0 +1,30 @@
+uuid: 992cde97-61cc-4d6d-9a22-699763503b64
+langcode: en-x-simple
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_price
+    - profile.type.store_owner
+  module:
+    - profile
+third_party_settings:
+  profile:
+    profile_private: true
+id: profile.store_owner.field_price
+field_name: field_price
+entity_type: profile
+bundle: store_owner
+label: price
+description: 'السعر الذى تم الاتفاق عليه '
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 5
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal
