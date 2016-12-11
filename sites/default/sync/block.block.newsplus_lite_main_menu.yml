@@ -5,6 +5,7 @@ dependencies:
   config:
     - system.menu.main
   module:
+    - language
     - system
   theme:
     - newsplus_lite
@@ -13,7 +14,7 @@ _core:
 id: newsplus_lite_main_menu
 theme: newsplus_lite
 region: navigation
-weight: 0
+weight: -8
 provider: null
 plugin: 'system_menu_block:main'
 settings:
@@ -23,4 +24,12 @@ settings:
   label_display: '0'
   level: 1
   depth: 1
-visibility: {  }
+visibility:
+  language:
+    id: language
+    langcodes:
+      ar: ar
+      en-x-simple: en-x-simple
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'

@@ -33,24 +33,9 @@ content:
   field_custloc:
     weight: 107
     label: above
-    settings:
-      title: ''
-      google_map_settings:
-        type: ROADMAP
-        zoom: '15'
-        mapTypeControl: 1
-        streetViewControl: 1
-        zoomControl: 1
-        scrollwheel: 1
-        disableDoubleClickZoom: 1
-        draggable: 1
-        style: ''
-        height: 400px
-        width: 100%
-        info_auto_display: 1
-      info_text: ''
+    settings: {  }
     third_party_settings: {  }
-    type: geolocation_map
+    type: geolocation_latlng
   field_custmobile:
     weight: 102
     label: above

@@ -1,0 +1,11 @@
+uuid: ab537dbc-79ee-45a6-89d8-4a6b2607b981
+langcode: ar
+status: true
+dependencies:
+  config:
+    - profile.type.store_owner
+id: profile.store_owner
+target_entity_type_id: profile
+target_bundle: store_owner
+default_langcode: site_default
+language_alterable: false

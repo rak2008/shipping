@@ -1,0 +1,11 @@
+uuid: d8312c33-49c5-47a8-80c5-125078103353
+langcode: ar
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.menu_link_content
+target_entity_type_id: menu_link_content
+target_bundle: menu_link_content
+default_langcode: en-x-simple
+language_alterable: true

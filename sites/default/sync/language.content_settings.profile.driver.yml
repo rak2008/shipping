@@ -1,0 +1,11 @@
+uuid: 48cff517-1e01-480f-8de2-b4b878dc920a
+langcode: ar
+status: true
+dependencies:
+  config:
+    - profile.type.driver
+id: profile.driver
+target_entity_type_id: profile
+target_bundle: driver
+default_langcode: site_default
+language_alterable: false

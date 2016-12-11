@@ -1,0 +1,11 @@
+uuid: 405055e5-ba60-451f-8420-28b7664c3890
+langcode: ar
+status: true
+dependencies:
+  module:
+    - user
+id: user.user
+target_entity_type_id: user
+target_bundle: user
+default_langcode: en-x-simple
+language_alterable: true

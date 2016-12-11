@@ -1,6 +1,6 @@
 country:
   default: SA
-first_day: 6
+first_day: 0
 timezone:
   default: Asia/Riyadh
   user:
