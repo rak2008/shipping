@@ -7,6 +7,7 @@ dependencies:
   module:
     - language
     - system
+    - user
   theme:
     - newsplus_lite
 _core:
@@ -33,3 +34,14 @@ visibility:
     negate: false
     context_mapping:
       language: '@language.current_language_context:language_interface'
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+      driver: driver
+      store_owner: store_owner
+      admin: admin
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

@@ -1,29 +1,27 @@
-uuid: 04927b70-0841-4fb2-a200-af17302e8cc1
-langcode: ar
+uuid: 9bd5b197-d6ab-4ce9-b124-0a49719965cd
+langcode: en-x-simple
 status: true
 dependencies:
   config:
-    - system.menu.account
+    - views.view.username
   module:
-    - system
     - user
+    - views
   theme:
     - newsplus_lite
-_core:
-  default_config_hash: BpDZVqKdL6gvIl9OLXqXTIPcBFEZj7_cmfcZHw_Htj0
-id: newsplus_lite_account_menu
+id: views_block__username_block_1
 theme: newsplus_lite
 region: sidebar_second
-weight: -4
+weight: -5
 provider: null
-plugin: 'system_menu_block:account'
+plugin: 'views_block:username-block_1'
 settings:
-  id: 'system_menu_block:account'
-  label: 'قائمة حساب المستخدم'
-  provider: system
+  id: 'views_block:username-block_1'
+  label: 'اسم المستخدم'
+  provider: views
   label_display: visible
-  level: 1
-  depth: 1
+  views_label: 'اسم المستخدم'
+  items_per_page: none
 visibility:
   user_role:
     id: user_role

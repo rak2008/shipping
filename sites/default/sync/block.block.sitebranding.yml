@@ -1,6 +1,6 @@
 uuid: 5f4d11e1-4c3d-4a6b-ba00-a82ffd79e802
 langcode: ar
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,7 +10,7 @@ _core:
   default_config_hash: AzM-UAg2Uxr6hnbL6BpnFuLmLDjLvdtySJ1dEj6Zih0
 id: sitebranding
 theme: newsplus_lite
-region: footer_first
+region: '-1'
 weight: -7
 provider: null
 plugin: system_branding_block

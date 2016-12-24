@@ -1,0 +1,40 @@
+uuid: 9600d1c9-2553-4781-9796-13aa56bbf2e9
+langcode: en-x-simple
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_halt_alatsal
+field_name: field_halt_alatsal
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: مغلق
+      label: مغلق
+    -
+      value: 'لم يتم الرد'
+      label: 'لم يتم الرد'
+    -
+      value: 'الرقم غير صحيح'
+      label: 'الرقم غير صحيح'
+    -
+      value: 'خارج الخدمة'
+      label: 'خارج الخدمة'
+    -
+      value: 'تم الاتصال'
+      label: 'تم الاتصال'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

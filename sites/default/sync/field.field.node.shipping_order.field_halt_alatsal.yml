@@ -1,0 +1,21 @@
+uuid: be22157c-6606-49a4-b367-0d844e66947c
+langcode: en-x-simple
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_halt_alatsal
+    - node.type.shipping_order
+  module:
+    - options
+id: node.shipping_order.field_halt_alatsal
+field_name: field_halt_alatsal
+entity_type: node
+bundle: shipping_order
+label: 'حالة الاتصال'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

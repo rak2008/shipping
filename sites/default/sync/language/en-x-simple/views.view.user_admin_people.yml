@@ -1,0 +1,9 @@
+label: 'Users Management'
+display:
+  default:
+    display_options:
+      title: 'Users Management'
+  page_1:
+    display_options:
+      tab_options:
+        title: 'Users Management'

@@ -1,29 +1,25 @@
-uuid: 04927b70-0841-4fb2-a200-af17302e8cc1
+uuid: cc949da3-f16b-429f-a800-677add43e901
 langcode: ar
 status: true
 dependencies:
-  config:
-    - system.menu.account
   module:
     - system
     - user
   theme:
     - newsplus_lite
-_core:
-  default_config_hash: BpDZVqKdL6gvIl9OLXqXTIPcBFEZj7_cmfcZHw_Htj0
-id: newsplus_lite_account_menu
+id: views_block__shipping_list_block_1
 theme: newsplus_lite
-region: sidebar_second
-weight: -4
+region: content
+weight: 0
 provider: null
-plugin: 'system_menu_block:account'
+plugin: 'views_block:shipping_list-block_1'
 settings:
-  id: 'system_menu_block:account'
-  label: 'قائمة حساب المستخدم'
-  provider: system
+  id: 'views_block:shipping_list-block_1'
+  label: ''
+  provider: views
   label_display: visible
-  level: 1
-  depth: 1
+  views_label: ''
+  items_per_page: '20'
 visibility:
   user_role:
     id: user_role
@@ -36,3 +32,8 @@ visibility:
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: /node/5
+    negate: false
+    context_mapping: {  }

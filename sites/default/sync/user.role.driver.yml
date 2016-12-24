@@ -19,3 +19,6 @@ permissions:
   - 'use completed transition'
   - 'use in transition'
   - 'use delivered transition'
+  - 'create field_signature'
+  - 'view own field_signature'
+  - 'view field_signature'

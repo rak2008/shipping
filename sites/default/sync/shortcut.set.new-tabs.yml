@@ -1,0 +1,6 @@
+uuid: e4468fb6-42a3-4dee-a330-16f3cda4a339
+langcode: ar
+status: true
+dependencies: {  }
+id: new-tabs
+label: 'new tabs'

@@ -18,15 +18,33 @@ definitions:
     expanded: false
     weight: 0
   user__page:
-    weight: -49
-    menu_name: account
-    parent: ''
-    enabled: true
-    expanded: false
-  user__logout:
     weight: -48
     menu_name: account
     parent: ''
+    expanded: false
+    enabled: true
+  user__logout:
+    weight: -47
+    menu_name: account
+    parent: ''
+    expanded: false
+    enabled: true
+  system__admin_content:
+    enabled: true
+    menu_name: admin
+    parent: system.admin
+    expanded: false
+    weight: -10
+  comment__admin:
+    enabled: true
+    menu_name: admin
+    parent: system.admin_content
+    weight: 0
+    expanded: false
+  registration_role_with_approval__settings:
+    weight: -72
+    menu_name: admin
+    parent: user.admin_index
     expanded: false
     enabled: true
 _core:

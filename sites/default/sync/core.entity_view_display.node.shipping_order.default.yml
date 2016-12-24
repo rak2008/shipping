@@ -8,18 +8,22 @@ dependencies:
     - field.field.node.shipping_order.field_custmobile
     - field.field.node.shipping_order.field_district
     - field.field.node.shipping_order.field_driver
+    - field.field.node.shipping_order.field_halt_alatsal
     - field.field.node.shipping_order.field_isitempayed
     - field.field.node.shipping_order.field_itemamount
     - field.field.node.shipping_order.field_itemtype
     - field.field.node.shipping_order.field_notes
+    - field.field.node.shipping_order.field_place
     - field.field.node.shipping_order.field_prefshipdatetime
     - field.field.node.shipping_order.field_shipcost
+    - field.field.node.shipping_order.field_signature
     - field.field.node.shipping_order.field_whowillpaytheship
     - node.type.shipping_order
   module:
     - datetime
     - dynamic_entity_reference
     - geolocation
+    - image
     - mobile_number
     - options
     - user
@@ -66,6 +70,12 @@ content:
       link: true
     third_party_settings: {  }
     type: dynamic_entity_reference_label
+  field_halt_alatsal:
+    weight: 120
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   field_isitempayed:
     weight: 105
     label: above
@@ -96,6 +106,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_place:
+    weight: 121
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_prefshipdatetime:
     weight: 106
     label: above
@@ -112,6 +129,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+  field_signature:
+    weight: 119
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_whowillpaytheship:
     weight: 112
     label: above

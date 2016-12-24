@@ -8,19 +8,24 @@ dependencies:
     - field.field.node.shipping_order.field_custmobile
     - field.field.node.shipping_order.field_district
     - field.field.node.shipping_order.field_driver
+    - field.field.node.shipping_order.field_halt_alatsal
     - field.field.node.shipping_order.field_isitempayed
     - field.field.node.shipping_order.field_itemamount
     - field.field.node.shipping_order.field_itemtype
     - field.field.node.shipping_order.field_notes
+    - field.field.node.shipping_order.field_place
     - field.field.node.shipping_order.field_prefshipdatetime
     - field.field.node.shipping_order.field_shipcost
+    - field.field.node.shipping_order.field_signature
     - field.field.node.shipping_order.field_whowillpaytheship
+    - image.style.thumbnail
     - node.type.shipping_order
   module:
     - content_moderation
     - datetime
     - dynamic_entity_reference
     - geolocation
+    - image
     - mobile_number
     - path
 id: node.shipping_order.default
@@ -34,7 +39,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_city:
-    weight: 27
+    weight: 16
     settings:
       size: 60
       placeholder: ''
@@ -68,19 +73,24 @@ content:
     third_party_settings: {  }
     type: mobile_number_default
   field_district:
-    weight: 28
+    weight: 18
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_driver:
-    weight: 14
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: dynamic_entity_reference_options_select
+  field_halt_alatsal:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_isitempayed:
-    weight: 13
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -96,7 +106,14 @@ content:
     third_party_settings: {  }
     type: options_select
   field_notes:
-    weight: 15
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_place:
+    weight: 17
     settings:
       size: 60
       placeholder: ''
@@ -108,11 +125,23 @@ content:
     third_party_settings: {  }
     type: datetime_default
   field_shipcost:
-    weight: 26
+    weight: 15
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+  field_signature:
+    weight: 20
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_whowillpaytheship:
+    type: options_select
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 1
@@ -150,5 +179,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_whowillpaytheship: true
+hidden: {  }

@@ -1,0 +1,38 @@
+uuid: 74b8809c-0d66-48cf-839c-f68219715d29
+langcode: en-x-simple
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_signature
+    - node.type.shipping_order
+  module:
+    - image
+id: node.shipping_order.field_signature
+field_name: field_signature
+entity_type: node
+bundle: shipping_order
+label: 'customer’s signature'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

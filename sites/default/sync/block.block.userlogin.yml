@@ -1,0 +1,32 @@
+uuid: 4bde9a01-1ef5-41c8-a8ad-2bd5de4386c7
+langcode: ar
+status: true
+dependencies:
+  config:
+    - system.menu.user-login
+  module:
+    - system
+    - user
+  theme:
+    - newsplus_lite
+id: userlogin
+theme: newsplus_lite
+region: navigation
+weight: 0
+provider: null
+plugin: 'system_menu_block:user-login'
+settings:
+  id: 'system_menu_block:user-login'
+  label: 'user login'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
