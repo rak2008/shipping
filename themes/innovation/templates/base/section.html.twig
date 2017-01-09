@@ -1,0 +1,7 @@
+<div{{ attributes }}>
+  <div class="section-inner">
+  <div{{ attributes.removeClass('inv-section').removeClass('inv-sticky').addClass(container_class)|without('id')|without('style') }}>
+    <div class="row">{{ content }}</div>
+  </div>
+  </div>
+</div>

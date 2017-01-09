@@ -1,0 +1,319 @@
+h2.title2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  span {
+    background: #1ccdca;
+    margin-right: 20px;
+    padding: 8px 17px 7px;
+    color: #fff;
+    .border-radius(3px,3px,3px,3px);
+    &.red {
+      background: #e74c3c;
+    }
+  }
+}
+.has_col_img {
+  img {
+    position:absolute;
+    max-width:50%;
+    bottom:0;
+  }
+}
+.description4 {
+  position:relative;
+  display: block;
+  line-height: 24px;
+  margin: 15px 0px 50px;
+  width: 50%;
+  &.centered {
+    margin: 15px auto 50px;
+    text-align:center;
+  }
+}
+.main_desc {
+  margin: 0 auto 40px;
+  font-family: "lato", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.half_desc {
+  width: 75%;
+  margin: 0 auto;
+}
+.centered {
+  text-align: center;
+}
+
+/************************************
+  Contact Us
+/***********************************/
+.c_detail {
+  line-height: 28px;
+  display: block;
+  .c_name {
+    display: inline-block;
+    color: #324545;
+    margin-right: 10px;
+    text-transform: capitalize;
+  }
+  .c_desc {
+    color: #9ea3a3;
+  }
+}
+.block.contact-us {
+  .block-title {
+    font-weight: 400;
+	margin-bottom:30px;
+    &:before {
+      margin-right: 15px;
+      font-size: 32px;
+      font-family: 'idealtheme';
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      content: "\e06e";
+    }
+  }
+  label {
+    float:left;
+    width:20%;
+  }
+  input[type="text"], input[type="date"], input[type="email"], input[type="number"], textarea {
+    width:80%;
+    float:left;
+  }
+  .form-wrapper {
+    .form-item {
+      clear: both;
+      overflow:auto;
+      margin-bottom: 27px;
+    }
+  }
+  input[type="submit"] {
+    background: @base_color;
+    border: 1px solid @base_color;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 14px;
+    display: inline-block;
+    width:80%;
+    margin-left:20%;
+  }
+  #edit-preview {
+    display:none;
+  }
+}
+/*********************************************
+     Home Page 1
+/*********************************************/
+.fs_block {
+  border: 5px solid rgba(0, 0, 0, 0.5);
+  background:none;
+  max-width: 500px;
+  margin: 0 auto;
+  .border-radius(100%,100%,100%,100%);
+  img {
+    .border-radius(100%,100%,100%,100%);
+  }
+}
+
+a.img_popup {
+   > span {
+    z-index: 2;
+    background: rgba(red(@base_color), green(@base_color), blue(@base_color), 0.7);
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    text-align: center;
+    width: 50px;
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+	.transform(45deg,2,0deg,-50%,-50%);
+	.border-radius(100%,100%,100%,100%);
+	.transition(all,0.4s,ease);
+   }
+   &:hover {
+	span {
+	opacity:1;
+	.transform(0deg,1,0deg,-50%,-50%);
+   }
+  }
+}
+
+
+/*********************************************
+     Home Page 5
+/*********************************************/
+.tree_features {
+   margin:0;
+   padding:0;
+}
+.tree_features > li:nth-of-type(2n) {
+	float: right;
+	clear: right;
+	text-align: right;
+	margin-right: -4px;
+}
+.tree_features > li:nth-of-type(2n) .leaf_icon {
+	left: auto;
+	right: 0;
+}
+.tree_features > li {
+	min-height: 144px;
+	clear: left;
+	float: left;
+	background: #b33753;
+	color: #fff;
+	padding: 25px 25px 30px 25px;
+	position: relative;
+	width: 50%;
+	margin-bottom: 5px;
+	list-style: none;
+	vertical-align: top;
+	display: block;
+	.border-radius(200px,200px,200px,200px);
+}
+.tree_features > li > .tree_curv {
+	background: #b33753;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 50%;
+}
+.tree_features > li:after {
+	background: #fff;
+	content: "";
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	.border-radius(200px,200px,200px,200px);
+}
+.tree_features > li:nth-child(2n) > .tree_curv {
+	left: 0;
+	right: auto;
+}
+.tree_features > li:nth-child(2n) .leaf_con {
+	padding-right: 144px;
+	padding-left: 0;
+}
+.tree_features_parent {
+	margin-top: 60px;
+	max-width: 50%;
+	min-width: 160px;
+	position: relative;
+	z-index: 2;
+}
+.tree_features_t {
+	display: block;
+	font-family: "Oswald", "Open Sans", sans-serif;
+	font-size: 26px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	color: #fff !important;
+}
+.tree_features_t:hover {
+	color: #eee;
+}
+.tree_features_d {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.leaf_icon {
+	background: rgba(0, 0, 0, 0.1);
+	display: block;
+	font-size: 32px;
+	height: 144px;
+	left: 0px;
+	line-height: 144px;
+	position: absolute;
+	text-align: center;
+	width: 144px;
+	z-index: 1;
+	top: 0;
+	.border-radius(100%,100%,100%,100%);
+}
+.bg-gray .tree_features > li::after {
+	background: #f9fafc;
+}
+.leaf_con {
+	padding-left: 144px;
+	position: relative;
+	z-index: 1;
+}
+	
+/*********************************************************************
+Testimonials
+**********************************************************************/
+.view-testimonial {
+  &.style01 {
+    .views-field-field-image {
+      border: 1px solid #dadbdb;
+      display: inline-block;
+      padding: 4px;
+      position: absolute;
+      img {
+        width: 95px;
+        height:95px;
+      }
+    }
+    .testimonial-detail {
+      padding-left:120px;
+      .name {
+        color: #324545;
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+      }
+      .position {
+        color: @base_color;
+        margin-left: 7px;
+      }
+      .desc {
+        margin-top:10px;
+      }
+    }
+  }
+  &.style02 {
+    .bx-wrapper {
+      img {
+        margin: 0 auto;
+        .border-radius(100%,100%,100%,100%);
+        border: 1px solid #dadbdb;
+        padding: 6px
+      }
+    }
+    .testimonial-detail {
+      text-align:center;
+      .info {
+          color: #324545;
+          font-size: 16px;
+          margin: 30px 0 15px;
+          text-transform: uppercase;
+      }
+      .position {
+        color: @base_color;
+      }
+      .desc {
+          margin-bottom: 0px;
+          color: #8f8e8e;
+          font-size: 16px;
+          font-style: italic;
+          line-height: 33px;
+      }
+    }
+  }
+}

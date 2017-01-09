@@ -1,0 +1,171 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Innovation theme.
+ */
+
+use \Drupal\Core\Template\Attribute;
+use \Drupal\Core\Render\Markup;
+require_once 'includes/innovation.php';
+require_once 'includes/lessc.php';
+
+function innovation_default_layouts() {
+  return 'W3sia2V5IjoiZGVmYXVsdCIsInRpdGxlIjoiRGVmYXVsdCIsInNlY3Rpb25zIjpbeyJrZXkiOiJoZWFkZXIiLCJ0aXRsZSI6IkhlYWRlciIsIndlaWdodCI6MCwiZnVsbHdpZHRoIjoibm8iLCJiYWNrZ3JvdW5kY29sb3IiOiIiLCJzdGlja3kiOmZhbHNlLCJ2cGhvbmUiOmZhbHNlLCJ2dGFibGV0IjpmYWxzZSwidmRlc2t0b3AiOmZhbHNlLCJocGhvbmUiOmZhbHNlLCJodGFibGV0IjpmYWxzZSwiaGRlc2t0b3AiOmZhbHNlLCJyZWdpb25zIjpbeyJrZXkiOiJoZWFkZXIiLCJ0aXRsZSI6IkhlYWRlciIsIndlaWdodCI6MCwiY29seHMiOiIxMiIsImNvbHNtIjoiMTIiLCJjb2xtZCI6IjEyIiwiY29sbGciOiIxMiJ9XX0seyJrZXkiOiJoaWdobGlnaHRlZCIsInRpdGxlIjoiSGlnaGxpZ2h0ZWQiLCJ3ZWlnaHQiOjEsImZ1bGx3aWR0aCI6Im5vIiwiYmFja2dyb3VuZGNvbG9yIjoiIiwic3RpY2t5IjpmYWxzZSwidnBob25lIjpmYWxzZSwidnRhYmxldCI6ZmFsc2UsInZkZXNrdG9wIjpmYWxzZSwiaHBob25lIjpmYWxzZSwiaHRhYmxldCI6ZmFsc2UsImhkZXNrdG9wIjpmYWxzZSwicmVnaW9ucyI6W3sia2V5IjoiaGlnaGxpZ2h0ZWQiLCJ0aXRsZSI6IkhpZ2hsaWdodGVkIiwid2VpZ2h0IjowLCJjb2x4cyI6IjEyIiwiY29sc20iOiIxMiIsImNvbG1kIjoiMTIiLCJjb2xsZyI6IjEyIn1dfSx7ImtleSI6Im1haW4tY29udGVudCIsInRpdGxlIjoiTWFpbiBDb250ZW50Iiwid2VpZ2h0IjoyLCJmdWxsd2lkdGgiOiJubyIsImJhY2tncm91bmRjb2xvciI6IiIsInN0aWNreSI6ZmFsc2UsInZwaG9uZSI6ZmFsc2UsInZ0YWJsZXQiOmZhbHNlLCJ2ZGVza3RvcCI6ZmFsc2UsImhwaG9uZSI6ZmFsc2UsImh0YWJsZXQiOmZhbHNlLCJoZGVza3RvcCI6ZmFsc2UsInJlZ2lvbnMiOlt7ImtleSI6InNpZGViYXJfZmlyc3QiLCJ0aXRsZSI6IkxlZnQgc2lkZWJhciIsIndlaWdodCI6MCwiY29seHMiOiIxMiIsImNvbHNtIjoiMTIiLCJjb2xtZCI6IjMiLCJjb2xsZyI6IjMifSx7ImtleSI6ImNvbnRlbnQiLCJ0aXRsZSI6IkNvbnRlbnQiLCJ3ZWlnaHQiOjEsImNvbHhzIjoiMTIiLCJjb2xzbSI6IjEyIiwiY29sbWQiOiI2IiwiY29sbGciOiI2In0seyJrZXkiOiJzaWRlYmFyX3NlY29uZCIsInRpdGxlIjoiUmlnaHQgc2lkZWJhciIsIndlaWdodCI6MiwiY29seHMiOiIxMiIsImNvbHNtIjoiMTIiLCJjb2xtZCI6IjMiLCJjb2xsZyI6IjMifV19LHsia2V5IjoiZm9vdGVyIiwidGl0bGUiOiJGb290ZXIiLCJ3ZWlnaHQiOjMsImZ1bGx3aWR0aCI6Im5vIiwiYmFja2dyb3VuZGNvbG9yIjoiIiwic3RpY2t5IjpmYWxzZSwidnBob25lIjpmYWxzZSwidnRhYmxldCI6ZmFsc2UsInZkZXNrdG9wIjpmYWxzZSwiaHBob25lIjpmYWxzZSwiaHRhYmxldCI6ZmFsc2UsImhkZXNrdG9wIjpmYWxzZSwicmVnaW9ucyI6W3sia2V5IjoiZm9vdGVyIiwidGl0bGUiOiJGb290ZXIiLCJ3ZWlnaHQiOjAsImNvbHhzIjoiMTIiLCJjb2xzbSI6IjEyIiwiY29sbWQiOiIxMiIsImNvbGxnIjoiMTIifV19LHsia2V5IjoidW5hc3NpZ25lZCIsInRpdGxlIjoiVW5hc3NpZ25lZCIsIndlaWdodCI6NCwiZnVsbHdpZHRoIjoibm8iLCJiYWNrZ3JvdW5kY29sb3IiOiIiLCJzdGlja3kiOmZhbHNlLCJ2cGhvbmUiOmZhbHNlLCJ2dGFibGV0IjpmYWxzZSwidmRlc2t0b3AiOmZhbHNlLCJocGhvbmUiOmZhbHNlLCJodGFibGV0IjpmYWxzZSwiaGRlc2t0b3AiOmZhbHNlLCJyZWdpb25zIjpbeyJrZXkiOiJoZWxwIiwidGl0bGUiOiJIZWxwIiwid2VpZ2h0IjowLCJjb2x4cyI6MTIsImNvbHNtIjoxMiwiY29sbWQiOjYsImNvbGxnIjo2fSx7ImtleSI6InBhZ2VfdG9wIiwidGl0bGUiOiJQYWdlIHRvcCIsIndlaWdodCI6MSwiY29seHMiOjEyLCJjb2xzbSI6MTIsImNvbG1kIjo2LCJjb2xsZyI6Nn0seyJrZXkiOiJwYWdlX2JvdHRvbSIsInRpdGxlIjoiUGFnZSBib3R0b20iLCJ3ZWlnaHQiOjIsImNvbHhzIjoxMiwiY29sc20iOjEyLCJjb2xtZCI6NiwiY29sbGciOjZ9LHsia2V5IjoiZGFzaGJvYXJkX21haW4iLCJ0aXRsZSI6IkRhc2hib2FyZCAobWFpbikiLCJ3ZWlnaHQiOjMsImNvbHhzIjoxMiwiY29sc20iOjEyLCJjb2xtZCI6NiwiY29sbGciOjZ9LHsia2V5IjoiZGFzaGJvYXJkX3NpZGViYXIiLCJ0aXRsZSI6IkRhc2hib2FyZCAoc2lkZWJhcikiLCJ3ZWlnaHQiOjQsImNvbHhzIjoxMiwiY29sc20iOjEyLCJjb2xtZCI6NiwiY29sbGciOjZ9LHsia2V5IjoiZGFzaGJvYXJkX2luYWN0aXZlIiwidGl0bGUiOiJEYXNoYm9hcmQgKGluYWN0aXZlKSIsIndlaWdodCI6NSwiY29seHMiOjEyLCJjb2xzbSI6MTIsImNvbG1kIjo2LCJjb2xsZyI6Nn1dfV19XQ==';
+}
+
+function innovation_default_presets() {
+  return 'W3sia2V5IjoiQmx1ZSIsImJhc2VfY29sb3IiOiIjMDA3MmI5IiwidGV4dF9jb2xvciI6IiM0OTQ5NDkiLCJsaW5rX2NvbG9yIjoiIzAyN2FjNiIsImxpbmtfaG92ZXJfY29sb3IiOiIjMDI3YWM2IiwiaGVhZGluZ19jb2xvciI6IiMyMzg1YzIifSx7ImtleSI6IkFzaCIsImJhc2VfY29sb3IiOiIjNDY0ODQ5IiwidGV4dF9jb2xvciI6IiM0OTQ5NDkiLCJsaW5rX2NvbG9yIjoiIzJmNDE2ZiIsImxpbmtfaG92ZXJfY29sb3IiOiIjMmY0MTZmIiwiaGVhZGluZ19jb2xvciI6IiMyYTJiMmQifSx7ImtleSI6IkFxdWFtYXJpbmUiLCJiYXNlX2NvbG9yIjoiIzU1YzBlMiIsInRleHRfY29sb3IiOiIjNjk2OTY5IiwibGlua19jb2xvciI6IiMwMDAwMDAiLCJsaW5rX2hvdmVyX2NvbG9yIjoiIzAwMDAwMCIsImhlYWRpbmdfY29sb3IiOiIjMDg1MzYwIn0seyJrZXkiOiJCZWxnaWFuIENob2NvbGF0ZSIsImJhc2VfY29sb3IiOiIjZDViMDQ4IiwidGV4dF9jb2xvciI6IiM0OTQ5NDkiLCJsaW5rX2NvbG9yIjoiIzZjNDIwZSIsImxpbmtfaG92ZXJfY29sb3IiOiIjNmM0MjBlIiwiaGVhZGluZ19jb2xvciI6IiMzMzE5MDAifSx7ImtleSI6IkJsdWFtYXJpbmUiLCJiYXNlX2NvbG9yIjoiIzNmM2YzZiIsInRleHRfY29sb3IiOiIjMDAwMDAwIiwibGlua19jb2xvciI6IiMzMzY2OTkiLCJsaW5rX2hvdmVyX2NvbG9yIjoiIzMzNjY5OSIsImhlYWRpbmdfY29sb3IiOiIjNjU5OGNiIn0seyJrZXkiOiJDaXRydXMgQmxhc3QiLCJiYXNlX2NvbG9yIjoiI2QwY2I5YSIsInRleHRfY29sb3IiOiIjNDk0OTQ5IiwibGlua19jb2xvciI6IiM5MTc4MDMiLCJsaW5rX2hvdmVyX2NvbG9yIjoiIzkxNzgwMyIsImhlYWRpbmdfY29sb3IiOiIjZWZkZTAxIn1d';
+}
+
+/**
+ * Implements hook_theme
+ */
+function innovation_theme($existing, $type, $theme, $path) {
+  return [
+    'inv-section' => [
+      'template' => 'section',
+      'path' => $path . '/templates/base',
+      'render element' => 'elements',
+      'pattern' => 'section__',
+      'preprocess functions' => [
+        'template_preprocess',
+        'template_preprocess_section',
+      ],
+      'process functions' => [
+        'template_process',
+        'template_process_section',
+      ],
+      'variables' => [
+        'attributes' => [],
+        'content' => '',
+        'section' => '',
+      ]
+    ],
+  ];
+}
+
+function innovation_preprocess_html(&$vars) {
+  //$vars['#attached']['library'][] = 'innovation/bootstrap';
+  $vars['#attached']['library'][] = 'innovation/font-awesome';
+
+  $theme = innovation_get_theme();
+  $direction = theme_get_setting('innovation_direction');
+  if (empty($direction) || $direction == 'default') {
+    $direction = \Drupal::languageManager()->getCurrentLanguage()->getDirection();
+  }
+  if ($direction == 'rtl' || \Drupal::moduleHandler()->moduleExists('inv_quicksettings')) {
+	$vars['#attached']['library'][] = 'innovation/innovation-rtl';
+  }
+  $vars['attributes']['class'][] = $direction;
+  $vars['attributes']['class'][] = $theme->style;
+
+  $less = new innovation_lessc($theme);
+  $path = drupal_get_path('theme',$theme->theme);
+  $css_file = $path . '/assets/css/style.css';
+  $less->complie($css_file);
+}
+
+/**
+ * Implement hook_preprocess_page 
+ */
+function innovation_preprocess_page(&$page){
+  $theme = innovation_get_theme();
+  $theme->page = &$page;
+//  $page['#attached']['library'][] = 'innovation/innovation-base';
+  $page['page']['innovation_markup']  = Markup::create($theme->pageRender());
+}
+
+function template_preprocess_section(&$variables){
+  $section = $variables['section'];
+  if (isset($section->sticky) && $section->sticky) {
+      $variables['attributes']['class'][] = 'inv-sticky';
+      $variables['#attached']['library'] = array('innovation/innovation-sticky');
+  }
+  if (isset($section->backgroundcolor) && $section->backgroundcolor) {
+    $variables['attributes']['style'] = "background-color:{$section->backgroundcolor}";
+  }
+  if (isset($section->colpadding) && $section->colpadding != '' && $section->colpadding != 15 && $section->colpadding >= 0) {
+   // $vars['attributes_array']['data-padding'] = $section->colpadding;
+    $variables['attributes']['class'][] = 'custompadding';
+  }
+  if (isset($section->custom_class) && $section->custom_class != '') {
+    $variables['attributes']['class'][] = $section->custom_class;
+  }
+  if (isset($section->hphone) && $section->hphone) {
+    $variables['attributes']['class'][] = 'hidden-xs';
+  }
+  if (isset($section->htablet) && $section->htablet) {
+    $variables['attributes']['class'][] = 'hidden-sm';
+  }
+  if (isset($section->hdesktop) && $section->hdesktop) {
+    $variables['attributes']['class'][] = 'hidden-md';
+    $variables['attributes']['class'][] = 'hidden-lg';
+  }
+  if (isset($section->vphone) && $section->vphone) {
+    $variables['attributes']['class'][] = 'visible-xs';
+  }
+  if (isset($section->vtablet) && $section->vtablet) {
+    $variables['attributes']['class'][] = 'visible-sm';
+  }
+  if (isset($section->vdesktop) && $section->vdesktop) {
+    $variables['attributes']['class'][] = 'visible-md';
+    $variables['attributes']['class'][] = 'visible-lg';
+  }
+  $variables['container_class'] = $section->fullwidth == 'no' ? 'container' : 'inv-container';
+}
+
+function innovation_preprocess_region(&$variables) {
+  $theme = innovation_get_theme();
+  $region_key = $variables['elements']['#region'];
+  $region = $theme->getRegion($region_key);
+  $variables['attributes']['class'][] = 'inv-region';
+  $variables['attributes']['class'][] = 'region-'.$region_key;
+  if ($region) {
+    $variables['attributes']['class'][] = 'col-xs-' . $region->colxs;
+    $variables['attributes']['class'][] = 'col-sm-' . $region->colsm;
+    $variables['attributes']['class'][] = 'col-md-' . $region->colmd;
+    $variables['attributes']['class'][] = 'col-lg-' . $region->collg;
+
+    if (isset($region->custom_class) && $region->custom_class) {
+      $variables['attributes']['class'][] = $region->custom_class;
+    }
+    if(isset($region->collgoffset) && $region->collgoffset){
+      $variables['attributes']['class'][] = 'col-lg-offset-' . $region->collgoffset;
+    }
+    if(isset($region->colmdoffset) && $region->colmdoffset){
+      $variables['attributes']['class'][] = 'col-md-offset-' . $region->colmdoffset;
+    }
+    if(isset($region->colsmoffset) && $region->colsmoffset){
+      $variables['attributes']['class'][] = 'col-sm-offset-' . $region->colsmoffset;
+    }
+    if(isset($region->colxsoffset) && $region->colxsoffset){
+      $variables['attributes']['class'][] = 'col-xs-offset-' . $region->colxsoffset;
+    }
+  }
+}
+
+/**
+ * Implement hook_process_region
+ */
+
+function innovation_process_region(&$variables) {
+  $theme = innovation_get_theme();
+  switch ($variables['elements']['#region']) {
+    case 'content':
+      $variables['messages'] = $theme->page['messages'];
+      $variables['title_prefix'] = $theme->page['title_prefix'];
+      $variables['title'] = $theme->page['title'];
+      $variables['title_suffix'] = $theme->page['title_suffix'];
+      $variables['tabs'] = $theme->page['tabs'];
+      $variables['action_links'] = $theme->page['action_links'];
+      $variables['feed_icons'] = $theme->page['feed_icons'];
+      $variables['breadcrumb'] = $theme->page['breadcrumb'];
+      break;
+    case 'title':
+      $variables['title_prefix'] = $theme->page['title_prefix'];
+      $variables['title'] = $theme->page['title'];
+      $variables['title_suffix'] = $theme->page['title_suffix'];
+      break;
+  }
+}

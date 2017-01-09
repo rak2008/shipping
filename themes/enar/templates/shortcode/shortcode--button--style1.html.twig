@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Default theme implementation for accordion item.
+ *
+ * Available variables:
+ * - progress_id
+ * - percent
+ * - class
+ * - icon
+ * - content
+ */
+#}
+<a role="button" class="btn {{ class }}" {% if link %} href="{{ link }}" {% endif %} {% if target %} target="{{ target }}" {% endif %}>
+    <span>
+    {% if icon %}<i class="in_left {{ icon }}"></i>{% endif %}<span>{{ content }}</span>
+    {% if icon %}<i class="in_right {{ icon }}"></i>{% endif %}
+    </span>
+</a>
+

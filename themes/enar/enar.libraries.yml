@@ -1,0 +1,35 @@
+global-styling:
+  version: 8.x-0.0
+  css:
+    base:
+      assets/css/style.css: {}
+      assets/css/custom.css: {}
+      font-ideatheme/css/icon-fonts.css: {}
+      /libraries/magnific-popup/magnific-popup.css: {}
+  js:
+    assets/js/enar.js: {}
+    /libraries/magnific-popup/jquery.magnific-popup.min.js: {minified: true}
+    assets/js/jquery.nav.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
+enar-hoverdir:
+  version: 1.1.1
+  js:
+    assets/js/jquery.hoverdir.js: {}
+  dependencies:
+    - core/jquery
+    - core/modernizr
+
+revolution-slider:
+  version: 8.x-0.0
+  css:
+    base:
+      assets/rs-plugin/css/settings.css: {}
+  js:
+    assets/js/jquery.themepunch.revolution.min.js: {}
+    assets/js/jquery.themepunch.tools.min.js: {}
+    assets/js/enar-revolution.js: {}
+  dependencies:
+    - core/jquery    

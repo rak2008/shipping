@@ -1,0 +1,15 @@
+<div class="hm_new_title_con">
+	<h4>
+		<i class="ico-streetsign"></i>
+		<span><span class="latest_word">Latest </span> News</span>
+	</h4>
+</div>
+<div class="hm_new_bar_con">
+<ul id="{{view_id}}" class="inv-bxslider">
+	{% for item in rows %}
+		<li class="bxslide">
+			{{item}}
+		</li>	
+	{% endfor %}
+</ul>
+</div>

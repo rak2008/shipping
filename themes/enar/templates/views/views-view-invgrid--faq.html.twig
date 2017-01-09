@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Default simple view template to display a list of rows.
+ *
+ * @ingroup views_templates
+ */
+?>
+{% if (options['grid_filter'])  %}
+<div class="grid-filter">
+	<ul class="inv-grid-filter clearfix">
+		<li><a class="active" href="#" data-filter="*"><span>{% trans "Show All" %}</span></a></li>
+		{% for key, value in categories %}
+		<li>
+			<a href="#" class="{{ key }}" data-filter="{{ key }}"><span>{{ value }}</span></a>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endif %}
+<div id="{{view_id}}" class="inv-grid">
+
+		<div id = "faq-accordion" class="panel-group style01">
+		{% for item in items %}
+		<div class="inv-grid-item {{ item.class }}" data-index="{{ loop.index0 }}">
+			{{ item.content }}
+		</div>
+		{% endfor %}
+		</div>
+
+</div>

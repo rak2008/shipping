@@ -1,0 +1,10 @@
+<div class="title-wrapper {{ class }}">
+    {% if sub_title is not empty %}
+        <h3 class="title">{% if icon is not empty %}
+                <i class="{{ icon }}"></i>
+            {% endif %}{{ main_title }}</h3>
+        <p class="subtitle">{{ sub_title }}</p>
+    {% else %}
+        <h3 class="title nosubtitle">{% if icon is not empty %}<i class="{{ icon }}"></i>{% endif %}{{ main_title }}</h3>
+    {% endif %}
+</div>

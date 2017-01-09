@@ -1,0 +1,10 @@
+name: Innovation
+type: theme
+description: Stater theme with drag and drop layout builder and boostrap.
+core: 8.x
+version: 8.x-1.0
+hidden: true
+
+libraries:
+- innovation/innovation-base
+- innovation/bootstrap

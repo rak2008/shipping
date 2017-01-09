@@ -1,0 +1,308 @@
+.region-sidebar_first, .region-sidebar_second {
+  div.block {
+    .block-title {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      word-spacing: 1px;
+    }
+  }
+}
+/* ----------------------------------------------------------------
+	 Flickr widget
+-----------------------------------------------------------------*/
+.innovation-flickr {
+  .flickr_badge_image {
+    width: 33.33%;
+    float:left;
+    padding: 0 7px 7px 0;
+    a {
+      display: block;
+      position: relative;
+      img {
+        width: 100%;
+        max-width:100%;
+        height:auto;
+      }
+      &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: @base_color;
+        opacity: 0;
+        .transition(all,200ms,ease-in-out);
+      }
+      &:after {
+        font-family: "idealtheme";
+        content: "\e6e5";
+        color: #fff;
+        font-size: 20px;
+        opacity: 0;
+        .middle-center();
+        .transition(all,200ms,ease-in-out);
+      }
+      &:hover:before,&:hover:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* ----------------------------------------------------------------
+	 Tags widget
+-----------------------------------------------------------------*/
+.cloud-tag {
+  ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+    li {
+      list-style-type:none;
+      display:inline-block;
+      margin-bottom: 2px;
+      margin-right: 2px;
+      a {
+        background: rgba(0, 0, 0, 0.5);
+		display:block;
+        border-color: rgba(255, 255, 255, 0);
+        color: #989898;
+        font-size: 11px;
+        overflow: hidden;
+        padding: 9px 11px;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/* ----------------------------------------------------------------
+  Blog Categories widget
+-----------------------------------------------------------------*/
+.categories-list-widget {
+  ul {
+    padding:0;
+    li {
+      border-bottom: 1px dotted #e5e5e5;
+      list-style: none;
+      padding: 7px 0;
+      &:last-child {
+        border-bottom: none;
+      }
+      .num-posts {
+        color: #aaa;
+        float: right;
+        font-size: 11px;
+      }
+      a {
+        color: #777;
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 13px;
+        &:hover {
+          color: #aaa;
+        }
+      }
+    }
+  }
+}
+/* ----------------------------------------------------------------
+  Cloud Tag Style 2 widget
+-----------------------------------------------------------------*/
+.cloud-tag-style2 {
+  ul {
+    padding:0;
+    list-style:none;
+    font-size:0;
+    li {
+      display:inline-block;
+      margin: 0 10px 10px 0;
+      a {
+        background: #fff;
+        border: 1px solid #E5E5E5;
+        color: #666;
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        padding: 8px 9px;
+        text-transform: uppercase;
+      }
+      .num-posts {
+        background: #FAFAFA;
+        border-color: #E5E5E5;
+        border-style: solid;
+        border-width: 1px;
+        display: inline-block;
+        font-size: 11px;
+        padding: 8px 9px 8px 11px;
+        color: #888;
+        position: relative;
+        margin-left: -2px;
+        &:before {
+          border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #c6c6c6;
+          border-style: solid;
+          border-width: 4px;
+          content: "";
+          display: block;
+          left: 0px;
+          position: absolute;
+          top: 12px;
+        }
+        &:after {
+          border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #ffffff;
+          border-style: solid;
+          border-width: 4px;
+          content: "";
+          display: block;
+          left: -1px;
+          position: absolute;
+          top: 12px;
+        }
+      }
+    }
+  }
+}
+
+/* ----------------------------------------------------------------
+  Best author
+-----------------------------------------------------------------*/
+.about_author {
+  background: #ecf0f1;
+  position: relative;
+  padding: 10px 5px 15px 15px;
+  margin-top: 36px;
+  .border-radius(3px,3px,3px,3px);
+  .about_author_link {
+    > img {
+    float: left;
+    margin: -25px 15px 0 0;
+    max-width: 100px;
+    .border-radius(3px,3px,3px,3px);
+    }
+    > span {
+      color: #444;
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+    }
+  }
+  a.inv-social-icon {
+    font-size: 13px;
+    text-align: left;
+    width: 20px;
+    i {
+      font-size:13px;
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------
+	Custom Video
+----------------------------------------------------------------------------*/
+.hm_vid_con {
+    border: 4px solid rgba(0, 0, 0, 0.3);
+    display: block;
+    overflow: hidden;
+    position: relative;
+	.vid_icon {
+		border: 3px solid rgba(255, 255, 255, 0.9);
+		height: 54px;
+		line-height: 54px;
+		position: absolute;
+		text-align: center;
+		width: 54px;
+		color: #fff;
+		font-size: 24px;
+		z-index: 1;
+		.middle-center();
+		.border-radius(100%,100%,100%,100%);
+		i {
+			background: @base_color;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			line-height: 47px;
+			text-indent: 5px;
+			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+			.border-radius(100%,100%,100%,100%);
+		}
+	}
+}
+
+/*----------------------------------------------------------------------------------
+	NEWSLETTER SIGNUP
+------------------------------------------------------------------------------------*/
+.simplenews-subscriber-form {
+	label {
+		display:none;
+	}
+	input[type="email"] {
+		max-width:100%;
+		width:100%;
+		width: 100%;
+		font-size: 13px;
+		padding: 8px 50px 8px 12px;
+		border: 1px solid #ddd;
+		color: #666;
+		font-size: 13px;
+		background: #fff;
+		outline: none;
+		.border-radius(3px,3px,3px,3px);
+	}
+	.description {
+		display:none;
+	}
+	.form-actions {
+		position: relative;
+	}
+	.field--name-mail {
+		margin-top:20px;
+	}
+	input[type="submit"] {
+	    background: @base_color;
+		border: none;
+		color: #fff;
+		font-size: 16px;
+		height: 37px;
+		padding: 0;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+		-moz-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+		-webkit-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+		top: -37px;
+		width: 40px;
+		border-left: 1px solid rgba(0, 0, 0, 0.07);
+		text-indent:-9999px;
+	}
+	i {
+		position: absolute;
+		display: block;
+		right: 14px;
+		top: -25px;
+		z-index: 1000;
+		color: #FFF;
+		cursor: pointer;
+	}
+	&.logged-in {
+		input[type="submit"] {
+			top: 20px;
+			text-indent: 0;
+			font-size: 11px;
+			width: 100px;
+		}
+		i { 
+			top:32px;
+			right:80px;
+		}
+	}
+}	

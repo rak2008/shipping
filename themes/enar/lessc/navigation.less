@@ -1,0 +1,233 @@
+// Reset base stylesheet TB on default style
+// 1. Remove gray background animating
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  background-color: unset;
+  border-color: rgba(255, 255, 255, 0.03);
+}
+
+/********************************************************/
+/* Enar menu style owner                                */
+/********************************************************/
+.tb-megamenu .nav > .active > a, .tb-megamenu .nav > .active > a:hover, .tb-megamenu .nav > .active > a:focus {
+  background-color:transparent;
+  color: @base_color;
+}
+.tb-megamenu .nav li.dropdown.open.active > .dropdown-toggle, .tb-megamenu .nav > li.dropdown.open.active > a:hover {
+  background-color:transparent;
+  color: @base_color;
+}
+.tb-megamenu .nav li.dropdown.active > .dropdown-toggle, .tb-megamenu .nav li.dropdown.open.active > .dropdown-toggle {
+  background-color: transparent;
+  border-color: @base_color;
+  color: @base_color;
+}
+.tb-megamenu .nav > li.dropdown.open.active > a:hover {
+  background-color: transparent;
+  color:@base_color;
+}
+.tb-megamenu .span12.mega-col-nav .mega-inner {
+   padding: 0;
+}
+.tb-megamenu .mega-inner {
+   padding: 0px;
+}
+.tb-megamenu .mega-nav > li a, .tb-megamenu .dropdown-menu .mega-nav > li a {
+   padding: 0 15px;
+}
+.tb-megamenu .nav li.dropdown > .dropdown-toggle .caret {
+  display:none; // Hide caret on level 1 menu item
+}
+
+.tb-megamenu {
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size:12px;
+  .nav {
+    > li {
+      > a {
+        border-right: 0 none;
+        color: #324545;
+        line-height:74px;
+        padding:0 20px;
+        font-weight:600;
+      }
+    }
+  }
+  .dropdown-menu {
+    background-color:#13181A;
+    border-bottom: 0 none;
+    border-top:solid 1px @base_color;
+     li {
+       outline: none;
+       > a {
+         color: #ccc;
+         border-top: 0 none;
+         font-size: 12px;
+         line-height: 40px;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+         &:hover {
+           color: #FFF;
+           background-color: #000;
+         }
+         &:focus {
+           background-color: unset;
+           background-image:unset;
+         }
+       }
+     }
+    .active > a {
+      background-color: unset;
+      background-image:unset;
+      &:hover {
+        background-color: unset;
+        background-image:unset;
+        color:#FFF;
+      }
+    }
+  }
+}
+.tb-megamenu .nav > li > a:focus, .tb-megamenu .nav > li > a:hover {
+  color: @base_color;
+}
+.tb-megamenu .nav li.dropdown.open > .dropdown-toggle {
+  background-color: unset;
+  color: @base_color;
+}
+.tb-megamenu .dropdown-submenu > a:after {
+  margin-top:15px;
+}
+.tb-megamenu .dropdown-submenu > .dropdown-menu {
+  top:5px;
+}
+
+@media (max-width: 979px) {
+  .tb-megamenu {
+    .btn-navbar {
+      margin-top:18px;
+    }
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size:12px;
+    .nav {
+      > li {
+        > a {
+          line-height: unset;
+        }
+      }
+    }
+    .nav-collapse {
+      width: 100vw;
+      top:65px;
+    }
+    .btn-navbar {
+      background-color: unset;
+      background-image: unset;
+      .border-radius(100%,100%,100%,100%);
+      width:38px;
+      height:38px;
+    }
+  }
+}
+
+/*******************************************************/
+/* Search form                                         */
+/*******************************************************/
+.search-block-form {
+  width: 200px;
+  margin-top: 18px;
+  #search-block-form {
+    border: 1px solid #E4E4E4;
+    height: 38px;
+    position: relative;
+    width: 100%;
+    background: #fff !important;
+    .border-radius(200px,200px,200px,200px);
+    > .js-form-type-search {
+      height: 36px;
+    }
+  }
+  input[type='search'] {
+    border: medium none;
+    height: 100%;
+    width: 100%;
+    padding: 1px 20px 0 40px;
+    color: #818B8D;
+    font-size: 12px;
+    height: 100%;
+    .border-radius(200px,200px,200px,200px);
+  }
+  input[type='submit'] {
+    border: medium none;
+   
+    opacity: 0;
+    
+  }
+  i.search-action {
+   padding: 0;
+    position: absolute;
+    left: 11px;
+	top: 10px;
+	cursor:pointer;
+	color: @base_color;
+  }
+  
+	.search-toggle {
+		position: absolute;
+		cursor: pointer;
+		color: @base_color;
+		width: 38px;
+		height: 38px;
+		border: solid 1px #E4E4E4;
+		border-radius: 100%;
+		top: 0px;
+		text-align:center;
+		padding-top:10px;
+		display:none ;
+	}
+}
+
+.region-primary_menu {
+  div.block {
+    float:right;
+	margin-left:10px;
+  }
+}
+@media (max-width: 1190px) {
+	.search-block-form { 
+		width:38px;
+		input[type='submit'] {
+			display: none;
+		}
+		.search-toggle {
+			display:block;
+		}
+	}
+}
+nav.onepage-menu {
+	text-align:right;
+	ul {
+		padding:0;
+		margin:0;
+		font-size: 12px;
+		text-transform: uppercase;
+		list-style:none;
+		li  {
+			display: inline-block;
+			position: relative;
+			a {
+				color: #324545;
+				display:block;
+				padding: 28px 20px;
+				display: block;
+				font-weight: 600;
+			}
+			&.current {
+				a {	
+					color: @base_color;
+				}
+			}
+		}
+	}
+}

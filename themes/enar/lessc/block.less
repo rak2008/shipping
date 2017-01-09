@@ -1,0 +1,37 @@
+.block {
+	position: relative;
+}
+.block-overlay {
+  position: relative;
+  color:#eeeeee;
+  .block-overlay-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.section_icon {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: block;
+    position: absolute;
+    text-align: center;
+    top: -38px;
+    z-index: 1;
+	.translateX(-50%);
+	left:50%;
+	.border-radius(100%,100%,100%,100%);
+	i {
+	    background: #fff;
+		color: @base_color;
+		display: block;
+		font-size: 32px;
+		height: 76px;
+		line-height: 76px;
+		text-align: center;
+		width: 76px;
+		.border-radius(100%,100%,100%,100%);
+	}
+}
