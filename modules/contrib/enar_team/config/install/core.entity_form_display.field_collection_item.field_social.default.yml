@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_social.field_icon
+    - field.field.field_collection_item.field_social.field_link
+    - field_collection.field_collection.field_social
+id: field_collection_item.field_social.default
+targetEntityType: field_collection_item
+bundle: field_social
+mode: default
+content:
+  field_icon:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_link:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden: {  }

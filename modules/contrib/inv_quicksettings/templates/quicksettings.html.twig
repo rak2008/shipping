@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the basic structure of a inv_quicksettings.
+ *
+ * Available variables:
+ * - presets: List of color which theme support
+ * @ingroup themeable
+ */
+#}
+<span class="quicksettings_toggle ico-cog4"></span>
+<div class="inv_settings">
+  <h3>{{ 'Layout Style'|trans }}</h3>
+  <select class="inv_layout form-select" name="setting_layout">
+    <option value="wide">Wide</option>
+    <option value="boxed">Boxed</option>
+  </select>
+  <h3>{{ 'Colors schema'|trans }}</h3>
+  <ul class="presets">
+    {% for preset in presets %}
+    <li class="{{ preset.key }}">
+	<a href="{{ path('innovation.preset.setting', {'preset': loop.index}) }}"><span style="background-color: {{ preset.base_color}}"> </span></a></li>
+    {% endfor %}
+  </ul>
+  <h3>{{ 'Direction'|trans }}</h3>
+  <select class="inv_direction form-select" name="setting_direction">
+    <option value="ltr">LTR</option>
+    <option value="rtl">RTL</option>
+  </select>
+ <div class="clearfix"></div>
+</div>
+									

@@ -1,0 +1,16 @@
+{% if type == "type1" %}
+<div class="inv-pie-chart-wrapper {{ class }}">
+    <div class="inv-pie-chart" data-percent="{{ percent }}" data-title="{{ title }}"></div>
+    <div class="inv-pie-chart-content">{{ content }}</div>
+</div>
+{% endif %}
+
+{% if type == "type2" %}
+<div class="inv-pie-chart-wrapper {{ class }}">
+    <div class="inv-pie-chart" data-percent="{{ percent }}"></div>
+    <div class="inv-pie-chart-info">
+        <div class="inv-pie-chart-title">{{ title }}</div>
+        <div class="inv-pie-chart-content">{{ content }}</div>
+    </div>
+</div>
+{% endif %}

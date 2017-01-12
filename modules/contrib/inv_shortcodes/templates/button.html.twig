@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Default theme implementation for button item.
+ *
+ * Available variables:
+ * - link
+ * - class
+ * - icon
+ * - target
+ * - type
+ */
+#}
+
+<a role="button" class="btn {{ class }}" {% if link %} href="{{ link }}" {% endif %} {% if target %} target="{{ target }}" {% endif %}>
+    {% if icon %}
+        <i class="{{ icon }}"></i>
+    {% endif %}
+    {{ content }}
+</a>
+

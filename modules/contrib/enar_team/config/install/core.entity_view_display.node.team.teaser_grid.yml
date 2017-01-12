@@ -1,0 +1,57 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_grid
+    - field.field.node.team.body
+    - field.field.node.team.field_image
+    - field.field.node.team.field_position
+    - field.field.node.team.field_social
+    - node.type.team
+  module:
+    - field_collection
+    - image
+    - text
+    - user
+id: node.team.teaser_grid
+targetEntityType: node
+bundle: team
+mode: teaser_grid
+content:
+  body:
+    label: hidden
+    type: text_trimmed
+    weight: 101
+    settings:
+      trim_length: 120
+    third_party_settings: {  }
+  field_image:
+    weight: 103
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_position:
+    weight: 102
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_social:
+    weight: 104
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_items
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

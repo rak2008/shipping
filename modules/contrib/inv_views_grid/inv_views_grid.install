@@ -1,0 +1,35 @@
+<?php
+function inv_views_grid_schema() {
+  $schema ['inv_masonry'] = array(
+    'description' => 'The base table store grid masonry resizable',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for a view masonry resizable.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'view' => array(
+        'description' => 'The views name',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'item' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'width' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'height' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}

@@ -1,0 +1,19 @@
+name: 'Enar Portfolio'
+description: 'Provides portfolio content type and all related information such as view and configurations.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - carousel_formatter
+  - field
+  - image
+  - inv_block_custom
+  - menu_ui
+  - node
+  - path
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+version: 8.x-1.0

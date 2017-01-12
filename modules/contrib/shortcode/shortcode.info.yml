@@ -1,0 +1,8 @@
+name: 'Shortcode Filter'
+type: 'module'
+description: 'Custom filter for using shortcode in Drupal 8'
+package: 'Innovation'
+
+core: '8.x'
+version: '8.x-0.0'
+project: 'Innovation build core D8 theme'

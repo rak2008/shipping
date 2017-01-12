@@ -1,0 +1,5 @@
+{% if (tooltip is not empty) %}
+    <a data-placement="{{ placement }}" target="_blank" data-toggle="tooltip" title="{{ tooltip }}" href="{{ link }}" class="dtooltip inv-social-icon {{ class }}"><span><i class="{{ icon }}"></i></span> {{ content }}</a>
+{% else %}
+    <a href="{{ link }}" target="_blank" class="inv-social-icon {{ class }}"><span><i class="{{ icon }}"></i></span> {{ content }}</a>
+{% endif %}

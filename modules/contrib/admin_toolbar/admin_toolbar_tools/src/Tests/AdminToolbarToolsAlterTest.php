@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Definition of Drupal\admin_toolbar_tools\Tests\AdminToolbarToolsAlterTest.
+ */
+
 namespace Drupal\admin_toolbar_tools\Tests;
 
 use Drupal\simpletest\WebTestBase;

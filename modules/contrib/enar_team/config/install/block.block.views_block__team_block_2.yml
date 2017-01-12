@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.team
+  module:
+    - inv_block_custom
+    - system
+    - views
+  theme:
+    - enar
+third_party_settings:
+  inv_block_custom:
+    background_image_position: 'top left'
+    block_classes: bg-gray
+    block_container_class: container
+    block_padding: '90px 0'
+id: views_block__team_block_2
+theme: enar
+region: bottom_content
+weight: -51
+provider: null
+plugin: 'views_block:team-block_2'
+settings:
+  id: 'views_block:team-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/111\r\n/node/53"
+    negate: false
+    context_mapping: {  }

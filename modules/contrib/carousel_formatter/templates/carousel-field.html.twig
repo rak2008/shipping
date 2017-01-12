@@ -1,0 +1,91 @@
+{% if (settings.popup) %}
+<div class="mf-popup">
+{% endif %}
+{% if (items|length > 1) %}
+	{% if (settings.pager == 'thumbnail') %}
+		{% if (settings.interval is empty) %}
+			{% set settings = settings | merge({ interval : 'false'}) %}
+		{% endif %}
+		<div id='{{ settings.id }}' data-interval="{{ settings.interval }}" class='carousel-custom carousel slide' data-ride='carousel'>
+			<div class='carousel-outer'>
+				<!-- Wrapper for slides -->
+				<div class='carousel-inner'>
+					{% for key, item in items %}
+						<div class="item {{ (key == 0) ? 'active' : '' }}">
+							{{ item }} 
+						</div>
+					{% endfor%}
+				</div>
+				{% if (settings.control) %}    
+				<!-- Controls -->
+				<a class="left carousel-control" href="#{{ settings['id'] }}" role="button" data-slide="prev">
+					<span class="fa fa-angle-left" aria-hidden="true"></span>
+					<span class="sr-only">{% trans 'Previous' %}</span>
+				</a>
+				<a class="right carousel-control" href="#{{ settings['id'] }}" role="button" data-slide="next">
+					<span class="fa fa-angle-right" aria-hidden="true"></span>
+					<span class="sr-only">{% trans 'Next' %}</span>
+				</a>
+				{% endif %}
+			</div>
+			
+			<!-- Indicators -->
+			<ol class='carousel-indicators'>
+				{% for key, thumb in thumbs %}
+				<li data-target="#{{ settings['id'] }}" data-slide-to="{{ key }}" class="{{ (key == 0) ? 'active' : '' }}">
+					<img src='{{ thumb }}' alt='' />
+				</li>
+				{% endfor%}
+			</ol>
+		</div>
+	{% else %}
+
+		{% if (settings.interval is empty) %}
+			{% set settings = settings | merge({ interval : 'false'}) %}
+		{% endif %}
+		<div id="{{ settings.id }}" data-interval="{{ settings.interval }}" class="carousel slide" data-ride="carousel">
+		  {% if (settings.pager == 'control') %}
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+			{% for key, item in items %}
+				<li data-target="#{{ settings['id'] }}" data-slide-to="{{ key }}" class="{{ (key == 0) ? 'active' : '' }}"></li>
+			{% endfor%}
+			</ol>
+		  {% endif %}
+		  
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+			{% for key, item in items %}
+			<div class="item {{ (key == 0) ? 'active' : '' }}">
+				{{ item }} 
+			</div>
+			{% endfor%}
+		  </div>
+		  
+		 {% if (settings.control) %}
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#{{ settings['id'] }}" role="button" data-slide="prev">
+			<span class="fa fa-angle-left" aria-hidden="true"></span>
+			<span class="sr-only">{% trans 'Previous' %}</span>
+		  </a>
+		  <a class="right carousel-control" href="#{{ settings['id'] }}" role="button" data-slide="next">
+			<span class="fa fa-angle-right" aria-hidden="true"></span>
+			<span class="sr-only">{% trans 'Next' %}</span>
+		  </a>
+		  {% endif %}
+		</div>
+	{% endif %}
+{% else %}	
+	{% for key, item in items %}
+		{% if (settings.popup) %}
+		<div class="mf-no-gallery">
+		{% endif %}
+			{{ item }}
+		{% if (settings.popup) %}		
+		</div>
+		{% endif %}
+	{% endfor%}
+{% endif %}
+{% if (settings.popup) %}
+</div>
+{% endif %}

@@ -1,0 +1,8 @@
+name: 'Innovation Views BxSlider'
+type: 'module'
+description: 'This module add a view style plugin called Views BxSlider and render content of rows such as slider using bxslider js'
+package: 'Innovation'
+
+core: '8.x'
+version: '8.x-1.0'
+project: 'Innovation build core theme'

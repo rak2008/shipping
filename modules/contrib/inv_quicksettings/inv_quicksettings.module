@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * inv_quicksettings module
+ */
+
+function inv_quicksettings_theme($existing, $type, $theme, $path) {
+    return array(
+        'quicksettings' => array(
+            'variables' => array(
+                'presets' => '',
+            ),
+            'template' => 'quicksettings'
+        ),
+    );
+}
+
+function inv_quicksettings_presets() {
+  $presets = theme_get_setting('innovation_presets');
+  if ($presets) {
+    return json_decode(base64_decode($presets));
+  }
+  return array();
+}

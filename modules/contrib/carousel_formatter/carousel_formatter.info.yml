@@ -1,0 +1,8 @@
+name: Carousel Formatter
+type: module
+description: Show content which carousel bootstrap
+core: 8.x
+package: Innovation
+dependencies:
+  - field
+  - image

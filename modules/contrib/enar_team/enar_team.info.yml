@@ -1,0 +1,22 @@
+name: 'Enar Team'
+description: 'Provides team content types and all config relation to team view, team mode, team display...'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - carousel_formatter
+  - comment
+  - field
+  - field_collection
+  - file
+  - image
+  - inv_block_custom
+  - menu_ui
+  - node
+  - options
+  - path
+  - system
+  - text
+  - user
+  - views
+version: 8.x-1.0

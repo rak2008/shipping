@@ -1,0 +1,10 @@
+<?php
+
+function carousel_formatter_theme() {
+	return [
+    'carousel_field' => [
+      'variables' => ['items' => NULL, 'settings' => NULL, 'thumbs'=> NULL],
+    ],
+  ];
+}
+

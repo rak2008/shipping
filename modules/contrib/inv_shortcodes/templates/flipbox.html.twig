@@ -1,0 +1,17 @@
+<div class="flip-box {{ class }}">
+    <div class="inner">
+        <div class="front">
+            {% if icon is not empty%}
+                <i class="{{ icon }}"></i>
+            {% endif %}
+            {% if image is not empty%}
+                <img alt="" src="{{ image }}">;
+            {% endif %}
+            <h3>{{ title }}</h3>
+        </div>
+        <div class="back">
+            <h3>{{ title }}</h3>
+            <div class="content">{{ content }}</div>
+        </div>
+    </div>
+</div>

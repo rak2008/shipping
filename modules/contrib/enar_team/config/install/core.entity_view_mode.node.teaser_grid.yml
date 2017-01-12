@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_grid
+label: 'Teaser Grid'
+targetEntityType: node
+cache: true

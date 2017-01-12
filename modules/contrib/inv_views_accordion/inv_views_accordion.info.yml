@@ -1,0 +1,8 @@
+name: 'Accordion view based on boostrap'
+type: 'module'
+description: 'Show content of rows such accordion which has group filter function'
+package: 'Innovation'
+
+core: '8.x'
+version: '8.x-1.0'
+project: 'Innovation build core D8 theme'

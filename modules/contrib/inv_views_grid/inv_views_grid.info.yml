@@ -1,0 +1,8 @@
+name: 'Innovation Responsive Grid View'
+type: 'module'
+description: 'Show content of rows such as grid or masonry'
+package: 'Innovation'
+
+core: '8.x'
+version: '8.x-1.0'
+project: 'Innovation build core D8 theme'

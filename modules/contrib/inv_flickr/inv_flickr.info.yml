@@ -1,0 +1,8 @@
+name: Flickr widget
+type: module
+description: 'Create a Flickr block to pull images from Flickr using Flickr badge service along with many options to customize'
+package: Innovation
+
+version: '8.0.0'
+core: '8.x'
+project: 'Innovation'

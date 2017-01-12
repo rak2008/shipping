@@ -1,0 +1,129 @@
+<?php
+module_load_include('inc','inv_shortcodes','includes/row');
+module_load_include('inc','inv_shortcodes','includes/col');
+module_load_include('inc','inv_shortcodes','includes/accordion');
+module_load_include('inc','inv_shortcodes','includes/tab');
+module_load_include('inc','inv_shortcodes','includes/progress');
+module_load_include('inc','inv_shortcodes','includes/stat');
+module_load_include('inc','inv_shortcodes','includes/box');
+module_load_include('inc','inv_shortcodes','includes/map');
+module_load_include('inc','inv_shortcodes','includes/flipbox');
+module_load_include('inc','inv_shortcodes','includes/video');
+module_load_include('inc','inv_shortcodes','includes/carousel');
+module_load_include('inc','inv_shortcodes','includes/social');
+module_load_include('inc','inv_shortcodes','includes/animation');
+module_load_include('inc','inv_shortcodes','includes/icon');
+module_load_include('inc','inv_shortcodes','includes/button');
+module_load_include('inc','inv_shortcodes','includes/title');
+module_load_include('inc','inv_shortcodes','includes/pie');
+module_load_include('inc','inv_shortcodes','includes/embed');
+
+function inv_shortcodes_shortcode_info() {
+    $shortcodes = array();
+    // Declare row shortcode
+    inv_shortcodes_row_shortcode_info($shortcodes);
+
+    // Declare column shortcode
+    inv_shortcodes_col_shortcode_info($shortcodes);
+
+    // Declare accordion shortcode
+    inv_shortcodes_accordions_shortcode_info($shortcodes);
+    inv_shortcodes_accordion_shortcode_info($shortcodes);
+
+    // Declare tab shortcode
+    inv_shortcodes_tabs_shortcode_info($shortcodes);
+    inv_shortcodes_tab_shortcode_info($shortcodes);
+
+    // Declare progress bar shortcode
+    inv_shortcodes_progress_shortcode_info($shortcodes);
+
+    // Declare statistic counter shortcode
+    inv_shortcodes_stat_shortcode_info($shortcodes);
+
+    // Declare box shortcode
+    inv_shortcodes_box_shortcode_info($shortcodes);
+
+    // Declare map shortcode
+    inv_shortcodes_maps_shortcode_info($shortcodes);
+    inv_shortcodes_map_shortcode_info($shortcodes);
+
+    // Declare flipbox shortcode
+    inv_shortcodes_flipbox_shortcode_info($shortcodes);
+
+    // Declare video shortcode
+    inv_shortcodes_video_shortcode_info($shortcodes);
+
+    // Declare carousels shortcode
+    inv_shortcodes_carousels_shortcode_info($shortcodes);
+    inv_shortcodes_carousel_shortcode_info($shortcodes);
+
+    // Declare social shortcode
+    inv_shortcodes_social_shortcode_info($shortcodes);
+
+    // Declare animation shortcode
+    inv_shortcodes_animation_shortcode_info($shortcodes);
+
+    // Declare icon shortcode
+    inv_shortcodes_icon_shortcode_info($shortcodes);
+
+    // Declare button shortcode
+    inv_shortcodes_button_shortcode_info($shortcodes);
+
+    // Declare title shortcode
+    inv_shortcodes_title_shortcode_info($shortcodes);
+
+    // Pie shortcode
+    inv_shortcodes_pie_shortcode_info($shortcodes);
+
+    // Embed shortcode
+    inv_shortcodes_embed_shortcode_info($shortcodes);
+
+    return $shortcodes;
+}
+
+/**
+ * Implement hook_theme().
+ */
+function inv_shortcodes_theme($existing, $type, $theme, $path){
+    $themes = array();
+    $module_path = drupal_get_path('module', 'inv_shortcodes');
+
+    // Hook theme accordion shortcode
+    inv_shortcodes_accordions_theme($themes, $module_path);
+    inv_shortcodes_accordion_theme($themes, $module_path);
+
+    // Hook theme progress bar shortcode
+    inv_shortcodes_progress_theme($themes, $module_path);
+
+    // Hook theme statistic shortcode
+    inv_shortcodes_stat_theme($themes, $module_path);
+
+    // Hook theme statistic shortcode
+    inv_shortcodes_box_theme($themes, $module_path);
+
+    // Hook theme google map
+    inv_shortcodes_map_theme($themes, $module_path);
+
+    // Hook theme flipbox
+    inv_shortcodes_flipbox_theme($themes, $module_path);
+
+    // Hook theme video
+    inv_shortcodes_video_theme($themes, $module_path);
+
+    // Hook theme carousels
+    inv_shortcodes_carousels_theme($themes, $module_path);
+
+    // Hook theme social
+    inv_shortcodes_social_theme($themes, $module_path);
+
+    // Hook title social
+    inv_shortcodes_title_theme($themes, $module_path);
+
+    // Hook pie social
+    inv_shortcodes_pie_theme($themes, $module_path);
+
+    // Hook pie social
+    inv_shortcodes_button_theme($themes, $module_path);
+
+    return $themes;
+}

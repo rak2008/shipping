@@ -1,0 +1,6 @@
+quicksettings:
+  version: 1.0
+  js:
+    js/quicksetting.js: {}
+  dependencies:
+    - core/jquery

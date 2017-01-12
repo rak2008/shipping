@@ -1,0 +1,12 @@
+p:empty{
+	margin: 0;
+}
+.inv-gmap-shortcode img{
+	max-width:none !important;
+}
+.inv-gmap-shortcode label {
+	width: auto; display:inline;
+}
+.inv-gmap-shortcode img.img-responsive{
+	max-width: 100px !important;
+}

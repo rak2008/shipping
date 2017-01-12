@@ -1,0 +1,26 @@
+drupal.grid:
+  vesion: 1.0
+  css: 
+    theme:
+        css/inv-grid.css: {}
+  js:
+    js/jquery.shuffle.min.js: {}
+    js/inv-grid.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
+drupal.grid_css_classic:
+  vesion: 1.0
+  css:
+    theme:
+        css/inv-grid-classic.css: {}
+
+drupal.grid_masonry_resize:
+  vesion: 1.0
+  js:
+      js/inv-grid-masonry-admin.js: {}
+  dependencies:
+    - core/jquery.ui.resizable

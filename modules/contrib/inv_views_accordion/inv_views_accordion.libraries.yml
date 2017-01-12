@@ -1,0 +1,6 @@
+accordion_filter:
+  vesion: 1.0
+  js:
+      js/inv-accordion.js: {}
+  dependencies:
+    - core/jquery

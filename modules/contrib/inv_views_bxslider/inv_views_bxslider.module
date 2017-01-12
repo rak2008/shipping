@@ -1,0 +1,59 @@
+<?php
+/**
+ * @file
+ * Views bxslider style plugin code.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Render\Element\RenderElement;
+
+/**
+ * Implements hook_preprocess_HOOK
+ */
+function template_preprocess_views_view_bxslider(&$variables) {
+	$options = $variables ['options'] = $variables ['view']->style_plugin->options;
+	$view = $variables['view'];
+	$view_id = Html::getUniqueId($view->storage->id() . '-' . $view->current_display);
+	$bx_options = array(
+              'mode' => $options['mode'],
+              'speed' => $options['speed'],
+              'auto' => ($options['auto']) ? true : false,
+              'pause' => $options['pause'],
+              'infiniteLoop' => ($options['infiniteloop']) ? true : false,
+              'slideMargin' => ($options['slidemargin']) ? (int) $options['slidemargin'] : 0,
+              'startSlide' => $options['startslide'],
+              'randomStart' => ($options['randomstart']) ? true : false,
+              'pager' => ($options['pager']) ? true : false,
+              'controls' => ($options['controls']) ? true : false,
+              'moveSlides' => $options['moveslides'],
+              'prevText' => $options['prevtext'],
+              'nextText' => $options['nexttext'],
+              'touchEnabled' => ($options['touchEnabled'])?true:false,
+              'ticker' => ($options['ticker'])?true:false,
+              'tickerHover' => ($options['tickerHover'])?true:false,
+              'lg_items' => $options['lg_items'],
+              'md_items' => $options['md_items'],
+              'sm_items' => $options['sm_items'],
+              'xs_items' => $options['xs_items'],
+          );
+	if($options['auto']) {
+		if($options['autoControls']) {
+			//$bx_options = array_merge($bx_options, array('autoControls'=> true));
+		}
+	}	  
+	$bx_slider_settings = array(
+      'invbxsliders' => array(
+          $view_id => $bx_options,
+      ),
+    );
+    $library_bxslider  = array(
+        '#attached' => array(
+            'library' => array(
+                'inv_views_bxslider/drupal.bxslider',
+            ),
+            'drupalSettings' => $bx_slider_settings,
+        ),
+    );
+    $variables['view_id'] = $view_id;
+    return \Drupal::service('renderer')->render($library_bxslider);
+}

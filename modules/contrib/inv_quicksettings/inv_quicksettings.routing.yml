@@ -1,0 +1,8 @@
+# Drupal 8 inv_quicksettings.routing.yml snippet
+innovation.preset.setting:
+  path: '/innovation/preset/{preset}'
+  defaults:
+    _controller: '\Drupal\inv_quicksettings\Controller\QuickSettingsController::view'
+    _title: 'Quick Settings'
+  requirements:
+        _permission: 'access content'

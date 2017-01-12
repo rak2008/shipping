@@ -1,0 +1,13 @@
+drupal.bxslider:
+  vesion: 1.0
+  css: 
+    theme:
+        css/jquery.bxslider.css: {}
+        css/inv-bxslider.css: {}
+  js:
+    js/jquery.bxslider.min.js: {}
+    js/inv-bxslider.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

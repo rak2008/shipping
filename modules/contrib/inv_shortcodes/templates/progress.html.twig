@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Default theme implementation for accordion item.
+ *
+ * Available variables:
+ * - progress_id
+ * - percent
+ * - class
+ * - icon
+ * - content
+ */
+#}
+
+<div id="{{ progress_id }}" class="progress-bar-wrapper" data-percent="{{ percent }}%">
+    <div class="progress {{ class }}" data-percent="{{ percent }}%">
+        <div class="progress-bar" role="progressbar" aria-valuenow="{{ percent }}" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+             <span class="pb-content-text">{% if icon is not empty %}<i class='{{ icon }}'></i>{% endif %}{{ content }}</span>
+             <span class="pb-completed">{{ percent }}%</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+innovation_animation:
+  css:
+    theme:
+      css/animate.css: {}
+  js:
+    js/jquery.appear.js: {}
+    js/inv_animation.js: {}
+  dependencies:
+      - core/jquery
+
+innovation_video_background:
+  js:
+    js/jquery.mb.YTPlayer.js: {}
+    js/inv_video.js: {}
+  dependencies:
+    - core/jquery
+
+innovation_parallax:
+  css:
+     theme:
+        css/inv_parallax.css: {}
+  js:
+    js/jquery.stellar.min.js: {}
+    js/inv_parallax.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

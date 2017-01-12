@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Default theme implementation for accordion item.
+ *
+ * Available variables:
+ * - accordion_item_id
+ * - item_collapse
+ * - item_active
+ * - title
+ * - icon
+ * - content
+ */
+#}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a class="{{ item_collapse }}" data-parent="#ACCORDION_WRAPPER_ID" data-toggle="collapse" href="#{{ accordion_item_id }}">
+                <i class='{{ icon }}'></i>{{ title }}
+            </a>
+        </h4>
+    </div>
+    <div class="panel-collapse collapse {{ item_active }}" id="{{ accordion_item_id }}">
+        <div class="panel-body">{{ content }}
+        </div>
+    </div>
+</div>

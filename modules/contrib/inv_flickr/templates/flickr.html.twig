@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the basic structure of a inv_flickr.
+ *
+ * Available variables:
+ * - flickr_source: Source pulling photo
+ * - flickr_id: Flickr ID.
+ * - flickr_num_photo: Number of photo to get.
+ * - flickr_display: Order Images can be latest or random
+ * - flickr_image_size: Size of images
+ * - flickr_layout
+ * @ingroup themeable
+ */
+#}
+<div class="innovation-flickr">
+  <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count={{ flickr_num_photo }}&amp;display={{ flickr_display }}&amp;size={{ flickr_image_size }}&amp;layout={{ flickr_layout }}&amp;source={{ flickr_source }}&amp;{{ flickr_id }}"></script>
+</div>

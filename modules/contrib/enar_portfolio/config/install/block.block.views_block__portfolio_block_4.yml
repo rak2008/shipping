@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.portfolio
+  module:
+    - inv_block_custom
+    - system
+    - views
+  theme:
+    - enar
+third_party_settings:
+  inv_block_custom:
+    background_image_position: 'top left'
+id: views_block__portfolio_block_4
+theme: enar
+region: bottom_content
+weight: -35
+provider: null
+plugin: 'views_block:portfolio-block_4'
+settings:
+  id: 'views_block:portfolio-block_4'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/55\r\n/node/54"
+    negate: false
+    context_mapping: {  }

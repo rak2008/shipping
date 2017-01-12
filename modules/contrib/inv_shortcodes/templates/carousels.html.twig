@@ -1,0 +1,45 @@
+{% if (pager == 'thumbnail') %}
+<div id="{{ carousel_id }}" class="carousel slide carousel-thumbnail inv_carousel" data-ride="carousel" {% if auto != "true" %} data-interval="false" {% endif %}>
+	<div class='carousel-outer'>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			{{ content|raw }}
+		</div>
+		<!-- Controls -->
+		{% if control == "true" %}
+			<a class="left carousel-control" href="#{{ carousel_id }}" data-slide="prev"><span class="fa fa-angle-left"></span></a>
+			<a class="right carousel-control" href="#{{ carousel_id }}" data-slide="next"><span class="fa fa-angle-right"></span></a>
+		{% endif %}
+	</div>
+   <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+        {% for i in 0..total_item - 1 %}
+            <li data-target="#{{ carousel_id }}" data-slide-to="{{ i }}" class="{% if i == 0 %} active {% endif %}">
+				<img src='{{ thumbnail[i] }}' alt=''/>
+			</li>
+        {% endfor %}
+    </ol>
+</div>
+{% else %}
+<div id="{{ carousel_id }}" class="carousel slide inv_carousel" data-ride="carousel" {% if auto != "true" %} data-interval="false" {% endif %}>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        {{ content|raw }}
+    </div>
+
+    {% if pager == "control" %}
+    <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+        {% for i in 0..total_item - 1 %}
+            <li data-target="#{{ carousel_id }}" data-slide-to="{{ i }}" class="{% if i == 0 %} active {% endif %}"></li>
+        {% endfor %}
+    </ol>
+    {% endif %}
+
+    <!-- Controls -->
+    {% if control == "true" %}
+        <a class="left carousel-control" href="#{{ carousel_id }}" data-slide="prev"><span class="fa fa-angle-left"></span></a>
+        <a class="right carousel-control" href="#{{ carousel_id }}" data-slide="next"><span class="fa fa-angle-right"></span></a>
+    {% endif %}
+</div>
+{% endif %}

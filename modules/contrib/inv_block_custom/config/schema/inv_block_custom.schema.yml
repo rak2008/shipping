@@ -1,0 +1,41 @@
+block.block.*.third_party.inv_block_custom:
+  type: mapping
+  label: Innovation Block custom third party settings
+  mapping:
+    animate_css_class:
+      type: string
+      label: Animation classes for the block
+    animate_css_delay:
+      type: string
+      label: Animation delay for the block
+    background_type:
+      type: string
+      label: Background type block such as Image or Video
+    background_image:
+      type: string
+      label: Image background in case background_type is Image
+    background_image_type:
+      type: string
+      label: Background Image type such as Parallax or Cover
+    background_image_position:
+      type: string
+      label: Background position of image
+    background_video:
+      type: string
+      label: Video URL to set background block
+    background_video_start:
+      type: string
+      label: Video start at
+    background_video_mute:
+      type: string
+      label: Option to mute video block
+    block_text_align:
+      type: string
+      label: Text align block
+    block_padding:
+      type: string
+      label: Padding block
+    block_margin:
+      type: string
+      label: Margin block
+

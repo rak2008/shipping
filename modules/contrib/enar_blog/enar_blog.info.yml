@@ -1,0 +1,19 @@
+name: 'Enar Blog'
+description: 'Provides all blog views and related configurations such as view modes, view mode display for Article content type.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - carousel_formatter
+  - comment
+  - field
+  - image
+  - inv_block_custom
+  - node
+  - path
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+version: 8.x-1.0

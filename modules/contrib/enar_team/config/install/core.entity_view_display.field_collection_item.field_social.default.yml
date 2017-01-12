@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_social.field_icon
+    - field.field.field_collection_item.field_social.field_link
+    - field_collection.field_collection.field_social
+  module:
+    - options
+id: field_collection_item.field_social.default
+targetEntityType: field_collection_item
+bundle: field_social
+mode: default
+content:
+  field_icon:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+  field_link:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden: {  }

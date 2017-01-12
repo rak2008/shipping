@@ -1,0 +1,33 @@
+shortcode.stat:
+  header: true
+  js:
+    assets/js/jquery.appear.js: {}
+  dependencies:
+      - core/jquery
+
+shortcode.map:
+  css:
+     theme:
+        assets/css/gmap.css: {}
+  js:
+    assets/js/inv_gmap.js: {}
+  dependencies:
+    - core/jquery
+
+shortcode.flipbox:
+  css:
+     theme:
+        assets/css/flipbox.css: {}
+
+shortcode.progress:
+  js:
+    assets/js/jquery.appear.js: {}
+    assets/js/inv_progress.js: {}
+  dependencies:
+      - core/jquery
+
+shortcode.pie:
+  js:
+    assets/js/inv_pie.js: {}
+  dependencies:
+    - core/jquery

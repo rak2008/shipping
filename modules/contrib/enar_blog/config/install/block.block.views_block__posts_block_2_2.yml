@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.posts
+  module:
+    - inv_block_custom
+    - system
+    - views
+  theme:
+    - enar
+third_party_settings:
+  inv_block_custom:
+    background_image_position: 'top left'
+id: views_block__posts_block_2_2
+theme: enar
+region: sidebar_second
+weight: -67
+provider: null
+plugin: 'views_block:posts-block_2'
+settings:
+  id: 'views_block:posts-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/97\r\n/node/100"
+    negate: false
+    context_mapping: {  }

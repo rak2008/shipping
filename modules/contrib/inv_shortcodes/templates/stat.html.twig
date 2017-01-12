@@ -1,0 +1,51 @@
+<div id="{{ stat_id }}" class="counter {{ class }}">
+    <div class="icon"><i class="{{ icon }}"></i>
+    </div>
+    <div class="stat-count highlight">
+        {{ number }}
+    </div>
+    <div class="counter-info">
+        <div class="counter-title">{{ title }}</div>
+
+        <div class="counter-details">
+        {{ content }}
+        </div>
+    </div>
+</div>
+{{ attach_library('core/jquery') }}
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        $('#{{ stat_id }} .stat-count').each(function() {
+            var start = {{ start_number }};
+            var number = {{ number }};
+            var duration= {{ duration }};
+            var speed = parseInt(duration / number);
+            var inc = {{ inc_step }};
+            if (typeof $.fn.appear === 'function') {
+                $(this).appear(function() {
+                    statcount($(this), start, inc, speed);
+                }, {
+                    accX: 0,
+                    accY: 0,
+                    one: true
+                });
+            } else {
+                statcount($(this), start, inc, speed);
+            }
+        });
+
+    });
+    function statcount($element, $start, $inc_step, $speed) {
+        var end = parseInt($element.html(), 10);
+        if (end <= $start)
+            return false;
+        var interval = setInterval(function() {
+            $start=$start+$inc_step;
+            $element.html($start.toString());
+            if ($start >= end) {
+                $element.html(end.toString());
+                clearInterval(interval);
+            }
+        }, $speed);
+    }
+</script>

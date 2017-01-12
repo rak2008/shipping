@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.faq
+  module:
+    - inv_block_custom
+    - system
+    - views
+  theme:
+    - enar
+third_party_settings:
+  inv_block_custom:
+    background_image_position: 'top left'
+id: views_block__faq_block_1
+theme: enar
+region: content
+weight: -66
+provider: null
+plugin: 'views_block:faq-block_1'
+settings:
+  id: 'views_block:faq-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/110
+    negate: false
+    context_mapping: {  }

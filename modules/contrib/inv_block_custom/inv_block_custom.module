@@ -1,0 +1,541 @@
+<?php
+/**
+ *
+ * @file
+ * Module for adding animation, background image, parallax block, video background and style settings margin, padding, align for block
+ */
+use Drupal\Component\Utility\Html;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Template\Attribute;
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function inv_block_custom_form_block_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (\Drupal::currentUser()->hasPermission('administer block custom')) {
+
+    /** @var \Drupal\block\BlockInterface $block */
+    $block = $form_state->getFormObject()->getEntity();
+
+    $form['innovation_block_settings'] = [
+      '#type' => 'vertical_tabs',
+      '#title' => t('Innovation block settings'),
+      '#parents' => ['innovation_block_settings'],
+      '#description' => t('Allow user settings animation, background image or video background also settings margin, padding, align for block'),
+    ];
+    $form['animation_settings'] = array(
+      '#type' => 'details',
+      '#title' => t('Animation Settings'),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      '#group' => 'innovation_block_settings',
+    );
+    $form['background_settings'] = array(
+      '#type' => 'details',
+      '#title' => t('Background Settings'),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      '#group' => 'innovation_block_settings',
+
+    );
+    $form['style_settings'] = array(
+      '#type' => 'details',
+      '#title' => t('Style Settings'),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      '#group' => 'innovation_block_settings',
+    );
+    $form['bootstrap_settings'] = array(
+      '#type' => 'details',
+      '#title' => t('Bootstrap Responsive Utility'),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      '#group' => 'innovation_block_settings',
+    );
+    // This will automatically be saved in the third party settings.
+    //$form['third_party_settings']['#tree'] = TRUE;
+
+     $form['animation_settings']['animate_css_class'] = array(
+        '#type' => 'select',
+        '#title' => t('Select Animation'),
+        '#options' => _get_animation_types_form_options(),
+        '#default_value' => $block->getThirdPartySetting('inv_block_custom','animate_css_class'),
+        '#description' => t('Select the Animate CSS animation you wish to apply to this block.'),
+    );
+    $form['animation_settings']['animate_css_delay'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Animation Delay.'),
+      '#description' => t("Change the default animation's delay. Leave blank for default delay (0 seconds). Units: seconds. Example: 5 (seconds)"),
+      '#default_value' => $block->getThirdPartySetting('inv_block_custom','animate_css_delay'),
+      '#field_suffix' => 'seconds',
+    );
+
+    $form['background_settings']['background_type'] = array(
+      '#type' => 'select',
+      '#title' => t('Background type'),
+      '#options' => array(0=>t('None'),1=>t('Color'),2=>t('Image'),3=>t('Video')),
+      '#default_value' => $block->getThirdPartySetting('inv_block_custom','background_type'),
+      '#prefix' => '<h2>'.t('Block Background Settings').'</h2>'
+    );
+
+    $default_image = array();
+    if ($block->getThirdPartySetting('inv_block_custom','background_image') && !empty($block->getThirdPartySetting('inv_block_custom','background_image'))) {
+        $default_image = array($block->getThirdPartySetting('inv_block_custom', 'background_image'));
+    }
+    $form['background_settings']['background_image'] = array(
+      '#tree' => TRUE,
+      '#title' => t('Background image'),
+      '#type' => 'managed_file',
+      '#description' => t('The uploaded image will be displayed on the page unless it is marked as "removed".'),
+      '#default_value' => $default_image,
+      '#media_options' => array(
+          'global' => array(
+              'types' => array(
+                  'image' => 'image',
+              ),
+              'schemes' => array(
+                  'public' => 'public',
+              ),
+              'file_extensions' => 'png gif jpg jpeg',
+              'max_filesize' => '4 MB',
+              'uri_scheme' => 'public',
+          ),
+      ),
+      '#upload_location' => 'public://bg_images/',
+      '#states' => array(
+          'visible' => array(
+              ':input[name="background_settings[background_type]"]' => array('value' => 2),
+          ),
+      ),
+    );
+    $form['background_settings']['background_image_type'] = array(
+      '#type' => 'select',
+      '#title' => t('Background image type'),
+      '#options' => array('default' => t('Default'), 'parallax' => t('Parallax'), 'cover'=>t('Cover')),
+      '#default_value' => $block->getThirdPartySetting('inv_block_custom','background_image_type'),
+      '#states' => array(
+          'visible' => array(
+              ':input[name="background_settings[background_type]"]' => array('value' => 2),
+          ),
+      ),
+    );
+    $form['background_settings']['background_image_position'] = array(
+      '#type' => 'select',
+      '#title' => t('Background position'),
+      '#options' => array(
+          'top left' => t('Top Left'),
+          'top center' => t('Top Center'),
+          'top right' => t('Top Right'),
+          'center left'=> t('Center Left'),
+          'center center'=> t('Center Center'),
+          'center right'=> t('Center Right'),
+          'bottom left'=> t('Bottom Left'),
+          'bottom center'=> t('Bottom Center'),
+          'bottom right'=>t('Bottom Right'),
+      ),
+      '#default_value' => $block->getThirdPartySetting('inv_block_custom','background_image_position'),
+      '#states' => array(
+          'visible' => array(
+              ':input[name="background_settings[background_type]"]' => array('value' => 2),
+          ),
+      ),
+    );
+
+    $form['background_settings']['overlay_color'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Overlay color'),
+          '#description' => t("Use hexa color and leave empty if you don't want use overlay background color"),
+          '#default_value' => $block->getThirdPartySetting('inv_block_custom','overlay_color'),
+    );
+
+    $form['background_settings']['overlay_opacity'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Overlay Opacity'),
+      '#description' => t("Set overlay opacity. Ex: 0.5"),
+      '#default_value' => $block->getThirdPartySetting('inv_block_custom','overlay_opacity'),
+    );
+
+    $form['background_settings']['background_video'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Background Video URL'),
+      '#description' => t('Support youtube video'),
+      '#default_value' => $block->getThirdPartySetting('inv_block_custom','background_video'),
+      '#states' => array(
+          'visible' => array(
+              ':input[name="background_settings[background_type]"]' => array('value' => 3),
+          ),
+      ),
+    );
+    $form['background_settings']['background_video_start'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Start at'),
+      '#field_suffix' => t('second'),
+      '#description' => t('Start video at time'),
+      '#default_value' => $block->getThirdPartySetting('inv_block_custom','background_video_start'),
+      '#states' => array(
+          'visible' => array(
+              ':input[name="background_settings[background_type]"]' => array('value' => 3),
+          ),
+      ),
+    );
+    $form['background_settings']['background_video_mute'] = array(
+      '#type' => 'select',
+      '#title' => t('Mute'),
+      '#default_value' => $block->getThirdPartySetting('inv_block_custom','background_video_mute'),
+      '#options' => array('0'=>'No',1=>'Yes'),
+      '#states' => array(
+          'visible' => array(
+              ':input[name="background_settings[background_type]"]' => array('value' => 3),
+          ),
+      ),
+    );
+
+    $form['style_settings']['block_classes'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Block classes'),
+      '#description' => t('Add custom class to block. You can separate by space for multiple class'),
+      '#default_value' => $block->getThirdPartySetting('inv_block_custom','block_classes'),
+    );
+    $form['style_settings']['block_container_class'] = array(
+          '#type' => 'select',
+          '#title' => t('Force content block to box in Fullwidth section'),
+          '#options' => array('' => t('No'), 'container' => t('Yes'),),
+          '#default_value' => $block->getThirdPartySetting('inv_block_custom','block_container_class'),
+      );
+    $form['style_settings']['block_text_align'] = array(
+      '#type' => 'select',
+      '#title' => t('Text align'),
+      '#options' => array('default' => t('Default'), 'left' => t('Left'), 'center' => t('Center'), 'right' => t('Right')),
+      '#default_value' => $block->getThirdPartySetting('inv_block_custom','block_text_align'),
+    );
+    $form['style_settings']['block_padding'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Padding'),
+      '#default_value' => $block->getThirdPartySetting('inv_block_custom','block_padding'),
+    );
+    $form['style_settings']['block_margin'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Margin'),
+      '#default_value' => $block->getThirdPartySetting('inv_block_custom','block_margin'),
+    );
+    $form['bootstrap_settings']['hidden_devices'] = array(
+      '#type' => 'checkboxes',
+      '#title' => 'Responsive settings',
+      '#options' => array(
+          'hidden-xs' => 'Hidden on Extra Small Device',
+          'hidden-sm' => 'Hidden on Small Device',
+          'hidden-md' => 'Hidden on Medium Device',
+          'hidden-ld' => 'Hidden on Large Device',
+      ),
+    //  '#default_value' => array('hidden-xs','hidden-sm' ),
+    );
+    $form['#entity_builders'][] = 'inv_block_custom_submit';
+  }
+}
+
+function inv_block_custom_submit($entity_type, Drupal\block\Entity\Block $block, &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+    $animate_css_class = $form_state->getValue('animation_settings')['animate_css_class'];
+    if ($animate_css_class && $animate_css_class != 'none') {
+        $block->setThirdPartySetting('inv_block_custom', 'animate_css_class', $animate_css_class);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'animate_css_class');
+    }
+
+    if ($delay = $form_state->getValue('animation_settings')['animate_css_delay']) {
+        $block->setThirdPartySetting('inv_block_custom', 'animate_css_delay', $delay);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'animate_css_delay');
+    }
+
+    $bg_type = $form_state->getValue('background_settings')['background_type'];
+    if ($bg_type && $bg_type != 0) {
+        $block->setThirdPartySetting('inv_block_custom', 'background_type', $bg_type);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'background_type');
+    }
+
+    $bg_image = $form_state->getValue('background_settings')['background_image'];
+    if ($bg_image && !empty($bg_image)) {
+        $fid  = $bg_image[0];
+        $block->setThirdPartySetting('inv_block_custom', 'background_image', $fid);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'background_image');
+    }
+
+    if ($overlay_color = $form_state->getValue('background_settings')['overlay_color']) {
+        $block->setThirdPartySetting('inv_block_custom', 'overlay_color', $overlay_color);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'overlay_color');
+    }
+    if ($overlay_opacity = $form_state->getValue('background_settings')['overlay_opacity']) {
+        $block->setThirdPartySetting('inv_block_custom', 'overlay_opacity', $overlay_opacity);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'overlay_opacity');
+    }
+
+    $bg_image_type = $form_state->getValue('background_settings')['background_image_type'];
+    if ($bg_image_type && $bg_image_type != 'default') {
+        $block->setThirdPartySetting('inv_block_custom', 'background_image_type', $bg_image_type);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'background_image_type');
+    }
+
+    $bg_image_position = $form_state->getValue('background_settings')['background_image_position'];
+    if ($bg_image_position) {
+        $block->setThirdPartySetting('inv_block_custom', 'background_image_position', $bg_image_position);
+    }
+
+    $bg_video = $form_state->getValue('background_settings')['background_video'];
+    if ($bg_video) {
+        $block->setThirdPartySetting('inv_block_custom', 'background_video', $bg_video);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'background_video');
+    }
+
+    $video_start = $form_state->getValue('background_settings')['background_video_start'];
+    if ($video_start) {
+        $block->setThirdPartySetting('inv_block_custom', 'background_video_start', $video_start);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'background_video_start');
+    }
+
+    $video_mute = $form_state->getValue('background_settings')['background_video_mute'];
+    if ($video_mute) {
+        $block->setThirdPartySetting('inv_block_custom', 'background_video_mute', $video_mute);
+    }
+
+    $block_classes = $form_state->getValue('style_settings')['block_classes'];
+    if ($block_classes) {
+        $block->setThirdPartySetting('inv_block_custom', 'block_classes', $block_classes);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'block_classes');
+    }
+
+    $block_container_class = $form_state->getValue('style_settings')['block_container_class'];
+    if ($block_container_class) {
+        $block->setThirdPartySetting('inv_block_custom', 'block_container_class', $block_container_class);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'block_container_class');
+    }
+
+    $text_align = $form_state->getValue('style_settings')['block_text_align'];
+    if ($text_align && $text_align != 'default') {
+        $block->setThirdPartySetting('inv_block_custom', 'block_text_align', $text_align);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'block_text_align');
+    }
+
+    $padding = $form_state->getValue('style_settings')['block_padding'];
+    if ($padding) {
+        $block->setThirdPartySetting('inv_block_custom', 'block_padding', $padding);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'block_padding');
+    }
+
+    $margin = $form_state->getValue('style_settings')['block_margin'];
+    if ($margin) {
+        $block->setThirdPartySetting('inv_block_custom', 'block_margin', $margin);
+    } else {
+        $block->unsetThirdPartySetting('inv_block_custom', 'block_margin');
+    }
+}
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function inv_block_custom_preprocess_block(&$variables) {
+  // Blocks coming from page manager widget does not have id.
+  if (!empty($variables['elements']['#id'])) {
+      $block = Block::load($variables['elements']['#id']);
+
+      // Set animation block
+      _set_animation($block, $variables);
+
+      $background_type = $block->getThirdPartySetting('inv_block_custom', 'background_type');
+      $styles = array();
+
+      // Image background
+      if ($background_type == 2) {
+          _set_image_background($block, $variables,$styles);
+      }
+
+      // Video background
+      if ($background_type == 3) {
+          _set_video_background($block, $variables);
+      }
+
+      // Custom style block
+      set_custom_style($block, $variables,$styles);
+  }
+}
+
+function _set_animation($block, &$variables) {
+    $animate_class = $block->getThirdPartySetting('inv_block_custom', 'animate_css_class');
+
+    if ($animate_class != null && $animate_class != 'none') {
+        $variables['attributes']['class'][] = 'inv-animate';
+        $variables['attributes']['data-animate'] = $animate_class;
+        $variables['#attached']['library'][] = 'inv_block_custom/innovation_animation';
+    }
+    if ($delay = $block->getThirdPartySetting('inv_block_custom', 'animate_css_delay')) {
+        $variables['attributes']['data-animate-delay'] = $delay;
+    }
+}
+
+function _set_image_background($block, &$variables, &$styles) {
+    $fid = $block->getThirdPartySetting('inv_block_custom', 'background_image');
+    $background_position = $block->getThirdPartySetting('inv_block_custom', 'background_image_position');
+
+    if ($fid) {
+        $file = file_load($fid);
+        if($file) {
+            // Store file permanent
+            $file->setPermanent();
+            $file->save();
+            \Drupal::service('file.usage')->add($file, "inv_block_custom", "inv_block_custom", $fid);
+
+            $url = file_create_url($file->getFileUri());
+            $styles[] = "background-image:url({$url})";
+        }
+        $styles[] = "background-position:{$background_position}";
+        if ($block->getThirdPartySetting('inv_block_custom', 'background_image_type') == 'cover') {
+            $styles[] = "background-size:cover";
+        } else {
+            if ($block->getThirdPartySetting('inv_block_custom', 'background_image_type') == 'parallax') {
+                $variables['attributes']['class'][] = 'inv-parallax';
+                $variables['#attached']['library'][] = 'inv_block_custom/innovation_parallax';
+            }
+        }
+
+        $set_overlay = false;
+        if ($overlay_color = $block->getThirdPartySetting('inv_block_custom', 'overlay_color')) {
+            $overlay_style[] = "background-color:".$overlay_color;
+            $set_overlay = true;
+        }
+        if ($overlay_opacity = $block->getThirdPartySetting('inv_block_custom', 'overlay_opacity')) {
+            $overlay_style[] = "opacity:".$overlay_opacity;
+            $set_overlay = true;
+        }
+        if ( $set_overlay) {
+            $variables['overlay_style'] = implode(";", $overlay_style);
+            $variables['attributes']['class'][] = 'block-overlay';
+        }
+    }
+}
+
+function _set_video_background($block, &$variables) {
+    if ($video_background = $block->getThirdPartySetting('inv_block_custom', 'background_video')) {
+        $mute = $block->getThirdPartySetting('inv_block_custom', 'background_video_mute');
+        
+		$start = $block->getThirdPartySetting('inv_block_custom', 'background_video_start');
+        if ($start == null) {
+            $start = 0;
+        }
+        $variables['#attached']['library'][] = 'inv_block_custom/innovation_video_background';
+        $variables['video_bg'] = '<a class="inv_video_bg" data-property="{videoURL:\'' . $video_background . '\',containment:\'#block-' . Html::getClass($variables['elements']['#id']) . '\',autoPlay:true,showControls:false, mute:' . $mute . ', startAt:' . $start . ', opacity:1}">youtube</a>';
+    }
+}
+
+function set_custom_style($block, &$variables, &$styles) {
+    if ($block_classes = $block->getThirdPartySetting('inv_block_custom', 'block_container_class')) {
+        $variables['content_attributes']['class'][] = $block_classes;
+    }
+    if ($block_classes = $block->getThirdPartySetting('inv_block_custom', 'block_classes')) {
+        $variables['attributes']['class'][] = $block_classes;
+    }
+    if ($text_align = $block->getThirdPartySetting('inv_block_custom', 'block_text_align')) {
+        $styles[] = 'text-align:' . $text_align;
+    }
+    if ($padding = $block->getThirdPartySetting('inv_block_custom', 'block_padding')) {
+        $styles[] = 'padding:' . $padding;
+    }
+    if ($margin = $block->getThirdPartySetting('inv_block_custom', 'block_margin')) {
+        $styles[] = 'margin:' . $margin;
+    }
+    if (!empty($styles)) {
+        $variables['attributes']['style'] = implode(";", $styles);
+    }
+}
+
+/**
+ * Helper function.
+ *
+ * Returns the Animate CSS animation effects the user can
+ * select from the select list in the block's configuration page.
+ */
+function _get_animation_types_form_options() {
+  return array(
+      'none'   => t('-- No animation --'),
+      'bounce' => t('Bounce'),
+      'flash'  => t('Flash'),
+      'pulse'  => t('Pulse'),
+      'rubberBand' => t('Rubber Band'),
+      'shake' => t('Shake'),
+      'swing' => t('Swing'),
+      'tada' => t('Tada'),
+      'wobble' => t('Wobble'),
+      'bounceIn' => t('Bounce In'),
+      'bounceInDown' => t('Bounce In Down'),
+      'bounceInLeft' => t('Bounce In Left'),
+      'bounceInRight' => t('Bounce In Right'),
+      'bounceInUp' => t('Bounce In Up'),
+      'bounceOut' => t('Bounce Out'),
+      'bounceOutDown' => t('Bounce Out Down'),
+      'bounceOutLeft' => t('Bounce Out Left'),
+      'bounceOutRight' => t('Bounce Out Right'),
+      'bounceOutUp' => t('Bounce Out Up'),
+      'fadeIn' => t('Fade In'),
+      'fadeInDown' => t('Fade In Down'),
+      'fadeInDownBig' => t('Fade In Down Big'),
+      'fadeInLeft' => t('Fade In Left'),
+      'fadeInLeftBig' => t('Fade In Left Big'),
+      'fadeInRight' => t('Fade In Right'),
+      'fadeInRightBig' => t('Fade In Right Big'),
+      'fadeInUp' => t('Fade In Up'),
+      'fadeInUpBig' => t('Fade In Up Big'),
+      'fadeOut' => t('Fade Out'),
+      'fadeOutDown' => t('Fade Out Down'),
+      'fadeOutDownBig' => t('Fade Out Down Big'),
+      'fadeOutLeft' => t('Fade Out Left'),
+      'fadeOutLeftBig' => t('Fade Out Left Big'),
+      'fadeOutRight' => t('Fade Out Right'),
+      'fadeOutRightBig' => t('Fade Out Right Big'),
+      'fadeOutUp' => t('Fade Out Up'),
+      'fadeOutUpBig' => t('Fade Out Up Big'),
+      'flipInX' => t('Flip In X'),
+      'flipInY' => t('Flip In Y'),
+      'flipOutX' => t('Flip Out X'),
+      'flipOutY' => t('Flip Out Y'),
+      'lightSpeedIn' => t('Light Speed In'),
+      'lightSpeedOut' => t('Light Speed Out'),
+      'rotateIn' => t('Rotate In'),
+      'rotateInDownLeft' => t('Rotate In Down Left'),
+      'rotateInDownRight' => t('Rotate In Down Right'),
+      'rotateInUpLeft' => t('Rotate In Up Left'),
+      'rotateInUpRight' => t('Rotate In Up Right'),
+      'rotateOut' => t('Rotate Out'),
+      'rotateOutDownLeft' => t('Rotate Out Down Left'),
+      'rotateOutDownRight' => t('Rotate Out Down Right'),
+      'rotateOutUpLeft' => t('Rotate Out Up Left'),
+      'rotateOutUpRight' => t('Rotate Out Up Right'),
+      'hinge' => t('Hinge'),
+      'rollIn' => t('Roll In'),
+      'rollOut' => t('Roll Out'),
+      'zoomIn' => t('Zoon In'),
+      'zoomInDown' => t('Zoom In Down'),
+      'zoomInLeft' => t('Zoom In Left'),
+      'zoomInRight' => t('Zoom In Right'),
+      'zoomInUp' => t('Zoom In Up'),
+      'zoomOut' => t('Zoom Out'),
+      'zoomOutDown' => t('Zoom Out Down'),
+      'zoomOutLeft' => t('Zoom Out Left'),
+      'zoomOutRight' => t('Zoom Out Right'),
+      'zoomOutUp' => t('Zoom Out Up'),
+      'slideInDown' => t('Slide In Down'),
+      'slideInLeft' => t('Slide In Left'),
+      'slideInRight' => t('Slide In Right'),
+      'slideInUp' => t('Slide In Up'),
+      'slideOutDown' => t('Slide Out Down'),
+      'slideOutLeft' => t('Slide Out Left'),
+      'slideOutRight' => t('Slide Out Right'),
+      'slideOutUp' => t('Slide Out Up'),
+  );
+}

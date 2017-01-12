@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blog
+  module:
+    - inv_block_custom
+    - system
+    - views
+  theme:
+    - enar
+third_party_settings:
+  inv_block_custom:
+    background_image_position: 'top left'
+    block_classes: bg-dark
+    block_container_class: container
+id: views_block__blog_blog_ticker
+theme: enar
+region: top_content
+weight: null
+provider: null
+plugin: 'views_block:blog-blog_ticker'
+settings:
+  id: 'views_block:blog-blog_ticker'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/95\r\n/node/96\r\n/node/97\r\n/node/98\r\n/node/99\r\n/node/100\r\n/node/113\r\n/node/114\r\n/node/115\r\n/node/120\r\n/node/121"
+    negate: false
+    context_mapping: {  }

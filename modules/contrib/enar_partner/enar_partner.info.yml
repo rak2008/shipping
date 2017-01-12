@@ -1,0 +1,17 @@
+name: 'Enar Partner'
+description: 'Provides content type partner (client) and all related view, configuration, view modes...'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - field
+  - image
+  - inv_block_custom
+  - menu_ui
+  - node
+  - path
+  - system
+  - text
+  - user
+  - views
+version: 8.x-1.0

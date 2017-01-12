@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_portfolio_2
+    - field.field.node.portfolio.body
+    - field.field.node.portfolio.field_image
+    - field.field.node.portfolio.field_portfolio_categories
+    - node.type.portfolio
+  module:
+    - carousel_formatter
+    - text
+    - user
+id: node.portfolio.teaser_portfolio_2
+targetEntityType: node
+bundle: portfolio
+mode: teaser_portfolio_2
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    weight: 102
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: popup
+      control: '1'
+      pager: ''
+      interval: '5000'
+    third_party_settings: {  }
+    type: carousel_formatter
+  field_portfolio_categories:
+    weight: 103
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+  sharethis:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

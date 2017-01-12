@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.testimonial
+  module:
+    - inv_block_custom
+    - system
+    - views
+  theme:
+    - enar
+third_party_settings:
+  inv_block_custom:
+    background_type: '2'
+    background_image: '56'
+    background_image_type: cover
+    background_image_position: 'top center'
+    block_padding: '90px 0'
+    block_container_class: container
+    block_classes: 'white-section control-style02'
+    overlay_color: '#000'
+    overlay_opacity: '0.6'
+id: views_block__testimonial_block_2
+theme: enar
+region: bottom_content
+weight: -39
+provider: null
+plugin: 'views_block:testimonial-block_2'
+settings:
+  id: 'views_block:testimonial-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/40
+    negate: false
+    context_mapping: {  }

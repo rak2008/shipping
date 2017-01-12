@@ -1,0 +1,119 @@
+<?php
+/**
+ * @file
+ * Views bxslider style plugin code.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Render\Element\RenderElement;
+use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_preprocess_HOOK
+ */
+function template_preprocess_views_view_invgrid(&$variables) {
+
+	$options = $variables ['options'] = $variables ['view']->style_plugin->options;
+	$view = $variables['view'];
+	$view_id = Html::getUniqueId($view->storage->id() . '-' . $view->current_display);
+    $items = array();
+
+	$grid_settings = array(
+      'invgrid' => array(
+          $view_id => array(
+              'grid_style' => $options['grid_style'],
+              'grid_cols_lg' => $options['grid_cols_lg'],
+              'grid_cols_md' => $options['grid_cols_md'],
+              'grid_cols_sm' => $options['grid_cols_sm'],
+              'grid_cols_xs' => $options['grid_cols_xs'],
+              'grid_margin' => $options['grid_margin'],
+              'grid_ratio' => $options['grid_ratio'],
+          ),
+      ),
+    );
+    $source_library = array('inv_views_grid/drupal.grid');
+    if ($options['grid_style'] == 'classic') {
+        $source_library = array('inv_views_grid/drupal.grid', 'inv_views_grid/drupal.grid_css_classic');
+    }
+
+    if ($options['grid_style'] == 'masonry_resize') {
+        $source_library = array('inv_views_grid/drupal.grid', 'inv_views_grid/drupal.grid_masonry_resize');
+    }
+//    $library_grid  = array(
+//        '#attached' => array(
+//            'library' => $source_library,
+//            'drupalSettings' => $grid_settings,
+//        ),
+//    );
+    foreach ($variables['rows'] as $result_index => $item) {
+        $items[$result_index]['content'] = $item;
+        $items[$result_index]['class'] = "";
+
+        if($options['grid_style'] == 'masonry_resize' && isset($options['masonry_background']) && !empty($options['masonry_background'])){
+            $nid = $view->result[$result_index]->nid;
+            if($nid){
+                $node = node_load($nid);
+				$mansory_option = $options['masonry_background'];
+                if(is_array($node->$mansory_option) && is_array($node->$mansory_option->entity)){
+                    $uri = $node->$mansory_option->entity->getFileUri();
+                    $background = file_create_url($uri);
+                }
+            }
+            $size = _get_masonry_size($view_id, $result_index);
+            $items[$result_index]['class'] = " item-w".$size['width']. " item-h".$size['height'];
+            if (isset($background)) {
+                $items[$result_index]['background'] = $background;
+            }
+        }
+    }
+    if($options['grid_filter']){
+        $vocab = $options['grid_filter_vocabulary'];
+        $categories = array();
+        $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadTree($vocab, 0, NULL, false);
+        foreach($terms as $term) {
+            $categories[Html::getClass($term->name)] = $term->name;
+        }
+        $variables['categories'] = $categories;
+        foreach ($variables['rows'] as $result_index => $item) {
+            $nid = $view->result[$result_index]->nid;
+            $classes = "";
+            foreach(_get_term_by_node_id_vocabulary_id($nid,$vocab) as $termOfNode) {
+                $classes .= ' '.Html::getClass($termOfNode->name);
+            }
+            $items[$result_index]['class'] =  $items[$result_index]['class']. " ".$classes;
+        }
+    }
+
+    $variables['view_id'] = $view_id;
+    $variables['items'] = $items;
+//    return \Drupal::service('renderer')->render($library_grid);
+    $variables['#attached']['drupalSettings'] = $grid_settings;
+    $variables['#attached']['library'] =  $source_library;
+}
+
+function _get_term_by_node_id_vocabulary_id($nid,$vid) {
+    $query = db_select('taxonomy_index','tx');
+    $query->leftjoin('taxonomy_term_field_data','ttfd', 'tx.tid=ttfd.tid');
+    $query->fields('tx',array('tid'));
+    $query->fields('ttfd',array('name'));
+    $query->condition('tx.nid', $nid);
+    $query->condition('ttfd.vid', $vid);
+    return $query->execute()->fetchAll();
+}
+
+function _get_masonry_size($view, $item) {
+    $result = db_select('inv_masonry', 'm')
+        ->fields('m')
+        ->condition('view', $view, '=')
+        ->condition('item', $item, '=')
+        ->execute()
+        ->fetchAssoc();
+    if ($result) {
+        return array(
+            'width' => $result['width'],
+            'height' => $result['height'],
+        );
+    }
+    return array('width' => 1, 'height' => 1);
+}

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'FAQ Group'
+vid: faq_group
+description: ''
+hierarchy: 0
+weight: 0

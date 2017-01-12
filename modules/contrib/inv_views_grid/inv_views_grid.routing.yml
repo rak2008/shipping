@@ -1,0 +1,8 @@
+# Drupal 8 inv_views_grid.routing.yml snippet
+innovation.masonry.admin:
+  path: '/admin/masonry/save/{view}/{item}/{width}/{height}'
+  defaults:
+    _controller: '\Drupal\inv_views_grid\Controller\MasonryController::save'
+    _title: 'Masonry Settings'
+  requirements:
+    _permission: 'administer masonry'

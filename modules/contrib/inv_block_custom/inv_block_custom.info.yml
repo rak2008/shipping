@@ -1,0 +1,10 @@
+name: 'Innovation Block Custom'
+type: 'module'
+description: 'Customize block D8 by adding more features such as: animation, background image, parallax block, video background and style settings margin, padding, align for block'
+package: 'Innovation'
+
+core: '8.x'
+version: '8.x-0.0'
+project: 'Innovation build core theme'
+dependencies:
+  - block
